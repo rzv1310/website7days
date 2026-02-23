@@ -5,7 +5,7 @@ const benefits = [
   {
     icon: Clock,
     title: "Gata în 7 Zile",
-    description: "Nu mai aștepți luni de zile. Website-ul tău este live în doar o săptămână.",
+    description: "Nu mai aștepți câteva luni după programatori. Site-ul tău este live în doar o săptămână.",
   },
   {
     icon: Smartphone,
