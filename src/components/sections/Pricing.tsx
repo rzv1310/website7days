@@ -151,7 +151,7 @@ const PricingCard: React.FC<{ plan: PlanData; variant: "gold" | "platinum" | "da
   const Icon = isPlatinum ? Crown : variant === "gold" ? Star : Layers;
 
   return (
-    <div className={isPlatinum ? "md:-mt-4 md:mb-[-16px]" : ""}>
+    <div>
       {/* Popular badge for platinum */}
       {isPlatinum && (
         <div className="text-center mb-3">
