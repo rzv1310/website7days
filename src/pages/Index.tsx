@@ -21,7 +21,7 @@ const Index = () => {
           line1: "Creare Site Web Profesional",
           line2: "în doar 7 Zile",
         }}
-        subtitle="Creez site-uri de prezentare moderne pentru afaceri locale nou-înființate. Rapid, elegant și optimizat pentru conversii."
+        subtitle="Construim site-uri de prezentare elegante pentru businessuri locale. Rapid și optimizat pentru conversii."
         buttons={{
           primary: { text: "Scrie-ne în WhatsApp", onClick: scrollToContact },
         }}
