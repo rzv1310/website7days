@@ -87,15 +87,14 @@ const PricingCard: React.FC<PricingCardProps> = ({ type, mode }) => {
     const y = e.clientY - rect.top;
     const centerX = rect.width / 2;
     const centerY = rect.height / 2;
-    const rotateX = ((y - centerY) / centerY) * -8;
-    const rotateY = ((x - centerX) / centerX) * 8;
-    cardRef.current.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.02)`;
+    const rotateX = ((y - centerY) / centerY) * -15;
+    const rotateY = ((x - centerX) / centerX) * 15;
+    cardRef.current.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.05, 1.05, 1.05)`;
   };
 
   const handleMouseLeave = () => {
     if (!cardRef.current) return;
-    cardRef.current.style.transform =
-      "perspective(1000px) rotateX(0deg) rotateY(0deg) scale(1)";
+    cardRef.current.style.transform = "rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)";
   };
 
   const scrollToContact = () => {
@@ -106,15 +105,19 @@ const PricingCard: React.FC<PricingCardProps> = ({ type, mode }) => {
   const subtitle = isBasic ? "PREȚ FIX" : "PREȚ ORIENTATIV";
 
   return (
+    <div style={{ perspective: "1000px" }}>
     <div
       ref={cardRef}
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
-      className="relative rounded-3xl overflow-hidden transition-transform duration-200 ease-out will-change-transform cursor-pointer"
+      className="relative rounded-3xl overflow-hidden cursor-pointer"
       style={{
         background: isBasic
           ? "linear-gradient(135deg, hsl(36, 50%, 55%), hsl(40, 60%, 65%))"
           : "linear-gradient(135deg, hsl(25, 30%, 18%), hsl(30, 20%, 12%))",
+        transformStyle: "preserve-3d",
+        transition: "transform 0.15s ease-out",
+        willChange: "transform",
       }}
     >
       {/* Animated glow ring */}
@@ -248,6 +251,7 @@ const PricingCard: React.FC<PricingCardProps> = ({ type, mode }) => {
           <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
         </button>
       </div>
+    </div>
     </div>
   );
 };
