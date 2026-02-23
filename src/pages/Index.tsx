@@ -16,7 +16,7 @@ const Index = () => {
   return (
     <div>
       <Hero
-        trustBadge={{ text: "Peste 50+ afaceri locale online" }}
+        trustBadge={{ text: "Ajutăm la dezvoltarea a peste 50 de afaceri locale" }}
         headline={{
           line1: "Website Profesional",
           line2: "în doar 7 Zile",
