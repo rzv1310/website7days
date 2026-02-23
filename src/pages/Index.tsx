@@ -18,7 +18,7 @@ const Index = () => {
       <Hero
         trustBadge={{ text: "Ajutăm la dezvoltarea a peste 50 de afaceri locale" }}
         headline={{
-          line1: "Website Profesional",
+          line1: "Creare Site Web Profesional",
           line2: "în doar 7 Zile",
         }}
         subtitle="Creez site-uri de prezentare moderne pentru afaceri locale nou-înființate. Rapid, elegant și optimizat pentru conversii."
