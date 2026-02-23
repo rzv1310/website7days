@@ -165,7 +165,7 @@ const PricingCard: React.FC<{ plan: PlanData; variant: "gold" | "platinum" | "da
   const Icon = isPlatinum ? Crown : variant === "gold" ? Star : Layers;
 
   return (
-    <div>
+    <div className="h-full flex flex-col">
       {/* Popular badge for platinum - positioned above without affecting card alignment */}
       {isPlatinum && (
         <div className="text-center mb-3 md:-mt-10">
@@ -181,7 +181,7 @@ const PricingCard: React.FC<{ plan: PlanData; variant: "gold" | "platinum" | "da
         </div>
       )}
       <div
-        className="relative rounded-3xl overflow-hidden"
+        className="relative rounded-3xl overflow-hidden flex-grow"
         style={{
           background: s.bg,
           boxShadow: isPlatinum
@@ -336,7 +336,7 @@ const Pricing = () => {
           </h2>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto items-start">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto md:items-stretch">
           <PricingCard plan={plans[0]} variant="gold" />
           <PricingCard plan={plans[1]} variant="platinum" />
           <PricingCard plan={plans[2]} variant="dark" />
