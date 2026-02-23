@@ -47,11 +47,13 @@ const Benefits = () => {
       const wrapperHeight = wrapper.offsetHeight;
       const viewportHeight = window.innerHeight;
       const scrollableDistance = wrapperHeight - viewportHeight;
+      const deadZone = 300; // px of scroll before animation starts
 
       if (rect.top <= 0 && rect.bottom >= viewportHeight) {
         const scrolled = -rect.top;
-        const progress = Math.min(Math.max(scrolled / scrollableDistance, 0), 1);
-        // 6 cards * 380px + gaps - viewport width
+        const adjustedScroll = Math.max(scrolled - deadZone, 0);
+        const adjustedDistance = scrollableDistance - deadZone;
+        const progress = Math.min(Math.max(adjustedScroll / adjustedDistance, 0), 1);
         const maxTranslate = 6 * 396 - window.innerWidth + 96;
         setTranslateX(-progress * Math.max(maxTranslate, 0));
       }
