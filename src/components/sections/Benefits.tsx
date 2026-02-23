@@ -45,32 +45,56 @@ const Benefits = () => {
 
   useEffect(() => {
     const cards = cardsRef.current.filter(Boolean) as HTMLDivElement[];
-    if (!cards.length) return;
+    if (!cards.length || !sectionRef.current) return;
 
-    gsap.set(cards, {
-      opacity: 0,
-      y: 80,
-      scale: 0.9,
-      rotateX: 15,
+    const mm = gsap.matchMedia();
+
+    mm.add("(min-width: 768px)", () => {
+      // Desktop: cards start stacked on the left, then fan out to their grid positions
+      gsap.set(cards, {
+        opacity: 0,
+        x: (i) => -(i * 60),
+        y: (i) => (i * 20),
+        scale: 0.92,
+        rotation: (i) => -(i * 2),
+      });
+
+      gsap.to(cards, {
+        opacity: 1,
+        x: 0,
+        y: 0,
+        scale: 1,
+        rotation: 0,
+        duration: 1,
+        ease: "power3.out",
+        stagger: 0.1,
+        scrollTrigger: {
+          trigger: sectionRef.current,
+          start: "top 70%",
+          toggleActions: "play none none none",
+        },
+      });
     });
 
-    gsap.to(cards, {
-      opacity: 1,
-      y: 0,
-      scale: 1,
-      rotateX: 0,
-      duration: 0.8,
-      ease: "power3.out",
-      stagger: 0.12,
-      scrollTrigger: {
-        trigger: sectionRef.current,
-        start: "top 75%",
-        toggleActions: "play none none none",
-      },
+    mm.add("(max-width: 767px)", () => {
+      // Mobile: simple fade up
+      gsap.set(cards, { opacity: 0, y: 60 });
+      gsap.to(cards, {
+        opacity: 1,
+        y: 0,
+        duration: 0.7,
+        ease: "power3.out",
+        stagger: 0.12,
+        scrollTrigger: {
+          trigger: sectionRef.current,
+          start: "top 80%",
+          toggleActions: "play none none none",
+        },
+      });
     });
 
     return () => {
-      ScrollTrigger.getAll().forEach((t) => t.kill());
+      mm.revert();
     };
   }, []);
 
@@ -86,7 +110,7 @@ const Benefits = () => {
           </div>
         </ScrollReveal>
 
-        <div ref={sectionRef} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8" style={{ perspective: "1000px" }}>
+        <div ref={sectionRef} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
           {benefits.map((benefit, index) => (
             <div
               key={benefit.title}
