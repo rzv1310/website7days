@@ -75,7 +75,7 @@ const plans: PlanData[] = [
   {
     titleLine1: "WEBSITE +",
     titleLine2: "MAGAZIN ONLINE",
-    price: "899",
+    price: "Vreau Oferta",
     
     description: "Soluție completă cu magazin online, plăți integrate și panou de administrare.",
     features: [
@@ -209,21 +209,25 @@ const PricingCard: React.FC<{ plan: PlanData; variant: "gold" | "platinum" | "da
           <div>
             <div className="flex items-end gap-1 mb-1">
               <span
-                className="font-display text-5xl md:text-6xl font-bold"
+                className={`font-display font-bold ${/^\d+$/.test(plan.price) ? "text-5xl md:text-6xl" : "text-3xl md:text-4xl"}`}
                 style={{ color: s.priceColor }}
               >
                 {plan.price}
               </span>
-              <span
-                className="text-2xl font-body mb-2"
-                style={{ color: s.currencyColor }}
-              >
-                €
-              </span>
+              {/^\d+$/.test(plan.price) && (
+                <span
+                  className="text-2xl font-body mb-2"
+                  style={{ color: s.currencyColor }}
+                >
+                  €
+                </span>
+              )}
             </div>
-            <p className="text-xs font-body italic mt-1" style={{ color: s.subtitleColor }}>
-              * posibilitate plată în rate
-            </p>
+            {/^\d+$/.test(plan.price) && (
+              <p className="text-xs font-body italic mt-1" style={{ color: s.subtitleColor }}>
+                * posibilitate plată în rate
+              </p>
+            )}
           </div>
 
           <div className="w-full h-px mb-6" style={{ background: s.lineColor }} />
