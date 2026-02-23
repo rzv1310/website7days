@@ -30,7 +30,7 @@ const plans: PlanData[] = [
     ],
   },
   {
-    title: "SITE PREZENTARE PLATINUM",
+    title: "SITE DE PREZENTARE PLATINUM",
     price: "1700",
     subtitle: "PREȚ FIX",
     description:
