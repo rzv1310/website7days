@@ -224,11 +224,9 @@ const PricingCard: React.FC<{ plan: PlanData; variant: "gold" | "platinum" | "da
                 </span>
               )}
             </div>
-            {/^\d+$/.test(plan.price) && (
-              <p className="text-xs font-body italic mt-1" style={{ color: s.subtitleColor }}>
-                * posibilitate plată în rate
-              </p>
-            )}
+            <p className="text-xs font-body italic mt-1" style={{ color: s.subtitleColor }}>
+              * posibilitate plată în rate
+            </p>
           </div>
 
           <div className="w-full h-px mb-6" style={{ background: s.lineColor }} />
