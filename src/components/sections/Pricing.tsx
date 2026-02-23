@@ -152,9 +152,9 @@ const PricingCard: React.FC<{ plan: PlanData; variant: "gold" | "platinum" | "da
 
   return (
     <div>
-      {/* Popular badge for platinum */}
+      {/* Popular badge for platinum - positioned above without affecting card alignment */}
       {isPlatinum && (
-        <div className="text-center mb-3">
+        <div className="text-center mb-3 md:-mt-10">
           <span
             className="inline-block px-4 py-1.5 rounded-full text-xs font-bold tracking-[0.15em] font-body uppercase"
             style={{
