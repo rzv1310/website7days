@@ -76,7 +76,7 @@ const plans: PlanData[] = [
   {
     titleLine1: "WEBSITE +",
     titleLine2: "MAGAZIN ONLINE",
-    price: "Vreau Oferta",
+    price: "Cere Oferta",
     
     preDescription: "Ce Primești:",
     description: "Soluție completă cu magazin online, plăți integrate și panou de administrare.",
