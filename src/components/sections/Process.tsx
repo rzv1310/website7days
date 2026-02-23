@@ -1,5 +1,6 @@
 import { MessageSquare, Palette, Rocket } from "lucide-react";
 import ScrollReveal from "../ScrollReveal";
+import { MeshGradient } from "@paper-design/shaders-react";
 
 const steps = [
   {
@@ -27,12 +28,26 @@ const steps = [
 
 const Process = () => {
   return (
-    <section className="section-light py-20 md:py-28">
-      <div className="container">
+    <section className="relative py-20 md:py-28 overflow-hidden">
+      {/* Shader Background */}
+      <MeshGradient
+        style={{
+          position: "absolute",
+          inset: 0,
+          width: "100%",
+          height: "100%",
+        }}
+        speed={0.15}
+        colors={["#1a1208", "#2a1f0e", "#3d2e14", "#1f170a"]}
+      />
+      {/* Overlay for readability */}
+      <div className="absolute inset-0 bg-black/30" />
+
+      <div className="container relative z-10">
         <ScrollReveal>
           <div className="text-center mb-16">
             <span className="text-gold font-body text-sm uppercase tracking-[0.2em] font-medium">Procesul</span>
-            <h2 className="font-display text-3xl md:text-5xl font-bold text-warm-dark mt-4">
+            <h2 className="font-display text-3xl md:text-5xl font-bold text-warm-light-text mt-4">
               3 pași simpli spre <span className="text-gold">site-ul tău</span>
             </h2>
           </div>
@@ -44,19 +59,16 @@ const Process = () => {
               <div className="relative text-center group">
                 {/* Connector line (desktop) */}
                 {index < steps.length - 1 && (
-                  <div className="hidden md:block absolute top-10 left-[60%] w-[80%] h-px bg-gradient-to-r from-warm-gold/40 to-transparent" />
+                  <div className="hidden md:block absolute top-8 left-[60%] w-[80%] h-px bg-gradient-to-r from-warm-gold/40 to-transparent" />
                 )}
-                
-                <div className="relative w-20 h-20 mx-auto mb-6 rounded-2xl gradient-gold flex items-center justify-center shadow-lg shadow-warm-gold/20 group-hover:scale-110 transition-transform duration-500">
-                  <step.icon className="w-8 h-8 text-warm-dark" />
+
+                {/* Day badge - larger */}
+                <div className="inline-flex items-center justify-center px-6 py-3 rounded-2xl bg-warm-gold/15 border border-warm-gold/30 backdrop-blur-sm mb-6 group-hover:scale-110 transition-transform duration-500">
+                  <span className="font-display text-xl md:text-2xl font-bold text-warm-gold-bright">{step.day}</span>
                 </div>
-                
-                <span className="inline-block px-3 py-1 rounded-full bg-warm-beige text-gold font-body text-xs font-semibold uppercase tracking-wider mb-3">
-                  {step.day}
-                </span>
-                
-                <h3 className="font-display text-2xl font-bold text-warm-dark mb-3">{step.title}</h3>
-                <p className="font-body text-warm-dark/70 leading-relaxed">{step.description}</p>
+
+                <h3 className="font-display text-2xl font-bold text-warm-light-text mb-3">{step.title}</h3>
+                <p className="font-body text-warm-light-text/70 leading-relaxed">{step.description}</p>
               </div>
             </ScrollReveal>
           ))}
