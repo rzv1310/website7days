@@ -187,7 +187,7 @@
   background: hsl(40, 60%, 70%);
   box-shadow: 0 0 8px 2px hsla(36, 50%, 62%, 0.8), 0 0 16px 4px hsla(36, 50%, 62%, 0.4);
   offset-path: rect(0 100% 100% 0 round 12px);
-  animation: travel-border 4s linear infinite;
+  animation: travel-border 6s linear infinite;
   pointer-events: none;
   z-index: 1;
 }
