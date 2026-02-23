@@ -218,7 +218,6 @@ const Hero: React.FC<HeroProps> = ({ trustBadge, headline, subtitle, buttons, cl
                     color: "hsl(36, 50%, 62%)",
                   }}
                 >
-                  <span className="cta-glow-dot" />
                   {buttons.primary.text}
                 </button>
               )}
