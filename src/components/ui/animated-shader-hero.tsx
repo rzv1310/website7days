@@ -211,8 +211,14 @@ const Hero: React.FC<HeroProps> = ({ trustBadge, headline, subtitle, buttons, cl
               {buttons.primary && (
                 <button
                   onClick={buttons.primary.onClick}
-                  className="px-8 py-4 rounded-lg gradient-gold text-warm-dark font-body font-semibold text-base sm:text-lg tracking-wide hover:opacity-90 transition-all duration-300 hover:scale-105 shadow-lg shadow-warm-gold/20"
+                  className="relative px-8 py-4 rounded-lg font-body font-semibold text-base sm:text-lg tracking-wide transition-all duration-300 hover:scale-105 overflow-hidden"
+                  style={{
+                    background: "transparent",
+                    border: "1px solid hsl(36, 50%, 62%)",
+                    color: "hsl(36, 50%, 62%)",
+                  }}
                 >
+                  <span className="cta-glow-dot" />
                   {buttons.primary.text}
                 </button>
               )}
