@@ -55,7 +55,7 @@ const Process = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 max-w-5xl mx-auto items-stretch">
           {steps.map((step, index) => (
-            <ScrollReveal key={step.step} delay={index * 0.15}>
+            <ScrollReveal key={step.step} delay={index * 0.08}>
               <div className="relative text-center group h-full flex flex-col">
                 {/* Connector line (desktop) */}
                 {index < steps.length - 1 && (
