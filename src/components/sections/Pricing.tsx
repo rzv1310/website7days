@@ -79,7 +79,7 @@ const plans: PlanData[] = [
     
     description: "Soluție completă cu magazin online, plăți integrate și panou de administrare.",
     features: [
-      "Tot ce include pachetul Standard",
+      "__highlight__Totul din PLATINUM",
       "Magazin online integrat",
       "Până la 50 produse",
       "Sistem de plăți online",
@@ -257,16 +257,28 @@ const PricingCard: React.FC<{ plan: PlanData; variant: "gold" | "platinum" | "da
           )}
 
           <div className="flex flex-col gap-2 mb-8 flex-grow">
-            {plan.features.map((f, i) => (
-              <div
-                key={i}
-                className="flex items-start gap-2 text-xs font-body"
-                style={{ color: s.pillColor }}
-              >
-                <Check className="w-3.5 h-3.5 flex-shrink-0 mt-0.5" style={{ color: s.priceColor }} />
-                {f}
-              </div>
-            ))}
+            {plan.features.map((f, i) => {
+              const isHighlight = f.startsWith("__highlight__");
+              const text = isHighlight ? f.replace("__highlight__", "") : f;
+              return isHighlight ? (
+                <p
+                  key={i}
+                  className="text-xs font-body font-bold uppercase tracking-wider"
+                  style={{ color: s.priceColor }}
+                >
+                  {text}
+                </p>
+              ) : (
+                <div
+                  key={i}
+                  className="flex items-start gap-2 text-xs font-body"
+                  style={{ color: s.pillColor }}
+                >
+                  <Check className="w-3.5 h-3.5 flex-shrink-0 mt-0.5" style={{ color: s.priceColor }} />
+                  {text}
+                </div>
+              );
+            })}
           </div>
 
           {plan.note && (
