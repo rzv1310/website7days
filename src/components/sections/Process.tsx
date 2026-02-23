@@ -53,10 +53,10 @@ const Process = () => {
           </div>
         </ScrollReveal>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 max-w-5xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 max-w-5xl mx-auto items-stretch">
           {steps.map((step, index) => (
             <ScrollReveal key={step.step} delay={index * 0.15}>
-              <div className="relative text-center group">
+              <div className="relative text-center group h-full flex flex-col">
                 {/* Connector line (desktop) */}
                 {index < steps.length - 1 && (
                   <div className="hidden md:block absolute top-8 left-[60%] w-[80%] h-px bg-gradient-to-r from-warm-gold/40 to-transparent" />
@@ -68,7 +68,7 @@ const Process = () => {
                 </div>
 
                 {/* Glass card */}
-                <div className="rounded-2xl bg-white/10 backdrop-blur-md border border-white/20 px-6 py-6 shadow-lg">
+                <div className="rounded-2xl bg-white/10 backdrop-blur-md border border-white/20 px-6 py-6 shadow-lg flex-1 flex flex-col justify-center">
                   <h3 className="font-display text-2xl font-bold text-warm-light-text mb-3">{step.title}</h3>
                   <p className="font-body text-warm-light-text/70 leading-relaxed">{step.description}</p>
                 </div>
