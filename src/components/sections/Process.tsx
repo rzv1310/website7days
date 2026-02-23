@@ -38,7 +38,7 @@ const Process = () => {
           height: "100%",
         }}
         speed={0.15}
-        colors={["#1a1208", "#2a1f0e", "#3d2e14", "#1f170a"]}
+        colors={["#c3e4ff", "#6ec3f4", "#eae2ff", "#b9beff"]}
       />
       {/* Overlay for readability */}
       <div className="absolute inset-0 bg-black/30" />
