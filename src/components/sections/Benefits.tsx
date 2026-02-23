@@ -50,46 +50,56 @@ const Benefits = () => {
     const mm = gsap.matchMedia();
 
     mm.add("(min-width: 768px)", () => {
-      // Desktop: cards start stacked on the left, then fan out to their grid positions
-      gsap.set(cards, {
-        opacity: 0,
-        x: (i) => -(i * 60),
-        y: (i) => (i * 20),
-        scale: 0.92,
-        rotation: (i) => -(i * 2),
+      // All cards except the first start hidden and stacked behind the first
+      cards.forEach((card, i) => {
+        if (i === 0) {
+          gsap.set(card, { opacity: 1, x: 0, y: 0, scale: 1 });
+        } else {
+          gsap.set(card, {
+            opacity: 0,
+            x: -(i * 80),
+            y: 0,
+            scale: 0.9,
+          });
+        }
       });
 
-      gsap.to(cards, {
+      // Animate cards 1-5 into position on scroll
+      const hiddenCards = cards.slice(1);
+      gsap.to(hiddenCards, {
         opacity: 1,
         x: 0,
-        y: 0,
         scale: 1,
-        rotation: 0,
-        duration: 1,
+        duration: 0.9,
         ease: "power3.out",
-        stagger: 0.1,
+        stagger: 0.12,
         scrollTrigger: {
           trigger: sectionRef.current,
-          start: "top 70%",
+          start: "top 60%",
           toggleActions: "play none none none",
         },
       });
     });
 
     mm.add("(max-width: 767px)", () => {
-      // Mobile: simple fade up
-      gsap.set(cards, { opacity: 0, y: 60 });
-      gsap.to(cards, {
-        opacity: 1,
-        y: 0,
-        duration: 0.7,
-        ease: "power3.out",
-        stagger: 0.12,
-        scrollTrigger: {
-          trigger: sectionRef.current,
-          start: "top 80%",
-          toggleActions: "play none none none",
-        },
+      // Mobile: first card visible, rest fade in on scroll individually
+      cards.forEach((card, i) => {
+        if (i === 0) {
+          gsap.set(card, { opacity: 1, y: 0 });
+        } else {
+          gsap.set(card, { opacity: 0, y: 50 });
+          gsap.to(card, {
+            opacity: 1,
+            y: 0,
+            duration: 0.6,
+            ease: "power3.out",
+            scrollTrigger: {
+              trigger: card,
+              start: "top 85%",
+              toggleActions: "play none none none",
+            },
+          });
+        }
       });
     });
 
