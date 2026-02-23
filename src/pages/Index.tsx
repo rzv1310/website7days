@@ -1,12 +1,45 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import Hero from "@/components/ui/animated-shader-hero";
+import Benefits from "@/components/sections/Benefits";
+import Process from "@/components/sections/Process";
+import Testimonials from "@/components/sections/Testimonials";
+import Pricing from "@/components/sections/Pricing";
+import FAQ from "@/components/sections/FAQ";
+import CTA from "@/components/sections/CTA";
+import Footer from "@/components/sections/Footer";
 
 const Index = () => {
+  const scrollToContact = () => {
+    document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" });
+  };
+
   return (
-    <div className="flex min-h-screen items-center justify-center bg-background">
-      <div className="text-center">
-        <h1 className="mb-4 text-4xl font-bold">Welcome to Your Blank App</h1>
-        <p className="text-xl text-muted-foreground">Start building your amazing project here!</p>
+    <div className="overflow-x-hidden">
+      <Hero
+        trustBadge={{ text: "Peste 50+ afaceri locale online" }}
+        headline={{
+          line1: "Website Profesional",
+          line2: "în doar 7 Zile",
+        }}
+        subtitle="Creez site-uri de prezentare moderne pentru afaceri locale nou-înființate. Rapid, elegant și optimizat pentru conversii."
+        buttons={{
+          primary: { text: "Vreau site-ul meu →", onClick: scrollToContact },
+          secondary: { text: "Vezi cum funcționează", onClick: () => document.getElementById("process")?.scrollIntoView({ behavior: "smooth" }) },
+        }}
+      />
+
+      <div id="benefits">
+        <Benefits />
       </div>
+
+      <div id="process">
+        <Process />
+      </div>
+
+      <Testimonials />
+      <Pricing />
+      <FAQ />
+      <CTA />
+      <Footer />
     </div>
   );
 };
