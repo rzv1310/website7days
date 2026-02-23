@@ -33,8 +33,7 @@ const plans: PlanData[] = [
     title: "SITE DE PREZENTARE PLATINUM",
     price: "1700",
     subtitle: "PREȚ FIX",
-    description:
-      "Ce primești aici NU e doar 'un site frumos'. Ce primești este top local SEO, tehnic impecabil, desenat de la zero pentru businessul tău și focusat pe apeluri și programări — pentru a converti vizitatorii în clienți.",
+    description: "Website profesional livrat în 7 zile. Plată unică, fără abonament lunar.",
     highlight: "Totul din Pachetul Gold +",
     note: "* posibilitate plată în rate",
     features: [
