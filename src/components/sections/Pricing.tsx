@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useRef } from "react";
 import { Check, ArrowRight, Star, Layers } from "lucide-react";
 import ScrollReveal from "../ScrollReveal";
 
@@ -57,28 +57,16 @@ const pricingData = {
   },
 };
 
-type Mode = "standard" | "premium";
 type PlanType = "basic" | "ecommerce";
 
 interface PricingCardProps {
   type: PlanType;
-  mode: Mode;
 }
 
-const PricingCard: React.FC<PricingCardProps> = ({ type, mode }) => {
+const PricingCard: React.FC<PricingCardProps> = ({ type }) => {
   const isBasic = type === "basic";
-  const [displayData, setDisplayData] = useState(pricingData[type][mode]);
-  const [isAnimating, setIsAnimating] = useState(false);
+  const displayData = pricingData[type].standard;
   const cardRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    setIsAnimating(true);
-    const timer = setTimeout(() => {
-      setDisplayData(pricingData[type][mode]);
-      setIsAnimating(false);
-    }, 200);
-    return () => clearTimeout(timer);
-  }, [mode, type]);
 
   const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
     if (!cardRef.current) return;
@@ -159,7 +147,7 @@ const PricingCard: React.FC<PricingCardProps> = ({ type, mode }) => {
 
         {/* Price */}
         <div
-          className={`transition-all duration-300 ${isAnimating ? "opacity-0 translate-y-2" : "opacity-100 translate-y-0"}`}
+          className="transition-all duration-300"
         >
           <div className="flex items-end gap-1 mb-1">
             <span
@@ -216,7 +204,7 @@ const PricingCard: React.FC<PricingCardProps> = ({ type, mode }) => {
 
         {/* Features as pills */}
         <div
-          className={`flex flex-wrap gap-2 mb-8 flex-grow transition-all duration-300 ${isAnimating ? "opacity-0" : "opacity-100"}`}
+          className="flex flex-wrap gap-2 mb-8 flex-grow"
         >
           {displayData.features.map((f, i) => (
             <span
@@ -257,8 +245,6 @@ const PricingCard: React.FC<PricingCardProps> = ({ type, mode }) => {
 };
 
 const Pricing = () => {
-  const [mode, setMode] = useState<Mode>("standard");
-
   return (
     <section className="section-dark py-20 md:py-28">
       <div className="container">
@@ -267,57 +253,23 @@ const Pricing = () => {
             <span className="text-gold font-body text-sm uppercase tracking-[0.2em] font-medium">
               Oferta
             </span>
-            <h2 className="font-display text-3xl md:text-5xl font-bold text-warm-light mt-4 mb-8">
+            <h2 className="font-display text-3xl md:text-5xl font-bold text-warm-light mt-4">
               Investiție clară,{" "}
               <span className="text-gold">fără surprize</span>
             </h2>
-
-            {/* Toggle */}
-            <div className="flex items-center justify-center gap-4">
-              <span
-                className={`font-body text-sm font-medium transition-colors ${mode === "standard" ? "text-gold" : "text-warm-light/50"}`}
-              >
-                Complet
-              </span>
-              <button
-                onClick={() =>
-                  setMode(mode === "standard" ? "premium" : "standard")
-                }
-                className="relative w-14 h-7 rounded-full transition-colors duration-300"
-                style={{
-                  background:
-                    mode === "standard"
-                      ? "hsla(36, 50%, 62%, 0.3)"
-                      : "hsla(36, 50%, 62%, 0.6)",
-                }}
-              >
-                <div
-                  className="absolute top-0.5 w-6 h-6 rounded-full shadow-md transition-all duration-300"
-                  style={{
-                    left: mode === "standard" ? "2px" : "calc(100% - 26px)",
-                    background:
-                      "linear-gradient(135deg, hsl(36, 50%, 55%), hsl(40, 60%, 65%))",
-                  }}
-                />
-              </button>
-              <span
-                className={`font-body text-sm font-medium transition-colors ${mode === "premium" ? "text-gold" : "text-warm-light/50"}`}
-              >
-                Esențial
-              </span>
-            </div>
           </div>
         </ScrollReveal>
 
         <ScrollReveal>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-            <PricingCard type="basic" mode={mode} />
-            <PricingCard type="ecommerce" mode={mode} />
+            <PricingCard type="basic" />
+            <PricingCard type="ecommerce" />
           </div>
         </ScrollReveal>
       </div>
     </section>
   );
 };
+
 
 export default Pricing;
