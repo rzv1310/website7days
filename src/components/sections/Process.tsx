@@ -64,7 +64,7 @@ const Process = () => {
 
                 {/* Day badge - larger */}
                 <div className="inline-flex items-center justify-center px-6 py-3 rounded-2xl bg-warm-gold/15 border border-warm-gold/30 backdrop-blur-sm mb-6 group-hover:scale-110 transition-transform duration-500">
-                  <span className="font-display text-xl md:text-2xl font-bold text-warm-gold-bright">{step.day}</span>
+                  <span className="font-body text-xl md:text-2xl font-bold text-warm-gold-bright">{step.day}</span>
                 </div>
 
                 {/* Glass card */}
