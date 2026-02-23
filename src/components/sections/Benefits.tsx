@@ -1,5 +1,4 @@
 import { Clock, Zap, Shield, TrendingUp, Smartphone, HeartHandshake } from "lucide-react";
-import ScrollReveal from "../ScrollReveal";
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -40,66 +39,31 @@ const benefits = [
 ];
 
 const Benefits = () => {
-  const cardsRef = useRef<(HTMLDivElement | null)[]>([]);
-  const sectionRef = useRef<HTMLDivElement>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
+  const trackRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const cards = cardsRef.current.filter(Boolean) as HTMLDivElement[];
-    if (!cards.length || !sectionRef.current) return;
+    const container = containerRef.current;
+    const track = trackRef.current;
+    if (!container || !track) return;
 
     const mm = gsap.matchMedia();
 
     mm.add("(min-width: 768px)", () => {
-      // All cards except the first start hidden and stacked behind the first
-      cards.forEach((card, i) => {
-        if (i === 0) {
-          gsap.set(card, { opacity: 1, x: 0, y: 0, scale: 1 });
-        } else {
-          gsap.set(card, {
-            opacity: 0,
-            x: -(i * 80),
-            y: 0,
-            scale: 0.9,
-          });
-        }
-      });
+      // Calculate how far to scroll horizontally
+      const totalScrollWidth = track.scrollWidth - window.innerWidth;
 
-      // Animate cards 1-5 into position on scroll
-      const hiddenCards = cards.slice(1);
-      gsap.to(hiddenCards, {
-        opacity: 1,
-        x: 0,
-        scale: 1,
-        duration: 0.9,
-        ease: "power3.out",
-        stagger: 0.12,
+      gsap.to(track, {
+        x: -totalScrollWidth,
+        ease: "none",
         scrollTrigger: {
-          trigger: sectionRef.current,
-          start: "top 60%",
-          toggleActions: "play none none none",
+          trigger: container,
+          start: "top top",
+          end: () => `+=${totalScrollWidth}`,
+          pin: true,
+          scrub: 1,
+          invalidateOnRefresh: true,
         },
-      });
-    });
-
-    mm.add("(max-width: 767px)", () => {
-      // Mobile: first card visible, rest fade in on scroll individually
-      cards.forEach((card, i) => {
-        if (i === 0) {
-          gsap.set(card, { opacity: 1, y: 0 });
-        } else {
-          gsap.set(card, { opacity: 0, y: 50 });
-          gsap.to(card, {
-            opacity: 1,
-            y: 0,
-            duration: 0.6,
-            ease: "power3.out",
-            scrollTrigger: {
-              trigger: card,
-              start: "top 85%",
-              toggleActions: "play none none none",
-            },
-          });
-        }
       });
     });
 
@@ -109,32 +73,34 @@ const Benefits = () => {
   }, []);
 
   return (
-    <section className="section-dark py-20 md:py-28">
-      <div className="container">
-        <ScrollReveal>
-          <div className="text-center mb-16">
-            <span className="text-gold font-body text-sm uppercase tracking-[0.2em] font-medium">De ce să alegi acest serviciu</span>
-            <h2 className="font-display text-3xl md:text-5xl font-bold text-warm-light mt-4">
-              Tot ce ai nevoie pentru o <span className="text-gold-bright">prezență online</span> de succes
-            </h2>
-          </div>
-        </ScrollReveal>
+    <section ref={containerRef} className="section-dark overflow-hidden">
+      {/* Header - always visible */}
+      <div className="pt-20 md:pt-28 pb-12 text-center px-6">
+        <span className="text-gold font-body text-sm uppercase tracking-[0.2em] font-medium">
+          De ce să alegi acest serviciu
+        </span>
+        <h2 className="font-display text-3xl md:text-5xl font-bold text-warm-light mt-4">
+          Tot ce ai nevoie pentru o <span className="text-gold-bright">prezență online</span> de succes
+        </h2>
+      </div>
 
-        <div ref={sectionRef} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-          {benefits.map((benefit, index) => (
-            <div
-              key={benefit.title}
-              ref={(el) => { cardsRef.current[index] = el; }}
-              className="group p-6 md:p-8 rounded-2xl border border-warm-gold/10 bg-warm-dark-secondary/50 backdrop-blur-sm hover:border-warm-gold/30 transition-all duration-500 hover:-translate-y-1"
-            >
-              <div className="w-12 h-12 rounded-xl gradient-gold flex items-center justify-center mb-5">
-                <benefit.icon className="w-6 h-6 text-warm-dark" />
-              </div>
-              <h3 className="font-display text-xl font-semibold text-warm-light mb-3">{benefit.title}</h3>
-              <p className="font-body text-warm-light-text/70 leading-relaxed">{benefit.description}</p>
+      {/* Horizontal scroll track */}
+      <div
+        ref={trackRef}
+        className="flex gap-6 md:gap-8 px-6 md:px-12 pb-20 md:pb-28 will-change-transform"
+      >
+        {benefits.map((benefit) => (
+          <div
+            key={benefit.title}
+            className="group flex-shrink-0 w-[320px] md:w-[380px] p-6 md:p-8 rounded-2xl border border-warm-gold/10 bg-warm-dark-secondary/50 backdrop-blur-sm hover:border-warm-gold/30 transition-all duration-500 hover:-translate-y-1"
+          >
+            <div className="w-12 h-12 rounded-xl gradient-gold flex items-center justify-center mb-5">
+              <benefit.icon className="w-6 h-6 text-warm-dark" />
             </div>
-          ))}
-        </div>
+            <h3 className="font-display text-xl font-semibold text-warm-light mb-3">{benefit.title}</h3>
+            <p className="font-body text-warm-light-text/70 leading-relaxed">{benefit.description}</p>
+          </div>
+        ))}
       </div>
     </section>
   );
