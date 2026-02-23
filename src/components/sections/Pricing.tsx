@@ -247,21 +247,16 @@ const PricingCard: React.FC<{ plan: PlanData; variant: "gold" | "platinum" | "da
             {plan.description}
           </p>
 
-          {/* Features as pills */}
-          <div className="flex flex-wrap gap-2 mb-8 flex-grow">
+          <div className="flex flex-col gap-2 mb-8 flex-grow">
             {plan.features.map((f, i) => (
-              <span
+              <div
                 key={i}
-                className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-body font-medium"
-                style={{
-                  background: s.pillBg,
-                  color: s.pillColor,
-                  backdropFilter: "blur(10px)",
-                }}
+                className="flex items-start gap-2 text-xs font-body"
+                style={{ color: s.pillColor }}
               >
-                <Check className="w-3 h-3 flex-shrink-0" />
+                <Check className="w-3.5 h-3.5 flex-shrink-0 mt-0.5" style={{ color: s.priceColor }} />
                 {f}
-              </span>
+              </div>
             ))}
           </div>
 
