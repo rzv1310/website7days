@@ -14,7 +14,7 @@ interface PlanData {
 
 const plans: PlanData[] = [
   {
-    title: "SITE DE PREZENTARE",
+    title: "SITE DE PREZENTARE GOLD",
     price: "499",
     subtitle: "PREȚ FIX",
     description: "Website profesional livrat în 7 zile. Plată unică, fără abonament lunar.",
