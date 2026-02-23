@@ -67,8 +67,11 @@ const Process = () => {
                   <span className="font-display text-xl md:text-2xl font-bold text-warm-gold-bright">{step.day}</span>
                 </div>
 
-                <h3 className="font-display text-2xl font-bold text-warm-light-text mb-3">{step.title}</h3>
-                <p className="font-body text-warm-light-text/70 leading-relaxed">{step.description}</p>
+                {/* Glass card */}
+                <div className="rounded-2xl bg-white/10 backdrop-blur-md border border-white/20 px-6 py-6 shadow-lg">
+                  <h3 className="font-display text-2xl font-bold text-warm-light-text mb-3">{step.title}</h3>
+                  <p className="font-body text-warm-light-text/70 leading-relaxed">{step.description}</p>
+                </div>
               </div>
             </ScrollReveal>
           ))}
