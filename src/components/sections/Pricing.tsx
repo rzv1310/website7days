@@ -7,6 +7,7 @@ interface PlanData {
   titleLine2: string;
   price: string;
   
+  preDescription?: string;
   description: string;
   features: string[];
   highlight?: string;
@@ -18,6 +19,7 @@ const plans: PlanData[] = [
     titleLine1: "SITE DE PREZENTARE",
     titleLine2: "GOLD",
     price: "970",
+    preDescription: "Ce Primești:",
     description: "Un site web complet funcțional, cu design premium, cu până la 8 pagini personalizate, care arată perfect pe orice ecran și care e gata să-ți producă bani până la sfârșitul zilei.",
     note: "Opțional: Domeniu + Găzduire + suport + security updates = 100 lei/lună",
     features: [
@@ -226,26 +228,33 @@ const PricingCard: React.FC<{ plan: PlanData; variant: "gold" | "platinum" | "da
 
           <div className="w-full h-px mb-6" style={{ background: s.lineColor }} />
 
-          {/* Highlight badge */}
-          {plan.highlight && (
+          {/* Pre-description label */}
+          {plan.preDescription && (
             <p
-              className="font-body text-xs font-bold uppercase tracking-wider mb-3 px-3 py-1.5 rounded-full inline-block self-start"
-              style={{
-                background: "hsla(0, 0%, 100%, 0.2)",
-                color: "white",
-              }}
+              className="font-body text-xs font-bold uppercase tracking-wider mb-2"
+              style={{ color: s.priceColor }}
             >
-              {plan.highlight}
+              {plan.preDescription}
             </p>
           )}
 
           {/* Description */}
           <p
-            className="font-body text-sm mb-6 leading-relaxed"
+            className="font-body text-sm mb-4 leading-relaxed"
             style={{ color: s.descColor }}
           >
             {plan.description}
           </p>
+
+          {/* Highlight */}
+          {plan.highlight && (
+            <p
+              className="font-body text-xs font-bold uppercase tracking-wider mb-4"
+              style={{ color: s.priceColor }}
+            >
+              {plan.highlight}
+            </p>
+          )}
 
           <div className="flex flex-col gap-2 mb-8 flex-grow">
             {plan.features.map((f, i) => (
