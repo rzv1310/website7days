@@ -85,7 +85,7 @@ const plans: PlanData[] = [
       "Magazin online integrat",
       "Sistem de plăți online",
       "Multiple metode de plată (Card, Transfer bancar, Apple Pay / Google Pay)",
-      "Filtre inteligente (Faceted Search)",
+      'Filtre inteligente (Faceted Search): Preț, Brand, Rating, Specificații',
       "Search avansat (cu autocomplete)",
       "Pagini de produs optimizate pentru conversie",
       "Checkout simplificat (1-2 pași)",
