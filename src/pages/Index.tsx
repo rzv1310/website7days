@@ -14,7 +14,7 @@ const Index = () => {
   };
 
   return (
-    <div className="overflow-x-hidden">
+    <div>
       <Hero
         trustBadge={{ text: "Peste 50+ afaceri locale online" }}
         headline={{
