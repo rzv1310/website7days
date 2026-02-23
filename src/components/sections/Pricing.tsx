@@ -91,7 +91,7 @@ const plans: PlanData[] = [
       "Checkout simplificat (1-2 pași)",
       "Recenzii și rating mediu",
       "Cross-sell & Upsell",
-      "Sistem de reducere & cupoane",
+      "Sistem de reducere & cupoane: Coduri promo, Reduceri automate, Countdown timer (scarcity)",
       "Panou de administrare",
       "Optimizare SEO avansată (Schema.org Product, Offer, Review, Sitemap XML, Robots.txt corect, Meta optimizate)",
       "Securitate & încredere (Certificat SSL, Politici clare retur, GDPR, Badge-uri de încredere)",
