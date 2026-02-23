@@ -293,10 +293,15 @@ const PricingCard: React.FC<{ plan: PlanData; variant: "gold" | "platinum" | "da
           {/* CTA */}
           <button
             onClick={scrollToContact}
-            className="w-full py-4 rounded-xl font-body font-bold text-base flex items-center justify-center gap-2 group transition-all duration-300 hover:scale-[1.02]"
-            style={{ background: s.ctaBg, color: s.ctaColor }}
+            className="relative w-full py-4 rounded-xl font-body font-bold text-base flex items-center justify-center gap-2 group transition-all duration-300 hover:scale-[1.02] overflow-hidden"
+            style={{
+              background: "transparent",
+              border: "1px solid hsl(36, 50%, 62%)",
+              color: "hsl(36, 50%, 62%)",
+            }}
           >
-            Vreau acest pachet
+            <span className="cta-glow-dot" />
+            Vreau să vorbim
             <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
           </button>
         </div>
