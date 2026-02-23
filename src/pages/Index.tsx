@@ -23,8 +23,7 @@ const Index = () => {
         }}
         subtitle="Creez site-uri de prezentare moderne pentru afaceri locale nou-înființate. Rapid, elegant și optimizat pentru conversii."
         buttons={{
-          primary: { text: "Vreau site-ul meu →", onClick: scrollToContact },
-          secondary: { text: "Vezi cum funcționează", onClick: () => document.getElementById("process")?.scrollIntoView({ behavior: "smooth" }) },
+          primary: { text: "Scrie-ne în WhatsApp", onClick: scrollToContact },
         }}
       />
 
