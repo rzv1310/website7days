@@ -5,7 +5,7 @@ import ScrollReveal from "../ScrollReveal";
 interface PlanData {
   title: string;
   price: string;
-  subtitle: string;
+  
   description: string;
   features: string[];
   highlight?: string;
@@ -16,7 +16,6 @@ const plans: PlanData[] = [
   {
     title: "SITE DE PREZENTARE GOLD",
     price: "970",
-    subtitle: "PREȚ FIX",
     description: "Un site web complet funcțional, cu design premium, cu până la 8 pagini personalizate, care arată perfect pe orice ecran și care e gata să-ți producă bani până la sfârșitul zilei.",
     note: "Opțional: Domeniu + Găzduire + suport + security updates = 100 lei/lună",
     features: [
@@ -47,7 +46,7 @@ const plans: PlanData[] = [
   {
     title: "SITE DE PREZENTARE PLATINUM",
     price: "1700",
-    subtitle: "PREȚ FIX",
+    
     description: "Website profesional livrat în 7 zile. Plată unică, fără abonament lunar.",
     highlight: "Totul din Pachetul Gold +",
     note: "* posibilitate plată în rate",
@@ -71,7 +70,7 @@ const plans: PlanData[] = [
   {
     title: "SITE + MAGAZIN",
     price: "899",
-    subtitle: "PREȚ ORIENTATIV",
+    
     description: "Soluție completă cu magazin online, plăți integrate și panou de administrare.",
     features: [
       "Tot ce include pachetul Standard",
@@ -245,12 +244,6 @@ const PricingCard: React.FC<{ plan: PlanData; variant: "gold" | "platinum" | "da
                 €
               </span>
             </div>
-            <p
-              className="text-xs font-bold tracking-[0.15em] font-body mb-1"
-              style={{ color: s.subtitleColor }}
-            >
-              {plan.subtitle}
-            </p>
             {plan.note && (
               <p className="text-xs font-body mb-4 italic" style={{ color: s.subtitleColor }}>
                 {plan.note}
