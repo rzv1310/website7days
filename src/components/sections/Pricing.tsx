@@ -90,7 +90,7 @@ const plans: PlanData[] = [
       "Pagini de produs optimizate pentru conversie",
       "Checkout simplificat (1-2 pași)",
       "Recenzii și rating mediu",
-      "Cross-sell & Upsell",
+      'Cross-sell & Upsell: „Produse similare", „Clienții au cumpărat și…", Bundle-uri',
       "Sistem de reducere & cupoane: Coduri promo, Reduceri automate, Countdown timer (scarcity)",
       "Panou de administrare",
       "Optimizare SEO avansată (Schema.org Product, Offer, Review, Sitemap XML, Robots.txt corect, Meta optimizate)",
