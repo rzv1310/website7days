@@ -233,12 +233,6 @@ const Hero: React.FC<HeroProps> = ({ trustBadge, headline, subtitle, buttons, cl
           )}
         </div>
 
-        {/* Scroll indicator */}
-        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 opacity-0 animate-fade-in-up" style={{ animationDelay: '1.2s' }}>
-          <div className="w-6 h-10 rounded-full border-2 border-warm-gold/40 flex justify-center pt-2">
-            <div className="w-1.5 h-3 rounded-full gradient-gold animate-bounce" />
-          </div>
-        </div>
       </div>
     </section>
   );
