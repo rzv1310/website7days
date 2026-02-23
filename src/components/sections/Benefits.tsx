@@ -71,7 +71,7 @@ const Benefits = () => {
         {/* Header */}
         <div className="pt-20 md:pt-28 pb-12 text-center px-6 flex-shrink-0">
           <span className="text-gold font-body text-sm uppercase tracking-[0.2em] font-medium">
-            De ce să alegi acest serviciu
+            De ce noi
           </span>
           <h2 className="font-display text-3xl md:text-5xl font-bold text-warm-light mt-4">
             Tot ce ai nevoie pentru o <span className="text-gold-bright">prezență online</span> de succes
