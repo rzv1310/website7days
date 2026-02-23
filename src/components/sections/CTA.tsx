@@ -13,7 +13,7 @@ const CTA = () => {
               Ești gata să ai un <span className="text-gold">website profesional</span>?
             </h2>
             <p className="font-body text-warm-dark/60 text-lg mb-10 max-w-xl mx-auto">
-              Scrie-mi acum și în 7 zile afacerea ta va fi online. Fără bătăi de cap, fără complicații.
+              Scrie-ne acum și în 7 zile afacerea ta va fi online. Fără bătăi de cap, fără complicații.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
@@ -24,7 +24,7 @@ const CTA = () => {
                 className="inline-flex items-center justify-center gap-3 px-8 py-4 rounded-xl gradient-gold text-warm-dark font-body font-bold text-lg shadow-lg shadow-warm-gold/20 hover:opacity-90 transition-opacity"
               >
                 <Mail className="w-5 h-5" />
-                Contactează-mă
+                Contactează-ne
                 <ArrowRight className="w-5 h-5" />
               </motion.a>
 
@@ -40,7 +40,7 @@ const CTA = () => {
             </div>
 
             <p className="font-body text-warm-dark/40 text-sm">
-              Răspund în maxim 24 de ore • Consultanță inițială gratuită
+              Răspundem în maxim 24 de ore • Consultanță inițială gratuită
             </p>
           </div>
         </ScrollReveal>
