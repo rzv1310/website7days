@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React from "react";
 import { Check, ArrowRight, Star, Crown, Layers } from "lucide-react";
 import ScrollReveal from "../ScrollReveal";
 
@@ -93,25 +93,6 @@ const PricingCard: React.FC<{ plan: PlanData; variant: "gold" | "platinum" | "da
   plan,
   variant,
 }) => {
-  const cardRef = useRef<HTMLDivElement>(null);
-
-  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
-    if (!cardRef.current) return;
-    const rect = cardRef.current.getBoundingClientRect();
-    const x = e.clientX - rect.left;
-    const y = e.clientY - rect.top;
-    const centerX = rect.width / 2;
-    const centerY = rect.height / 2;
-    const rotateX = ((y - centerY) / centerY) * -15;
-    const rotateY = ((x - centerX) / centerX) * 15;
-    cardRef.current.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.05, 1.05, 1.05)`;
-  };
-
-  const handleMouseLeave = () => {
-    if (!cardRef.current) return;
-    cardRef.current.style.transform = "rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)";
-  };
-
   const scrollToContact = () => {
     document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" });
   };
@@ -169,7 +150,7 @@ const PricingCard: React.FC<{ plan: PlanData; variant: "gold" | "platinum" | "da
   const Icon = isPlatinum ? Crown : variant === "gold" ? Star : Layers;
 
   return (
-    <div style={{ perspective: "1000px" }} className={isPlatinum ? "md:-mt-4 md:mb-[-16px]" : ""}>
+    <div className={isPlatinum ? "md:-mt-4 md:mb-[-16px]" : ""}>
       {/* Popular badge for platinum */}
       {isPlatinum && (
         <div className="text-center mb-3">
@@ -185,25 +166,14 @@ const PricingCard: React.FC<{ plan: PlanData; variant: "gold" | "platinum" | "da
         </div>
       )}
       <div
-        ref={cardRef}
-        onMouseMove={handleMouseMove}
-        onMouseLeave={handleMouseLeave}
-        className="relative rounded-3xl overflow-hidden cursor-pointer"
+        className="relative rounded-3xl overflow-hidden"
         style={{
           background: s.bg,
-          transformStyle: "preserve-3d",
-          transition: "transform 0.15s ease-out",
-          willChange: "transform",
           boxShadow: isPlatinum
             ? "0 25px 60px -12px hsla(36, 50%, 40%, 0.4)"
             : undefined,
         }}
       >
-        {/* Glow */}
-        <div
-          className="absolute inset-0 rounded-3xl opacity-0 hover:opacity-100 transition-opacity duration-500 pointer-events-none"
-          style={{ background: s.glow }}
-        />
 
         {/* Top accent line for platinum */}
         {isPlatinum && (
@@ -316,25 +286,21 @@ const Pricing = () => {
   return (
     <section className="section-dark py-20 md:py-28">
       <div className="container">
-        <ScrollReveal>
-          <div className="text-center mb-16">
-            <span className="text-gold font-body text-sm uppercase tracking-[0.2em] font-medium">
-              Oferta
-            </span>
-            <h2 className="font-display text-3xl md:text-5xl font-bold text-warm-light mt-4">
-              Investiție clară,{" "}
-              <span className="text-gold">fără surprize</span>
-            </h2>
-          </div>
-        </ScrollReveal>
+        <div className="text-center mb-16">
+          <span className="text-gold font-body text-sm uppercase tracking-[0.2em] font-medium">
+            Oferta
+          </span>
+          <h2 className="font-display text-3xl md:text-5xl font-bold text-warm-light mt-4">
+            Investiție clară,{" "}
+            <span className="text-gold">fără surprize</span>
+          </h2>
+        </div>
 
-        <ScrollReveal>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto items-start">
-            <PricingCard plan={plans[0]} variant="gold" />
-            <PricingCard plan={plans[1]} variant="platinum" />
-            <PricingCard plan={plans[2]} variant="dark" />
-          </div>
-        </ScrollReveal>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto items-start">
+          <PricingCard plan={plans[0]} variant="gold" />
+          <PricingCard plan={plans[1]} variant="platinum" />
+          <PricingCard plan={plans[2]} variant="dark" />
+        </div>
       </div>
     </section>
   );
