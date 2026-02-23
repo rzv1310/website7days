@@ -219,11 +219,6 @@ const PricingCard: React.FC<{ plan: PlanData; variant: "gold" | "platinum" | "da
                 €
               </span>
             </div>
-            {plan.note && (
-              <p className="text-xs font-body mb-4 italic" style={{ color: s.subtitleColor }}>
-                {plan.note}
-              </p>
-            )}
           </div>
 
           <div className="w-full h-px mb-6" style={{ background: s.lineColor }} />
@@ -266,6 +261,12 @@ const PricingCard: React.FC<{ plan: PlanData; variant: "gold" | "platinum" | "da
               </span>
             ))}
           </div>
+
+          {plan.note && (
+            <p className="text-xs font-body mb-3 italic text-center" style={{ color: s.subtitleColor }}>
+              {plan.note}
+            </p>
+          )}
 
           {/* CTA */}
           <button
