@@ -1,5 +1,10 @@
 import { Clock, Zap, Shield, TrendingUp, Smartphone, HeartHandshake } from "lucide-react";
 import ScrollReveal from "../ScrollReveal";
+import { useEffect, useRef } from "react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
 
 const benefits = [
   {
@@ -35,6 +40,40 @@ const benefits = [
 ];
 
 const Benefits = () => {
+  const cardsRef = useRef<(HTMLDivElement | null)[]>([]);
+  const sectionRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const cards = cardsRef.current.filter(Boolean) as HTMLDivElement[];
+    if (!cards.length) return;
+
+    gsap.set(cards, {
+      opacity: 0,
+      y: 80,
+      scale: 0.9,
+      rotateX: 15,
+    });
+
+    gsap.to(cards, {
+      opacity: 1,
+      y: 0,
+      scale: 1,
+      rotateX: 0,
+      duration: 0.8,
+      ease: "power3.out",
+      stagger: 0.12,
+      scrollTrigger: {
+        trigger: sectionRef.current,
+        start: "top 75%",
+        toggleActions: "play none none none",
+      },
+    });
+
+    return () => {
+      ScrollTrigger.getAll().forEach((t) => t.kill());
+    };
+  }, []);
+
   return (
     <section className="section-dark py-20 md:py-28">
       <div className="container">
@@ -47,17 +86,19 @@ const Benefits = () => {
           </div>
         </ScrollReveal>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+        <div ref={sectionRef} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8" style={{ perspective: "1000px" }}>
           {benefits.map((benefit, index) => (
-            <ScrollReveal key={benefit.title} delay={index * 0.1}>
-              <div className="group p-6 md:p-8 rounded-2xl border border-warm-gold/10 bg-warm-dark-secondary/50 backdrop-blur-sm hover:border-warm-gold/30 transition-all duration-500 hover:-translate-y-1">
-                <div className="w-12 h-12 rounded-xl gradient-gold flex items-center justify-center mb-5">
-                  <benefit.icon className="w-6 h-6 text-warm-dark" />
-                </div>
-                <h3 className="font-display text-xl font-semibold text-warm-light mb-3">{benefit.title}</h3>
-                <p className="font-body text-warm-light-text/70 leading-relaxed">{benefit.description}</p>
+            <div
+              key={benefit.title}
+              ref={(el) => { cardsRef.current[index] = el; }}
+              className="group p-6 md:p-8 rounded-2xl border border-warm-gold/10 bg-warm-dark-secondary/50 backdrop-blur-sm hover:border-warm-gold/30 transition-all duration-500 hover:-translate-y-1"
+            >
+              <div className="w-12 h-12 rounded-xl gradient-gold flex items-center justify-center mb-5">
+                <benefit.icon className="w-6 h-6 text-warm-dark" />
               </div>
-            </ScrollReveal>
+              <h3 className="font-display text-xl font-semibold text-warm-light mb-3">{benefit.title}</h3>
+              <p className="font-body text-warm-light-text/70 leading-relaxed">{benefit.description}</p>
+            </div>
           ))}
         </div>
       </div>
