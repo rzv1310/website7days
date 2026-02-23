@@ -52,6 +52,7 @@ const plans: PlanData[] = [
     titleLine2: "PLATINUM",
     price: "1700",
     
+    preDescription: "Ce Primești:",
     description: "Website profesional livrat în 7 zile. Plată unică, fără abonament lunar.",
     highlight: "Totul din Pachetul Gold +",
     note: "Ce primești aici NU e doar 'un site frumos'.\n\nȘi NU e din categoria 'ai un vecin care știe un băiat care face site-uri'!\n\nCe primești aici este top local SEO, tehnic impecabil, desenat de la zero pentru businessul tău și focusat pe apeluri și programări — pentru a converti vizitatorii în clienți.",
@@ -77,6 +78,7 @@ const plans: PlanData[] = [
     titleLine2: "MAGAZIN ONLINE",
     price: "Vreau Oferta",
     
+    preDescription: "Ce Primești:",
     description: "Soluție completă cu magazin online, plăți integrate și panou de administrare.",
     features: [
       "__highlight__Totul din PLATINUM",
