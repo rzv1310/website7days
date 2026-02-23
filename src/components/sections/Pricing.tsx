@@ -3,7 +3,8 @@ import { Check, ArrowRight, Star, Crown, Layers } from "lucide-react";
 import ScrollReveal from "../ScrollReveal";
 
 interface PlanData {
-  title: string;
+  titleLine1: string;
+  titleLine2: string;
   price: string;
   
   description: string;
@@ -14,7 +15,8 @@ interface PlanData {
 
 const plans: PlanData[] = [
   {
-    title: "SITE DE PREZENTARE GOLD",
+    titleLine1: "SITE DE PREZENTARE",
+    titleLine2: "GOLD",
     price: "970",
     description: "Un site web complet funcțional, cu design premium, cu până la 8 pagini personalizate, care arată perfect pe orice ecran și care e gata să-ți producă bani până la sfârșitul zilei.",
     note: "Opțional: Domeniu + Găzduire + suport + security updates = 100 lei/lună",
@@ -44,7 +46,8 @@ const plans: PlanData[] = [
     ],
   },
   {
-    title: "SITE DE PREZENTARE PLATINUM",
+    titleLine1: "SITE DE PREZENTARE",
+    titleLine2: "PLATINUM",
     price: "1700",
     
     description: "Website profesional livrat în 7 zile. Plată unică, fără abonament lunar.",
@@ -68,7 +71,8 @@ const plans: PlanData[] = [
     ],
   },
   {
-    title: "SITE + MAGAZIN",
+    titleLine1: "WEBSITE +",
+    titleLine2: "MAGAZIN ONLINE",
     price: "899",
     
     description: "Soluție completă cu magazin online, plăți integrate și panou de administrare.",
@@ -220,12 +224,13 @@ const PricingCard: React.FC<{ plan: PlanData; variant: "gold" | "platinum" | "da
             >
               <Icon className="w-4 h-4" style={{ color: s.priceColor }} />
             </div>
-            <span
+            <div
               className="text-xs font-bold tracking-[0.2em] font-body"
               style={{ color: s.titleColor }}
             >
-              {plan.title}
-            </span>
+              <div>{plan.titleLine1}</div>
+              <div>{plan.titleLine2}</div>
+            </div>
           </div>
 
           {/* Price */}
