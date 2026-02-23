@@ -81,11 +81,10 @@ const plans: PlanData[] = [
     features: [
       "__highlight__Totul din PLATINUM",
       "Magazin online integrat",
-      "Până la 50 produse",
+      "Pagini produse",
       "Sistem de plăți online",
       "Panou de administrare",
       "Optimizare SEO avansată",
-      "Integrare social media",
       "3 luni suport gratuit",
     ],
   },
@@ -286,7 +285,7 @@ const PricingCard: React.FC<{ plan: PlanData; variant: "gold" | "platinum" | "da
           </div>
 
           {plan.note && (
-            <p className="text-xs font-body mb-3 italic text-center whitespace-pre-line" style={{ color: s.subtitleColor }}>
+            <p className="text-xs font-body mb-3 italic text-center whitespace-pre-line" style={{ color: "white" }}>
               {plan.note}
             </p>
           )}
