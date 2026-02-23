@@ -7,7 +7,7 @@ const steps = [
     icon: MessageSquare,
     step: "01",
     title: "Discutăm",
-    description: "Într-un call scurt de 30 min, înțeleg ce ai nevoie și stabilim structura site-ului.",
+    description: "Într-un call scurt de 30 min, înțelegem ce ai nevoie și stabilim structura site-ului.",
     day: "Ziua 1",
   },
   {
