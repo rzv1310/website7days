@@ -47,7 +47,7 @@ const Benefits = () => {
       const wrapperHeight = wrapper.offsetHeight;
       const viewportHeight = window.innerHeight;
       const scrollableDistance = wrapperHeight - viewportHeight;
-      const deadZone = 300; // px of scroll before animation starts
+      const deadZone = 600; // px of scroll before animation starts
 
       if (rect.top <= 0 && rect.bottom >= viewportHeight) {
         const scrolled = -rect.top;
