@@ -314,7 +314,7 @@ const Pricing = () => {
   return (
     <section className="section-dark py-20 md:py-28">
       <div className="container">
-        <div className="text-center mb-16">
+        <div className="text-center mb-24">
           <span className="text-gold font-body text-sm uppercase tracking-[0.2em] font-medium">
             Oferta
           </span>
