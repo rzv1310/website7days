@@ -13,7 +13,7 @@ const steps = [
   {
     icon: Palette,
     step: "02",
-    title: "Creez & Design",
+    title: "Codăm & Desenăm",
     description: "Construim paginile tehnic și cu design wow, conținut optimizat și funcționalități adaptate nevoilor tale.",
     day: "Zilele 2-5",
   },
@@ -64,7 +64,7 @@ const Process = () => {
 
                 {/* Day badge - larger */}
                 <div className="inline-flex items-center justify-center px-6 py-3 rounded-2xl bg-warm-gold/15 border border-warm-gold/30 backdrop-blur-sm mb-6 group-hover:scale-110 transition-transform duration-500">
-                  <span className="font-body text-sm uppercase tracking-[0.2em] font-medium text-warm-gold-bright">{step.day}</span>
+                  <span className="font-body text-sm uppercase tracking-[0.2em] font-medium text-white">{step.day}</span>
                 </div>
 
                 {/* Glass card */}
