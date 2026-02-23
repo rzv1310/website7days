@@ -7,14 +7,14 @@ const steps = [
     icon: MessageSquare,
     step: "01",
     title: "Discutăm",
-    description: "Într-un call scurt de 30 min, înțeleg afacerea ta, publicul țintă și obiectivele. Stabilim structura site-ului.",
+    description: "Într-un call scurt de 30 min, înțeleg ce ai nevoie și stabilim structura site-ului.",
     day: "Ziua 1",
   },
   {
     icon: Palette,
     step: "02",
     title: "Creez & Design",
-    description: "Construiesc website-ul cu un design modern, conținut optimizat și funcționalități adaptate nevoilor tale.",
+    description: "Construim paginile tehnic și cu design wow, conținut optimizat și funcționalități adaptate nevoilor tale.",
     day: "Zilele 2-5",
   },
   {
@@ -68,7 +68,7 @@ const Process = () => {
                 </div>
 
                 {/* Glass card */}
-                <div className="rounded-2xl bg-white/10 backdrop-blur-md border border-white/20 px-6 py-6 shadow-lg flex-1 flex flex-col justify-center">
+                <div className="rounded-2xl bg-[#3d2e14]/60 backdrop-blur-md border border-white/10 px-6 py-6 shadow-lg flex-1 flex flex-col justify-center">
                   <h3 className="font-display text-2xl font-bold text-warm-light-text mb-3">{step.title}</h3>
                   <p className="font-body text-warm-light-text/70 leading-relaxed">{step.description}</p>
                 </div>
