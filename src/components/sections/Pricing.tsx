@@ -1,71 +1,81 @@
 import React, { useRef } from "react";
-import { Check, ArrowRight, Star, Layers } from "lucide-react";
+import { Check, ArrowRight, Star, Crown, Layers } from "lucide-react";
 import ScrollReveal from "../ScrollReveal";
 
-const pricingData = {
-  basic: {
-    standard: {
-      price: "499",
-      features: [
-        "Design modern, personalizat",
-        "Până la 5 pagini",
-        "Optimizare SEO de bază",
-        "Responsive pe toate dispozitivele",
-        "Formular de contact funcțional",
-        "Integrare Google Maps",
-        "Certificat SSL gratuit",
-        "1 lună suport gratuit",
-      ],
-    },
-    premium: {
-      price: "349",
-      features: [
-        "Design modern, personalizat",
-        "Până la 3 pagini",
-        "Optimizare SEO de bază",
-        "Responsive pe toate dispozitivele",
-        "Formular de contact funcțional",
-        "Certificat SSL gratuit",
-      ],
-    },
-  },
-  ecommerce: {
-    standard: {
-      price: "899",
-      features: [
-        "Tot ce include pachetul Standard",
-        "Magazin online integrat",
-        "Până la 50 produse",
-        "Sistem de plăți online",
-        "Panou de administrare",
-        "Optimizare SEO avansată",
-        "Integrare social media",
-        "3 luni suport gratuit",
-      ],
-    },
-    premium: {
-      price: "699",
-      features: [
-        "Tot ce include pachetul Standard",
-        "Magazin online integrat",
-        "Până la 20 produse",
-        "Sistem de plăți online",
-        "Panou de administrare",
-        "Optimizare SEO avansată",
-      ],
-    },
-  },
-};
-
-type PlanType = "basic" | "ecommerce";
-
-interface PricingCardProps {
-  type: PlanType;
+interface PlanData {
+  title: string;
+  price: string;
+  subtitle: string;
+  description: string;
+  features: string[];
+  highlight?: string;
+  note?: string;
 }
 
-const PricingCard: React.FC<PricingCardProps> = ({ type }) => {
-  const isBasic = type === "basic";
-  const displayData = pricingData[type].standard;
+const plans: PlanData[] = [
+  {
+    title: "SITE DE PREZENTARE",
+    price: "499",
+    subtitle: "PREȚ FIX",
+    description: "Website profesional livrat în 7 zile. Plată unică, fără abonament lunar.",
+    features: [
+      "Design modern, personalizat",
+      "Până la 5 pagini",
+      "Optimizare SEO de bază",
+      "Responsive pe toate dispozitivele",
+      "Formular de contact funcțional",
+      "Integrare Google Maps",
+      "Certificat SSL gratuit",
+      "1 lună suport gratuit",
+    ],
+  },
+  {
+    title: "SITE PREZENTARE PLATINUM",
+    price: "1700",
+    subtitle: "PREȚ FIX",
+    description:
+      "Ce primești aici NU e doar 'un site frumos'. Ce primești este top local SEO, tehnic impecabil, desenat de la zero pentru businessul tău și focusat pe apeluri și programări — pentru a converti vizitatorii în clienți.",
+    highlight: "Totul din Pachetul Gold +",
+    note: "* posibilitate plată în rate",
+    features: [
+      "Pagină Blog (cu 4 articole optimizate SEO)",
+      "Pagini dedicate Servicii în website",
+      "Creare și optimizare Google Business Profile",
+      "Creare profil social media + covers",
+      "Local Schema Mark-up + Organization + FAQ + AggregateReviews",
+      "Optimizare SEO on-page (meta-titles, descriptions, headings)",
+      "Optimizare Core Web Vitals (+80 viteză, accesibilitate)",
+      "LLM.txt (descoperit de ChatGPT, Google AI Overviews)",
+      "OpenGraph cards (share WhatsApp/Facebook/Twitter)",
+      "Banner (pop-up) Cookies",
+      "Widget pt persoane cu dizabilități",
+      "Nume domeniu (1 an)",
+      "Găzduire domeniu (1 an)",
+      "Mentenanță tehnică (1 an)",
+    ],
+  },
+  {
+    title: "SITE + MAGAZIN",
+    price: "899",
+    subtitle: "PREȚ ORIENTATIV",
+    description: "Soluție completă cu magazin online, plăți integrate și panou de administrare.",
+    features: [
+      "Tot ce include pachetul Standard",
+      "Magazin online integrat",
+      "Până la 50 produse",
+      "Sistem de plăți online",
+      "Panou de administrare",
+      "Optimizare SEO avansată",
+      "Integrare social media",
+      "3 luni suport gratuit",
+    ],
+  },
+];
+
+const PricingCard: React.FC<{ plan: PlanData; variant: "gold" | "platinum" | "dark" }> = ({
+  plan,
+  variant,
+}) => {
   const cardRef = useRef<HTMLDivElement>(null);
 
   const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
@@ -89,157 +99,203 @@ const PricingCard: React.FC<PricingCardProps> = ({ type }) => {
     document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" });
   };
 
-  const title = isBasic ? "SITE DE PREZENTARE" : "SITE + MAGAZIN";
-  const subtitle = isBasic ? "PREȚ FIX" : "PREȚ ORIENTATIV";
+  const styles = {
+    gold: {
+      bg: "linear-gradient(135deg, hsl(36, 50%, 55%), hsl(40, 60%, 65%))",
+      glow: "linear-gradient(135deg, hsla(40, 80%, 75%, 0.15), transparent)",
+      iconBg: "hsla(40, 80%, 80%, 0.3)",
+      titleColor: "hsla(0, 0%, 100%, 0.9)",
+      priceColor: "white",
+      currencyColor: "hsla(0, 0%, 100%, 0.7)",
+      subtitleColor: "hsla(0, 0%, 100%, 0.6)",
+      lineColor: "hsla(0, 0%, 100%, 0.2)",
+      descColor: "hsla(0, 0%, 100%, 0.7)",
+      pillBg: "hsla(0, 0%, 100%, 0.15)",
+      pillColor: "white",
+      ctaBg: "hsla(0, 0%, 100%, 0.95)",
+      ctaColor: "hsl(25, 30%, 18%)",
+    },
+    platinum: {
+      bg: "linear-gradient(135deg, hsl(36, 55%, 48%), hsl(30, 45%, 35%))",
+      glow: "linear-gradient(135deg, hsla(40, 80%, 75%, 0.2), transparent)",
+      iconBg: "hsla(40, 80%, 80%, 0.3)",
+      titleColor: "hsla(0, 0%, 100%, 0.95)",
+      priceColor: "white",
+      currencyColor: "hsla(0, 0%, 100%, 0.7)",
+      subtitleColor: "hsla(0, 0%, 100%, 0.6)",
+      lineColor: "hsla(0, 0%, 100%, 0.2)",
+      descColor: "hsla(0, 0%, 100%, 0.8)",
+      pillBg: "hsla(0, 0%, 100%, 0.15)",
+      pillColor: "white",
+      ctaBg: "white",
+      ctaColor: "hsl(25, 30%, 12%)",
+    },
+    dark: {
+      bg: "linear-gradient(135deg, hsl(25, 30%, 18%), hsl(30, 20%, 12%))",
+      glow: "linear-gradient(135deg, hsla(36, 50%, 62%, 0.15), transparent)",
+      iconBg: "hsla(36, 50%, 62%, 0.3)",
+      titleColor: "hsl(36, 50%, 62%)",
+      priceColor: "hsl(36, 50%, 62%)",
+      currencyColor: "hsla(36, 50%, 62%, 0.7)",
+      subtitleColor: "hsla(36, 50%, 62%, 0.5)",
+      lineColor: "hsla(36, 50%, 62%, 0.2)",
+      descColor: "hsla(30, 30%, 88%, 0.6)",
+      pillBg: "hsla(36, 50%, 62%, 0.12)",
+      pillColor: "hsl(30, 30%, 88%)",
+      ctaBg: "linear-gradient(135deg, hsl(36, 50%, 55%), hsl(40, 60%, 65%))",
+      ctaColor: "hsl(25, 30%, 8%)",
+    },
+  };
+
+  const s = styles[variant];
+  const isPlatinum = variant === "platinum";
+  const Icon = isPlatinum ? Crown : variant === "gold" ? Star : Layers;
 
   return (
-    <div style={{ perspective: "1000px" }}>
-    <div
-      ref={cardRef}
-      onMouseMove={handleMouseMove}
-      onMouseLeave={handleMouseLeave}
-      className="relative rounded-3xl overflow-hidden cursor-pointer"
-      style={{
-        background: isBasic
-          ? "linear-gradient(135deg, hsl(36, 50%, 55%), hsl(40, 60%, 65%))"
-          : "linear-gradient(135deg, hsl(25, 30%, 18%), hsl(30, 20%, 12%))",
-        transformStyle: "preserve-3d",
-        transition: "transform 0.15s ease-out",
-        willChange: "transform",
-      }}
-    >
-      {/* Animated glow ring */}
-      <div
-        className="absolute inset-0 rounded-3xl opacity-0 hover:opacity-100 transition-opacity duration-500 pointer-events-none"
-        style={{
-          background: isBasic
-            ? "linear-gradient(135deg, hsla(40, 80%, 75%, 0.15), transparent)"
-            : "linear-gradient(135deg, hsla(36, 50%, 62%, 0.15), transparent)",
-        }}
-      />
-
-      <div className="relative z-10 p-8 md:p-10 flex flex-col h-full">
-        {/* Header */}
-        <div className="flex items-center gap-2 mb-6">
-          <div
-            className="w-8 h-8 rounded-full flex items-center justify-center"
-            style={{
-              background: isBasic
-                ? "hsla(40, 80%, 80%, 0.3)"
-                : "hsla(36, 50%, 62%, 0.3)",
-            }}
-          >
-            {isBasic ? (
-              <Star className="w-4 h-4 text-white" />
-            ) : (
-              <Layers className="w-4 h-4 text-warm-gold" />
-            )}
-          </div>
+    <div style={{ perspective: "1000px" }} className={isPlatinum ? "md:-mt-4 md:mb-[-16px]" : ""}>
+      {/* Popular badge for platinum */}
+      {isPlatinum && (
+        <div className="text-center mb-3">
           <span
-            className="text-xs font-bold tracking-[0.2em] font-body"
+            className="inline-block px-4 py-1.5 rounded-full text-xs font-bold tracking-[0.15em] font-body uppercase"
             style={{
-              color: isBasic ? "hsla(0, 0%, 100%, 0.9)" : "hsl(36, 50%, 62%)",
+              background: "linear-gradient(135deg, hsl(36, 50%, 55%), hsl(40, 60%, 65%))",
+              color: "hsl(25, 30%, 8%)",
             }}
           >
-            {title}
+            ⭐ Cel mai popular
           </span>
         </div>
-
-        {/* Price */}
+      )}
+      <div
+        ref={cardRef}
+        onMouseMove={handleMouseMove}
+        onMouseLeave={handleMouseLeave}
+        className="relative rounded-3xl overflow-hidden cursor-pointer"
+        style={{
+          background: s.bg,
+          transformStyle: "preserve-3d",
+          transition: "transform 0.15s ease-out",
+          willChange: "transform",
+          boxShadow: isPlatinum
+            ? "0 25px 60px -12px hsla(36, 50%, 40%, 0.4)"
+            : undefined,
+        }}
+      >
+        {/* Glow */}
         <div
-          className="transition-all duration-300"
-        >
-          <div className="flex items-end gap-1 mb-1">
-            <span
-              className="font-display text-6xl md:text-7xl font-bold"
-              style={{ color: isBasic ? "white" : "hsl(36, 50%, 62%)" }}
-            >
-              {displayData.price}
-            </span>
-            <span
-              className="text-2xl font-body mb-2"
-              style={{
-                color: isBasic
-                  ? "hsla(0, 0%, 100%, 0.7)"
-                  : "hsla(36, 50%, 62%, 0.7)",
-              }}
-            >
-              €
-            </span>
-          </div>
-          <p
-            className="text-xs font-bold tracking-[0.15em] font-body mb-6"
-            style={{
-              color: isBasic
-                ? "hsla(0, 0%, 100%, 0.6)"
-                : "hsla(36, 50%, 62%, 0.5)",
-            }}
-          >
-            {subtitle}
-          </p>
-        </div>
-
-        <div
-          className="w-full h-px mb-6"
-          style={{
-            background: isBasic
-              ? "hsla(0, 0%, 100%, 0.2)"
-              : "hsla(36, 50%, 62%, 0.2)",
-          }}
+          className="absolute inset-0 rounded-3xl opacity-0 hover:opacity-100 transition-opacity duration-500 pointer-events-none"
+          style={{ background: s.glow }}
         />
 
-        {/* Description */}
-        <p
-          className="font-body text-sm mb-6 leading-relaxed"
-          style={{
-            color: isBasic
-              ? "hsla(0, 0%, 100%, 0.7)"
-              : "hsla(30, 30%, 88%, 0.6)",
-          }}
-        >
-          {isBasic
-            ? "Website profesional livrat în 7 zile. Plată unică, fără abonament lunar."
-            : "Soluție completă cu magazin online, plăți integrate și panou de administrare."}
-        </p>
+        {/* Top accent line for platinum */}
+        {isPlatinum && (
+          <div
+            className="absolute top-0 left-0 right-0 h-1"
+            style={{
+              background: "linear-gradient(90deg, hsl(40, 60%, 65%), hsl(36, 50%, 55%), hsl(40, 60%, 65%))",
+            }}
+          />
+        )}
 
-        {/* Features as pills */}
-        <div
-          className="flex flex-wrap gap-2 mb-8 flex-grow"
-        >
-          {displayData.features.map((f, i) => (
+        <div className="relative z-10 p-8 md:p-10 flex flex-col h-full">
+          {/* Header */}
+          <div className="flex items-center gap-2 mb-6">
+            <div
+              className="w-8 h-8 rounded-full flex items-center justify-center"
+              style={{ background: s.iconBg }}
+            >
+              <Icon className="w-4 h-4" style={{ color: s.priceColor }} />
+            </div>
             <span
-              key={i}
-              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-body font-medium"
+              className="text-xs font-bold tracking-[0.2em] font-body"
+              style={{ color: s.titleColor }}
+            >
+              {plan.title}
+            </span>
+          </div>
+
+          {/* Price */}
+          <div>
+            <div className="flex items-end gap-1 mb-1">
+              <span
+                className="font-display text-5xl md:text-6xl font-bold"
+                style={{ color: s.priceColor }}
+              >
+                {plan.price}
+              </span>
+              <span
+                className="text-2xl font-body mb-2"
+                style={{ color: s.currencyColor }}
+              >
+                €
+              </span>
+            </div>
+            <p
+              className="text-xs font-bold tracking-[0.15em] font-body mb-1"
+              style={{ color: s.subtitleColor }}
+            >
+              {plan.subtitle}
+            </p>
+            {plan.note && (
+              <p className="text-xs font-body mb-4 italic" style={{ color: s.subtitleColor }}>
+                {plan.note}
+              </p>
+            )}
+          </div>
+
+          <div className="w-full h-px mb-6" style={{ background: s.lineColor }} />
+
+          {/* Highlight badge */}
+          {plan.highlight && (
+            <p
+              className="font-body text-xs font-bold uppercase tracking-wider mb-3 px-3 py-1.5 rounded-full inline-block self-start"
               style={{
-                background: isBasic
-                  ? "hsla(0, 0%, 100%, 0.15)"
-                  : "hsla(36, 50%, 62%, 0.12)",
-                color: isBasic ? "white" : "hsl(30, 30%, 88%)",
-                backdropFilter: "blur(10px)",
+                background: "hsla(0, 0%, 100%, 0.2)",
+                color: "white",
               }}
             >
-              <Check className="w-3 h-3 flex-shrink-0" />
-              {f}
-            </span>
-          ))}
-        </div>
+              {plan.highlight}
+            </p>
+          )}
 
-        {/* CTA */}
-        <button
-          onClick={scrollToContact}
-          className="w-full py-4 rounded-xl font-body font-bold text-base flex items-center justify-center gap-2 group transition-all duration-300 hover:scale-[1.02]"
-          style={{
-            background: isBasic
-              ? "hsla(0, 0%, 100%, 0.95)"
-              : "linear-gradient(135deg, hsl(36, 50%, 55%), hsl(40, 60%, 65%))",
-            color: isBasic ? "hsl(25, 30%, 18%)" : "hsl(25, 30%, 8%)",
-          }}
-        >
-          Vreau acest pachet
-          <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-        </button>
+          {/* Description */}
+          <p
+            className="font-body text-sm mb-6 leading-relaxed"
+            style={{ color: s.descColor }}
+          >
+            {plan.description}
+          </p>
+
+          {/* Features as pills */}
+          <div className="flex flex-wrap gap-2 mb-8 flex-grow">
+            {plan.features.map((f, i) => (
+              <span
+                key={i}
+                className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-body font-medium"
+                style={{
+                  background: s.pillBg,
+                  color: s.pillColor,
+                  backdropFilter: "blur(10px)",
+                }}
+              >
+                <Check className="w-3 h-3 flex-shrink-0" />
+                {f}
+              </span>
+            ))}
+          </div>
+
+          {/* CTA */}
+          <button
+            onClick={scrollToContact}
+            className="w-full py-4 rounded-xl font-body font-bold text-base flex items-center justify-center gap-2 group transition-all duration-300 hover:scale-[1.02]"
+            style={{ background: s.ctaBg, color: s.ctaColor }}
+          >
+            Vreau acest pachet
+            <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+          </button>
+        </div>
       </div>
-    </div>
     </div>
   );
 };
@@ -261,15 +317,15 @@ const Pricing = () => {
         </ScrollReveal>
 
         <ScrollReveal>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-            <PricingCard type="basic" />
-            <PricingCard type="ecommerce" />
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto items-start">
+            <PricingCard plan={plans[0]} variant="gold" />
+            <PricingCard plan={plans[1]} variant="platinum" />
+            <PricingCard plan={plans[2]} variant="dark" />
           </div>
         </ScrollReveal>
       </div>
     </section>
   );
 };
-
 
 export default Pricing;
