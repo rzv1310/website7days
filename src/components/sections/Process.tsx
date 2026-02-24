@@ -46,9 +46,9 @@ const Process = () => {
       <div className="container relative z-10">
         <ScrollReveal>
           <div className="text-center mb-16">
-            <span className="text-gold font-body text-sm uppercase tracking-[0.2em] font-medium">Procesul</span>
+            <span className="font-body text-sm uppercase tracking-[0.2em] font-medium" style={{ color: "rgba(27, 19, 14, 0.5)" }}>Procesul</span>
             <h2 className="font-display text-3xl md:text-5xl font-bold text-warm-light-text mt-4">
-              3 pași simpli spre <span className="text-gold">site-ul tău</span>
+              3 pași simpli spre <span style={{ color: "rgba(27, 19, 14, 0.5)" }}>site-ul tău</span>
             </h2>
           </div>
         </ScrollReveal>
