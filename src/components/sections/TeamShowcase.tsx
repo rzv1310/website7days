@@ -97,7 +97,8 @@ const TeamShowcase = () => {
 
   return (
     <div ref={containerRef} className="section-dark relative" style={{ height: "500vh" }}>
-      <div className="sticky top-0 h-screen flex items-center justify-center overflow-hidden">
+      <div className="sticky top-0 h-screen flex flex-col items-center justify-center overflow-hidden">
+        <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-8">Cine Suntem?</h2>
         <div className="relative w-[300px] md:w-[400px]" style={{ clipPath: "inset(0)" }}>
           {slides.map((slide, i) => (
             <div
