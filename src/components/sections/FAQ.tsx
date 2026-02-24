@@ -20,7 +20,7 @@ const faqs = [
   },
   {
     q: "Oferiți plata în rate?",
-    a: "Câteodată! Știm că e o investiție importantă și vrem să fie cât mai ușor să spui \u201Eda\u201D și să începem. De aceea oferim opțiuni de plată în 2 rate lunare la pachetul Platinum.",
+    a: "Câteodată! Știm că e o investiție importantă și vrem să fie cât mai ușor să spui \u201Eda\u201D și să începem.\nDe aceea oferim opțiuni de plată în câteva rate lunare la toate pachetele.",
   },
   {
     q: "Mai aveți și alte pachete de website?",
