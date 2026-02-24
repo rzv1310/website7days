@@ -50,12 +50,12 @@ const TeamShowcase = () => {
   return (
     <div ref={containerRef} className="section-dark relative" style={{ height: "350vh" }}>
       <div className="sticky top-0 h-screen flex items-center justify-center overflow-hidden">
-        <div className="relative w-[260px] md:w-[340px] aspect-[9/16]">
+        <div className="relative w-[300px] md:w-[400px]">
           {images.map((src, i) => (
             <div
               key={i}
               ref={(el) => { cardsRef.current[i] = el; }}
-              className="absolute inset-0 rounded-2xl overflow-hidden shadow-2xl"
+              className={`${i === 0 ? 'relative' : 'absolute inset-0'} rounded-2xl overflow-hidden shadow-2xl`}
               style={{ zIndex: images.length - i }}
             >
               <img
