@@ -11,9 +11,7 @@ import Footer from "@/components/sections/Footer";
 import SectionDivider from "@/components/SectionDivider";
 
 const Index = () => {
-  const openWhatsApp = () => {
-    window.open("https://wa.me/40742702982", "_blank");
-  };
+  const whatsAppUrl = "https://wa.me/40742702982";
 
   return (
     <div>
@@ -25,7 +23,7 @@ const Index = () => {
         }}
         subtitle="Construim site-uri de prezentare elegante pentru businessuri locale. Rapid și optimizat pentru conversii."
         buttons={{
-          primary: { text: "Scrie-ne în WhatsApp", onClick: openWhatsApp },
+          primary: { text: "Scrie-ne în WhatsApp", href: whatsAppUrl },
         }}
       />
 
