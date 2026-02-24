@@ -9,6 +9,7 @@ import TermsAndConditions from "./pages/TermsAndConditions";
 import GDPR from "./pages/GDPR";
 import Cookies from "./pages/Cookies";
 import CookieConsent from "./components/CookieConsent";
+import AccessibilityWidget from "./components/AccessibilityWidget";
 
 const queryClient = new QueryClient();
 
@@ -27,6 +28,7 @@ const App = () => (
           <Route path="*" element={<NotFound />} />
         </Routes>
         <CookieConsent />
+        <AccessibilityWidget />
       </BrowserRouter>
     </TooltipProvider>
   </QueryClientProvider>
