@@ -87,7 +87,13 @@ const Benefits = () => {
             {benefits.map((benefit) => (
               <div
                 key={benefit.title}
-                className="group flex-shrink-0 w-[300px] md:w-[380px] p-6 md:p-8 rounded-2xl border border-warm-gold/10 bg-warm-dark-secondary/50 backdrop-blur-sm hover:border-warm-gold/30 transition-all duration-300 hover:-translate-y-1"
+                className="group flex-shrink-0 w-[300px] md:w-[380px] p-6 md:p-8 rounded-2xl border border-warm-gold/10 backdrop-blur-sm hover:border-warm-gold/30 transition-all duration-300 hover:-translate-y-1"
+                style={{
+                  backgroundColor: "hsl(25 20% 14% / 0.5)",
+                  backgroundImage: `linear-gradient(hsl(30 35% 90% / 0.04) 1px, transparent 1px), linear-gradient(90deg, hsl(30 35% 90% / 0.04) 1px, transparent 1px)`,
+                  backgroundSize: "24px 24px",
+                  backgroundPosition: "8px 8px",
+                }}
               >
                 <div className="w-12 h-12 rounded-xl gradient-gold flex items-center justify-center mb-5">
                   <benefit.icon className="w-6 h-6 text-warm-dark" />
