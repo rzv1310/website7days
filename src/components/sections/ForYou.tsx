@@ -40,8 +40,8 @@ const ForYou = () => {
                 ))}
               </ul>
 
-              <p className="font-display text-lg md:text-xl font-semibold text-gold-bright mb-6">
-                Ești gata să fii online? Rezervă-ți săptămâna acum.
+              <p className="font-display text-lg md:text-xl text-gold-bright mb-6">
+                Ești gata să fii online? Fă-ți rezervarea acum.
               </p>
 
               <motion.button
