@@ -38,18 +38,6 @@ const testimonials = [
     text: "Am primit un site profesional în doar 5 zile. Clienții mei mă găsesc acum pe Google și am crescut cu 40% programările online.",
     stars: 5,
   },
-  {
-    name: "Elena D.",
-    business: "Studio Pilates Flow",
-    text: "Comunicare excelentă, design modern și un site care chiar vinde. Am recuperat investiția în prima lună!",
-    stars: 5,
-  },
-  {
-    name: "Radu P.",
-    business: "Cabinet Stomatologic",
-    text: "Rapid, profesionist și atent la detalii. Site-ul arată exact cum mi-am dorit. Recomand cu încredere.",
-    stars: 5,
-  },
 ];
 
 const Testimonials = () => {
