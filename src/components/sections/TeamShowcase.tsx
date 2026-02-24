@@ -18,38 +18,39 @@ const TeamShowcase = () => {
     if (!container) return;
 
     const ctx = gsap.context(() => {
-      // First card slides left to reveal second
+      // First card: dead zone then slides left (starts at 20%, ends at 45%)
       gsap.to(cardsRef.current[0], {
         xPercent: -120,
         ease: "none",
         scrollTrigger: {
           trigger: container,
-          start: "top top",
-          end: "33% top",
+          start: "20% top",
+          end: "45% top",
           scrub: 1,
         },
       });
 
-      // Second card slides left to reveal third
+      // Second card slides left (starts at 45%, ends at 70%)
       gsap.to(cardsRef.current[1], {
         xPercent: -120,
         ease: "none",
         scrollTrigger: {
           trigger: container,
-          start: "33% top",
-          end: "66% top",
+          start: "45% top",
+          end: "70% top",
           scrub: 1,
         },
       });
+      // 70%-100% = dead zone for last photo
     }, container);
 
     return () => ctx.revert();
   }, []);
 
   return (
-    <div ref={containerRef} className="section-dark relative" style={{ height: "300vh" }}>
+    <div ref={containerRef} className="section-dark relative" style={{ height: "350vh" }}>
       <div className="sticky top-0 h-screen flex items-center justify-center overflow-hidden">
-        <div className="relative w-[320px] md:w-[420px] aspect-[9/16] max-h-[80vh]">
+        <div className="relative w-[320px] md:w-[420px] aspect-[9/16] max-h-[85vh]">
           {images.map((src, i) => (
             <div
               key={i}
@@ -60,7 +61,7 @@ const TeamShowcase = () => {
               <img
                 src={src}
                 alt={`Team member ${i + 1}`}
-                className="w-full h-full object-cover"
+                className="w-full h-full object-cover object-bottom"
                 loading="lazy"
               />
             </div>
