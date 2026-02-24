@@ -140,6 +140,7 @@ const TeamShowcase = () => {
                 <img
                   src={slide.src}
                   alt={slide.alt}
+                  title={slide.alt}
                   className="w-full h-full object-contain"
                   loading="lazy"
                 />
