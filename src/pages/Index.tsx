@@ -1,4 +1,5 @@
 import Hero from "@/components/ui/animated-shader-hero";
+import ForYou from "@/components/sections/ForYou";
 import Benefits from "@/components/sections/Benefits";
 import Process from "@/components/sections/Process";
 import Testimonials from "@/components/sections/Testimonials";
@@ -26,6 +27,8 @@ const Index = () => {
           primary: { text: "Scrie-ne în WhatsApp", onClick: scrollToContact },
         }}
       />
+
+      <ForYou />
 
       <div id="benefits">
         <Benefits />
