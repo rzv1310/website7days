@@ -27,7 +27,7 @@ const faqs = [
     a: "Da! Avem și proiecte custom, pentru business-uri care au nevoie de un site mai amplu, cu impact mai mare și funcționalități avansate. Spune-ne ce ai în minte și îți propunem un plan potrivit.",
   },
   {
-    q: "Cu cât timp înainte ar trebui să-mi programez ziua lansării?",
+    q: "Cu cât timp înainte ar trebui să-mă programez?",
     a: "În ziua programării vom avea împreună o conversație telefonică și vom stabili atunci.\n\nRecomandăm, de obicei, să rezervi cu aprox. 2 săptămâni înainte, ca să avem timp să strângem textele și materialele necesare. Dacă ai deadline strâns, spune-ne și vedem cum te putem \u201Estrecura\u201D în program.",
   },
   {
