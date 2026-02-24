@@ -1,6 +1,7 @@
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { MeshGradient } from "@paper-design/shaders-react";
 import andreeaImg from "@/assets/Andreea.webp";
 import ioanImg from "@/assets/ioan.webp";
 import oanaImg from "@/assets/Oana.webp";
@@ -96,8 +97,19 @@ const TeamShowcase = () => {
   }, []);
 
   return (
-    <div ref={containerRef} className="section-dark relative" style={{ height: "500vh" }}>
-      <div className="sticky top-0 h-screen flex flex-col items-center justify-center overflow-hidden">
+    <div ref={containerRef} className="relative" style={{ height: "500vh" }}>
+      <MeshGradient
+        style={{
+          position: "absolute",
+          inset: 0,
+          width: "100%",
+          height: "100%",
+        }}
+        speed={0.12}
+        colors={["#3d2e14", "#c4a67a", "#1a1410", "#d4b896", "#2a1f0e"]}
+      />
+      <div className="absolute inset-0 bg-black/40" />
+      <div className="sticky top-0 h-screen flex flex-col items-center justify-center overflow-hidden relative z-10">
         <h2 className="text-3xl md:text-4xl font-bold text-white mb-8">Cine Suntem?</h2>
         <div className="relative w-[300px] md:w-[400px]" style={{ clipPath: "inset(0)" }}>
           {slides.map((slide, i) => (
