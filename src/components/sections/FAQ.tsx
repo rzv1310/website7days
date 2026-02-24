@@ -20,7 +20,7 @@ const faqs = [
   },
   {
     q: "Ce informații aveți nevoie de la mine?",
-    a: "Logo-ul afacerii (dacă există), texte și fotografii relevante, informații de contact și o idee generală despre ce vrei să comunici. Te ghidăm noi pe parcurs.",
+    a: "Nume Business (+ poze), Adresa completă, Telefon, Echipa (specializări + poze), Lista servicii (+ detalii), Lista Prețuri, Detalii business (istoric, etc.)\n\nDacă nu ai aproape nimic pregătit, te ghidăm noi pas cu pas.",
   },
   {
     q: "Trebuie să fiu disponibil(ă) în ziua lansării?",
