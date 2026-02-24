@@ -1,4 +1,4 @@
-import { ArrowRight, Mail, Phone } from "lucide-react";
+import { Phone } from "lucide-react";
 import ScrollReveal from "../ScrollReveal";
 import { motion } from "framer-motion";
 
@@ -16,23 +16,12 @@ const CTA = () => {
               Scrie-ne acum și în 7 zile afacerea ta va fi online. Fără bătăi de cap, fără complicații.
             </p>
 
-            <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
-              <motion.a
-                href="mailto:contact@exemplu.ro"
-                whileHover={{ scale: 1.03 }}
-                whileTap={{ scale: 0.98 }}
-                className="inline-flex items-center justify-center gap-3 px-8 py-4 rounded-xl gradient-gold text-warm-dark font-body font-bold text-lg shadow-lg shadow-warm-gold/20 hover:opacity-90 transition-opacity"
-              >
-                <Mail className="w-5 h-5" />
-                Contactează-ne
-                <ArrowRight className="w-5 h-5" />
-              </motion.a>
-
+            <div className="flex justify-center mb-12">
               <motion.a
                 href="tel:+40700000000"
                 whileHover={{ scale: 1.03 }}
                 whileTap={{ scale: 0.98 }}
-                className="inline-flex items-center justify-center gap-3 px-8 py-4 rounded-xl border-2 border-warm-gold/30 text-warm-dark font-body font-semibold text-lg hover:bg-warm-gold/10 transition-colors"
+                className="inline-flex items-center justify-center gap-3 px-8 py-4 rounded-xl gradient-gold text-warm-dark font-body font-bold text-lg shadow-lg shadow-warm-gold/20 hover:opacity-90 transition-opacity"
               >
                 <Phone className="w-5 h-5" />
                 Sună acum
@@ -40,7 +29,7 @@ const CTA = () => {
             </div>
 
             <p className="font-body text-warm-dark/40 text-sm">
-              Răspundem în maxim 24 de ore • Consultanță inițială gratuită
+              Răspundem imediat • Consultanță inițială gratuită
             </p>
           </div>
         </ScrollReveal>
