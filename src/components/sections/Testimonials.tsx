@@ -8,6 +8,7 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
+import VideoFeedSection from "./VideoFeed";
 
 const testimonials = [
   {
@@ -104,6 +105,8 @@ const Testimonials = () => {
             ))}
           </div>
         )}
+
+        <VideoFeedSection />
       </div>
     </section>
   );
