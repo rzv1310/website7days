@@ -122,8 +122,8 @@ const TeamShowcase = () => {
         colors={["#3d2e14", "#c4a67a", "#1a1410", "#d4b896", "#2a1f0e"]}
       />
       <div className="absolute inset-0 bg-black/40" />
-      <div className="sticky top-0 h-screen flex flex-col items-center justify-center overflow-hidden relative z-10">
-        <h2 className="text-3xl md:text-4xl font-bold text-white mb-8 mt-16 md:mt-24">Cine Suntem?</h2>
+      <div className="sticky top-0 h-screen flex flex-col items-center justify-start pt-16 md:pt-24 overflow-hidden relative z-10">
+        <h2 className="text-3xl md:text-4xl font-bold text-white mb-8">Cine Suntem?</h2>
         <div className="relative w-[300px] md:w-[400px]" style={{ clipPath: "inset(0)" }}>
           {slides.map((slide, i) => (
             <div
