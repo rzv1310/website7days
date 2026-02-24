@@ -11,8 +11,8 @@ import Footer from "@/components/sections/Footer";
 import SectionDivider from "@/components/SectionDivider";
 
 const Index = () => {
-  const scrollToContact = () => {
-    document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" });
+  const openWhatsApp = () => {
+    window.open("https://wa.me/40742702982", "_blank");
   };
 
   return (
@@ -25,7 +25,7 @@ const Index = () => {
         }}
         subtitle="Construim site-uri de prezentare elegante pentru businessuri locale. Rapid și optimizat pentru conversii."
         buttons={{
-          primary: { text: "Scrie-ne în WhatsApp", onClick: scrollToContact },
+          primary: { text: "Scrie-ne în WhatsApp", onClick: openWhatsApp },
         }}
       />
 

@@ -3,9 +3,6 @@ import ScrollReveal from "../ScrollReveal";
 import { motion } from "framer-motion";
 
 const ForYou = () => {
-  const scrollToContact = () => {
-    document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" });
-  };
 
   const forYouItems = [
     "Ai nevoie de un site de prezentare, funcțional, estetic și publicat rapid, fără să te pierzi în termeni tehnici sau luni de așteptare.",
@@ -45,14 +42,16 @@ const ForYou = () => {
                 Ești gata să fii online? Fă-ți rezervarea acum.
               </p>
 
-              <motion.button
-                onClick={scrollToContact}
+              <motion.a
+                href="https://wa.me/40742702982"
+                target="_blank"
+                rel="noopener noreferrer"
                 whileHover={{ scale: 1.03 }}
                 whileTap={{ scale: 0.98 }}
                 className="w-full inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl border border-warm-gold/30 text-warm-light-text font-body font-semibold text-lg hover:bg-warm-gold/10 transition-colors"
               >
                 Vreau site în 7 zile!
-              </motion.button>
+              </motion.a>
 
               <p className="font-body text-warm-light-text/50 text-sm text-center mt-4">
                 ✓ Fără costuri ascunse.
@@ -76,14 +75,16 @@ const ForYou = () => {
                 ))}
               </ul>
 
-              <motion.button
-                onClick={scrollToContact}
+              <motion.a
+                href="https://wa.me/40742702982"
+                target="_blank"
+                rel="noopener noreferrer"
                 whileHover={{ scale: 1.03 }}
                 whileTap={{ scale: 0.98 }}
                 className="w-full inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl border border-warm-gold/30 text-warm-light-text font-body font-semibold text-lg hover:bg-warm-gold/10 transition-colors mt-auto"
               >
                 Vreau să vorbim!
-              </motion.button>
+              </motion.a>
 
               <p className="font-body text-warm-light-text/50 text-sm text-center mt-4">
                 ✓ Și să-mi depășesc concurența
