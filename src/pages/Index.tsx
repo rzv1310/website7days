@@ -1,6 +1,7 @@
 import Hero from "@/components/ui/animated-shader-hero";
 import ForYou from "@/components/sections/ForYou";
 import Benefits from "@/components/sections/Benefits";
+import TeamShowcase from "@/components/sections/TeamShowcase";
 import Process from "@/components/sections/Process";
 import Testimonials from "@/components/sections/Testimonials";
 import Pricing from "@/components/sections/Pricing";
@@ -29,6 +30,8 @@ const Index = () => {
       />
 
       <ForYou />
+
+      <TeamShowcase />
 
       <div id="benefits">
         <Benefits />
