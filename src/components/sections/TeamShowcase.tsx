@@ -15,7 +15,7 @@ const slides: Slide[] = [
   {
     type: "text",
     content: (
-      <div className="flex flex-col items-center justify-center h-full px-6 text-center" style={{ backgroundColor: '#7f7a65' }}>
+      <div className="flex flex-col items-center justify-center h-full px-6 text-center" style={{ backgroundColor: 'hsl(40, 60%, 70%)' }}>
         <p className="text-xl md:text-2xl font-bold text-white mb-6">
           Suntem echipa care transformă „frumosul" în „profitabil".
         </p>
@@ -31,7 +31,7 @@ const slides: Slide[] = [
   {
     type: "text",
     content: (
-      <div className="flex flex-col items-center justify-center h-full px-5 text-center" style={{ backgroundColor: '#7f7a65' }}>
+      <div className="flex flex-col items-center justify-center h-full px-5 text-center" style={{ backgroundColor: 'hsl(40, 60%, 70%)' }}>
         <div className="space-y-4 mb-6">
           <p className="text-xs md:text-sm text-white/80">
             <span className="font-semibold text-white">Andreea (Design, 5 ani):</span> Se asigură că brandul tău are o identitate vizuală care captează atenția și ghidează utilizatorul spre conversie.
