@@ -48,11 +48,12 @@ const Benefits = () => {
       const viewportHeight = window.innerHeight;
       const scrollableDistance = wrapperHeight - viewportHeight;
       const deadZone = 600; // px of scroll before animation starts
+      const endDeadZone = 600; // px of scroll after last card is fully visible
 
       if (rect.top <= 0 && rect.bottom >= viewportHeight) {
         const scrolled = -rect.top;
         const adjustedScroll = Math.max(scrolled - deadZone, 0);
-        const adjustedDistance = scrollableDistance - deadZone;
+        const adjustedDistance = scrollableDistance - deadZone - endDeadZone;
         const progress = Math.min(Math.max(adjustedScroll / adjustedDistance, 0), 1);
         const maxTranslate = 6 * 396 - window.innerWidth + 96;
         setTranslateX(-progress * Math.max(maxTranslate, 0));
@@ -66,7 +67,7 @@ const Benefits = () => {
   }, []);
 
   return (
-    <div ref={wrapperRef} className="section-dark" style={{ height: "300vh" }}>
+    <div ref={wrapperRef} className="section-dark" style={{ height: "350vh" }}>
       <div className="sticky top-0 h-screen flex flex-col overflow-hidden">
         {/* Header */}
         <div className="pt-20 md:pt-28 pb-12 text-center px-6 flex-shrink-0">
