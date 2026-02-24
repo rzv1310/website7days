@@ -10,6 +10,7 @@ import GDPR from "./pages/GDPR";
 import Cookies from "./pages/Cookies";
 import CookieConsent from "./components/CookieConsent";
 import AccessibilityWidget from "./components/AccessibilityWidget";
+import WhatsAppButton from "./components/WhatsAppButton";
 
 const queryClient = new QueryClient();
 
@@ -29,6 +30,7 @@ const App = () => (
         </Routes>
         <CookieConsent />
         <AccessibilityWidget />
+        <WhatsAppButton />
       </BrowserRouter>
     </TooltipProvider>
   </QueryClientProvider>
