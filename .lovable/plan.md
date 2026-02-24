@@ -1,18 +1,27 @@
 
 
-## Plan: Ștergere indicator scroll din Hero
+## Raspuns si Plan
 
-Voi elimina indicatorul de scroll (iconița pill cu punctul care sare) din partea de jos a secțiunii Hero.
+**Da, trebuie actualizata politica de cookies.** Momentan textul spune explicit ca folositi "doar doua servicii terte" (Stripe si Google Analytics) si ca "nu folosim cookie-uri pentru publicitate, remarketing sau tracking in scopuri de marketing." Google Ads seteaza cookie-uri exact pentru remarketing si conversii, deci textul actual ar fi incorect/incomplet.
 
-### Modificare
-**Fișier**: `src/components/ui/animated-shader-hero.tsx` (liniile 233-237)
+---
 
-Șterg complet blocul:
-```tsx
-<div className="absolute bottom-8 left-1/2 -translate-x-1/2 opacity-0 animate-fade-in-up" style={{ animationDelay: '1.2s' }}>
-  <div className="w-6 h-10 rounded-full border-2 border-warm-gold/40 flex justify-center pt-2">
-    <div className="w-1.5 h-3 rounded-full gradient-gold animate-bounce" />
-  </div>
-</div>
-```
+### Ce se va modifica
+
+**1. `index.html`** - Adaugare Google Ads tag (gtag.js) in `<head>`, similar cu modul in care se adauga Google Analytics. Voi avea nevoie de **ID-ul tau Google Ads** (format: `AW-XXXXXXXXX`).
+
+**2. `src/pages/Cookies.tsx`** - Urmatoarele modificari:
+
+- **Sectiunea 2** (Cookie-uri de la terti): Se schimba "doar doua servicii terte" in "trei servicii terte" si se adauga un nou punct:
+  - **Google Ads** - pentru masurarea conversiilor din campaniile publicitare si remarketing. Aceste cookie-uri ne permit sa intelegem eficienta campaniilor noastre publicitare si sa va afisam reclame relevante pe alte site-uri din reteaua Google.
+
+- **Sectiunea 3** - Se reformuleaza complet: se elimina afirmatia ca nu folosim cookie-uri pentru publicitate/remarketing (deoarece Google Ads face exact asta). Textul nou va mentiona ca **nu vindem datele** si ca Google Ads este singurul serviciu de publicitate folosit.
+
+- **Sectiunea 4** - Se adauga un punct nou despre dezactivarea cookie-urilor Google Ads.
+
+---
+
+### Intrebare necesara
+
+Am nevoie de ID-ul tau Google Ads (format `AW-XXXXXXXXX`) pentru a adauga tag-ul. Il ai la indemana?
 
