@@ -91,8 +91,8 @@ const Testimonials = () => {
               ))}
             </CarouselContent>
             <div className="flex justify-center gap-4 mt-6">
-              <CarouselPrevious className="static translate-y-0 border-warm-gold/30 text-warm-light-text hover:bg-warm-gold/10 hover:border-warm-gold/50" />
-              <CarouselNext className="static translate-y-0 border-warm-gold/30 text-warm-light-text hover:bg-warm-gold/10 hover:border-warm-gold/50" />
+              <CarouselPrevious className="static translate-y-0 border-warm-gold/30 bg-warm-dark text-warm-gold hover:bg-warm-gold/10 hover:border-warm-gold/50" />
+              <CarouselNext className="static translate-y-0 border-warm-gold/30 bg-warm-dark text-warm-gold hover:bg-warm-gold/10 hover:border-warm-gold/50" />
             </div>
           </Carousel>
         ) : (
