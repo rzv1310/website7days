@@ -142,6 +142,7 @@ const TeamShowcase = () => {
               <p
                 ref={(el) => { textsRef.current[i] = el; }}
                 className="text-center text-foreground font-medium text-base md:text-lg mt-4"
+                style={{ opacity: i === 0 ? 1 : 0 }}
               >
                 {member.label}
               </p>
