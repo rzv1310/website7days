@@ -7,7 +7,11 @@ import oanaImg from "@/assets/Oana.webp";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const images = [andreeaImg, ioanImg, oanaImg];
+const teamMembers = [
+  { src: andreeaImg, name: "Andreea", role: "Design", experience: "5 ani experiență" },
+  { src: ioanImg, name: "Ioan", role: "Web Developer", experience: "15 ani experiență" },
+  { src: oanaImg, name: "Oana", role: "Marketing", experience: "7 ani experiență" },
+];
 
 const TeamShowcase = () => {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -57,19 +61,25 @@ const TeamShowcase = () => {
     <div ref={containerRef} className="section-dark relative" style={{ height: "350vh" }}>
       <div className="sticky top-0 h-screen flex items-center justify-center overflow-hidden">
         <div className="relative w-[300px] md:w-[400px]">
-          {images.map((src, i) => (
+          {teamMembers.map((member, i) => (
             <div
               key={i}
               ref={(el) => { cardsRef.current[i] = el; }}
-              className={`${i === 0 ? 'relative' : 'absolute inset-0'} rounded-2xl overflow-hidden shadow-2xl`}
+              className={`${i === 0 ? 'relative' : 'absolute inset-0'} overflow-hidden`}
               style={{ zIndex: i }}
             >
-              <img
-                src={src}
-                alt={`Team member ${i + 1}`}
-                className="w-full h-full object-contain"
-                loading="lazy"
-              />
+              <div className="rounded-2xl overflow-hidden shadow-2xl">
+                <img
+                  src={member.src}
+                  alt={member.name}
+                  className="w-full h-full object-contain"
+                  loading="lazy"
+                />
+              </div>
+              <div className="text-center mt-3">
+                <p className="text-foreground font-semibold text-lg">{member.name}</p>
+                <p className="text-muted-foreground text-sm">{member.role} · {member.experience}</p>
+              </div>
             </div>
           ))}
         </div>
