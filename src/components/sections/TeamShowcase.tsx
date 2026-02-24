@@ -128,7 +128,7 @@ const TeamShowcase = () => {
             <div
               key={i}
               ref={(el) => { cardsRef.current[i] = el; }}
-              className={`${i === 0 ? 'relative' : 'absolute inset-0'} overflow-hidden`}
+              className={`${i === 0 ? 'relative' : 'absolute inset-0'}`}
               style={{ zIndex: i }}
             >
               <div className="rounded-2xl overflow-hidden shadow-2xl">
@@ -139,21 +139,14 @@ const TeamShowcase = () => {
                   loading="lazy"
                 />
               </div>
-            </div>
-          ))}
-          {/* Text labels - positioned below images, each on its own layer */}
-          <div className="relative mt-4 h-8">
-            {teamMembers.map((member, i) => (
               <p
-                key={i}
                 ref={(el) => { textsRef.current[i] = el; }}
-                className="absolute inset-0 text-center text-foreground font-medium text-base md:text-lg"
-                style={{ zIndex: i, opacity: i === 0 ? 1 : 0 }}
+                className="text-center text-foreground font-medium text-base md:text-lg mt-4"
               >
                 {member.label}
               </p>
-            ))}
-          </div>
+            </div>
+          ))}
         </div>
       </div>
     </div>
