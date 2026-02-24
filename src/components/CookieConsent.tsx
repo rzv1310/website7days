@@ -129,10 +129,10 @@ const CookieConsent = () => {
             {/* Action Buttons */}
             <div className="flex flex-col sm:flex-row gap-2.5">
               <button
-                onClick={acceptAll}
-                className="flex-1 px-5 py-2.5 rounded-lg gradient-gold text-[hsl(var(--warm-dark))] font-semibold text-sm font-body hover:opacity-90 transition-opacity"
+                onClick={rejectAll}
+                className="flex-1 px-5 py-2.5 rounded-lg border border-[hsl(var(--warm-light-text))]/15 text-[hsl(var(--warm-light-text))]/70 text-sm font-body hover:bg-[hsl(var(--warm-light-text))]/5 transition-colors"
               >
-                Acceptă toate
+                Refuză opționalele
               </button>
               {showDetails && (
                 <button
@@ -143,10 +143,10 @@ const CookieConsent = () => {
                 </button>
               )}
               <button
-                onClick={rejectAll}
-                className="flex-1 px-5 py-2.5 rounded-lg border border-[hsl(var(--warm-light-text))]/15 text-[hsl(var(--warm-light-text))]/70 text-sm font-body hover:bg-[hsl(var(--warm-light-text))]/5 transition-colors"
+                onClick={acceptAll}
+                className="flex-1 px-5 py-2.5 rounded-lg gradient-gold text-[hsl(var(--warm-dark))] font-semibold text-sm font-body hover:opacity-90 transition-opacity"
               >
-                Refuză opționalele
+                Acceptă toate
               </button>
             </div>
           </div>
