@@ -10,11 +10,11 @@ const Footer = () => {
           </p>
           <div className="flex flex-col items-center md:items-end gap-2">
             <div className="flex items-center gap-4 font-body text-sm text-warm-light-text/60">
-              <Link to="/termeni-si-conditii" className="hover:text-warm-gold transition-colors">Termeni și condiții</Link>
+              <Link to="/termeni-si-conditii" title="Termeni și condiții" className="hover:text-warm-gold transition-colors">Termeni și condiții</Link>
               <span>•</span>
-              <Link to="/gdpr" className="hover:text-warm-gold transition-colors">GDPR</Link>
+              <Link to="/gdpr" title="Politica GDPR" className="hover:text-warm-gold transition-colors">GDPR</Link>
               <span>•</span>
-              <Link to="/cookies" className="hover:text-warm-gold transition-colors">Cookies</Link>
+              <Link to="/cookies" title="Politica de Cookies" className="hover:text-warm-gold transition-colors">Cookies</Link>
             </div>
             <p className="font-body text-sm text-warm-light-text/50">
               © {new Date().getFullYear()} Toate drepturile rezervate.

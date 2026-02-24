@@ -5,7 +5,7 @@ const Cookies = () => {
   return (
     <div className="min-h-screen bg-[hsl(var(--warm-dark))] text-[hsl(var(--warm-light-text))]">
       <div className="container max-w-3xl py-16 px-4">
-        <Link to="/" className="inline-flex items-center gap-2 text-[hsl(var(--warm-gold))] hover:opacity-80 transition-opacity mb-8 font-body">
+        <Link to="/" title="Înapoi la pagina principală" className="inline-flex items-center gap-2 text-[hsl(var(--warm-gold))] hover:opacity-80 transition-opacity mb-8 font-body">
           <ArrowLeft className="w-4 h-4" />
           Înapoi la pagina principală
         </Link>
@@ -54,7 +54,7 @@ const Cookies = () => {
             <h2 className="text-xl font-semibold text-[hsl(var(--warm-beige))] mb-3">5. Mai multe informații</h2>
             <p>Pentru mai multe informații despre cookie-uri și cum să le gestionați, puteți vizita:</p>
             <ul className="mt-2 space-y-1 list-disc list-inside">
-              <li><a href="https://www.allaboutcookies.org" target="_blank" rel="noopener noreferrer" className="text-[hsl(var(--warm-gold))] hover:underline">www.allaboutcookies.org</a></li>
+              <li><a href="https://www.allaboutcookies.org" target="_blank" rel="noopener noreferrer" title="Informații despre cookies" className="text-[hsl(var(--warm-gold))] hover:underline">www.allaboutcookies.org</a></li>
               <li>Politica de confidențialitate Stripe</li>
               <li>Politica de confidențialitate Google</li>
             </ul>
@@ -63,7 +63,7 @@ const Cookies = () => {
           <section>
             <h2 className="text-xl font-semibold text-[hsl(var(--warm-beige))] mb-3">6. Contactați-ne</h2>
             <p>Dacă aveți întrebări despre utilizarea cookie-urilor pe site-ul nostru, vă rugăm să ne contactați:</p>
-            <p className="mt-2">Telefon: <a href="tel:+40742702982" className="text-[hsl(var(--warm-gold))] hover:underline">+40 742 702 982</a></p>
+            <p className="mt-2">Telefon: <a href="tel:+40742702982" title="Sună la SEO Doctor" className="text-[hsl(var(--warm-gold))] hover:underline">+40 742 702 982</a></p>
           </section>
         </div>
       </div>

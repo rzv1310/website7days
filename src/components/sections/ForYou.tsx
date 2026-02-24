@@ -46,6 +46,7 @@ const ForYou = () => {
                 href="https://wa.me/40742702982"
                 target="_blank"
                 rel="noopener noreferrer"
+                title="Contactează-ne pe WhatsApp"
                 whileHover={{ scale: 1.03 }}
                 whileTap={{ scale: 0.98 }}
                 className="w-full inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl border border-warm-gold/30 text-warm-light-text font-body font-semibold text-lg hover:bg-warm-gold/10 transition-colors"
@@ -79,6 +80,7 @@ const ForYou = () => {
                 href="https://wa.me/40742702982"
                 target="_blank"
                 rel="noopener noreferrer"
+                title="Contactează-ne pe WhatsApp"
                 whileHover={{ scale: 1.03 }}
                 whileTap={{ scale: 0.98 }}
                 className="w-full inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl border border-warm-gold/30 text-warm-light-text font-body font-semibold text-lg hover:bg-warm-gold/10 transition-colors mt-auto"

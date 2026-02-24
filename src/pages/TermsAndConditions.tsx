@@ -5,7 +5,7 @@ const TermsAndConditions = () => {
   return (
     <div className="min-h-screen bg-[hsl(var(--warm-dark))] text-[hsl(var(--warm-light-text))]">
       <div className="container max-w-3xl py-16 px-4">
-        <Link to="/" className="inline-flex items-center gap-2 text-[hsl(var(--warm-gold))] hover:opacity-80 transition-opacity mb-8 font-body">
+        <Link to="/" title="Înapoi la pagina principală" className="inline-flex items-center gap-2 text-[hsl(var(--warm-gold))] hover:opacity-80 transition-opacity mb-8 font-body">
           <ArrowLeft className="w-4 h-4" />
           Înapoi la pagina principală
         </Link>
@@ -76,7 +76,7 @@ const TermsAndConditions = () => {
           <section>
             <h2 className="text-xl font-semibold text-[hsl(var(--warm-beige))] mb-3">11. Contactați-ne</h2>
             <p>Dacă aveți întrebări despre acești Termeni, vă rugăm să ne contactați:</p>
-            <p className="mt-2">Telefon: <a href="tel:+40742702982" className="text-[hsl(var(--warm-gold))] hover:underline">+40 742 702 982</a></p>
+            <p className="mt-2">Telefon: <a href="tel:+40742702982" title="Sună la SEO Doctor" className="text-[hsl(var(--warm-gold))] hover:underline">+40 742 702 982</a></p>
           </section>
 
           <section>
@@ -107,8 +107,8 @@ const TermsAndConditions = () => {
             <h2 className="text-xl font-semibold text-[hsl(var(--warm-beige))] mb-3">16. Legătura cu alte politici</h2>
             <p>Acești Termeni și Condiții trebuie citiți împreună cu următoarele politici ale SEO Doctor, care fac parte integrantă din prezentul acord:</p>
             <ul className="mt-2 list-disc list-inside space-y-1">
-              <li><Link to="/cookies" className="text-[hsl(var(--warm-gold))] hover:underline">Politica de Cookies</Link> – descrie modul în care utilizăm cookie-urile și tehnologiile similare pe site-ul nostru.</li>
-              <li><Link to="/gdpr" className="text-[hsl(var(--warm-gold))] hover:underline">Politica de Confidențialitate (GDPR)</Link> – detaliază modul în care colectăm, utilizăm și protejăm datele dumneavoastră personale, în conformitate cu Regulamentul General privind Protecția Datelor.</li>
+              <li><Link to="/cookies" title="Politica de Cookies" className="text-[hsl(var(--warm-gold))] hover:underline">Politica de Cookies</Link> – descrie modul în care utilizăm cookie-urile și tehnologiile similare pe site-ul nostru.</li>
+              <li><Link to="/gdpr" title="Politica GDPR" className="text-[hsl(var(--warm-gold))] hover:underline">Politica de Confidențialitate (GDPR)</Link> – detaliază modul în care colectăm, utilizăm și protejăm datele dumneavoastră personale, în conformitate cu Regulamentul General privind Protecția Datelor.</li>
             </ul>
             <p className="mt-2">Prin acceptarea acestor Termeni și Condiții, confirmați că ați citit și înțeles toate politicile menționate mai sus.</p>
           </section>

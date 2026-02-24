@@ -306,6 +306,7 @@ const PricingCard: React.FC<{ plan: PlanData; variant: "gold" | "platinum" | "da
             href="https://wa.me/40742702982"
             target="_blank"
             rel="noopener noreferrer"
+            title="Comandă pachet pe WhatsApp"
             className="relative w-full py-4 rounded-xl font-body font-bold text-base flex items-center justify-center gap-2 group transition-all duration-300 hover:scale-[1.02] overflow-hidden"
             style={{
               background: "transparent",
