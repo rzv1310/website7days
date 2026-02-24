@@ -7,18 +7,6 @@ const faqs = [
     a: "Da! Procesul nostru este optimizat pentru eficiență.\n\nVei avea 3 oameni dedicați care vor lucra până la 140 de ore în săptămâna dedicată ție.\n\nCodare + design + texte + SEO - vei avea totul gata într-un timp record!",
   },
   {
-    q: "Ce se întâmplă dacă am nevoie de modificări?",
-    a: "Ai incluse 2 runde de revizuiri gratuite în preț. Prima lună de suport este de asemenea gratuită, iar după aceea putem oferi pachete de mentenanță accesibile.",
-  },
-  {
-    q: "Am nevoie de hosting sau domeniu?",
-    a: "Te ajutăm să alegi și să configurezi hostingul și domeniul. Costul lor este separat (de obicei ~50-100€/an), dar ne ocupăm noi de tot setup-ul tehnic.",
-  },
-  {
-    q: "Pot actualiza conținutul singur după livrare?",
-    a: "Absolut! Vei primi acces complet și instrucțiuni clare pentru a modifica texte, imagini și alte elemente de conținut.",
-  },
-  {
     q: "Ce informații aveți nevoie de la mine?",
     a: "Nume Business (+ poze), Adresa completă, Telefon, Echipa (specializări + poze), Lista servicii (+ detalii), Lista Prețuri, Detalii business (istoric, etc.)\n\nDacă nu ai aproape nimic pregătit, te ghidăm noi pas cu pas.",
   },
