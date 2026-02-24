@@ -133,7 +133,7 @@ const TeamShowcase = () => {
               style={{ zIndex: i }}
             >
               {slide.type === "text" ? (
-                <div className="w-full aspect-[3/5] md:aspect-[3/4] flex items-center justify-center" style={{ borderTop: '12px solid white', borderBottom: '12px solid white' }}>
+                <div className="w-full aspect-[3/5] md:aspect-[3/4] flex items-center justify-center" style={{ borderTop: '14px solid white', borderBottom: '14px solid white' }}>
                   {slide.content}
                 </div>
               ) : (
