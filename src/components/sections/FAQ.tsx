@@ -4,7 +4,7 @@ import ScrollReveal from "../ScrollReveal";
 const faqs = [
   {
     q: "Chiar se poate face un site bun în 7 zile?",
-    a: "Da! Procesul nostru este optimizat pentru eficiență. Folosim instrumente moderne și avem un workflow testat care livrează rezultate profesionale în timp record.",
+    a: "Da! Procesul nostru este optimizat pentru eficiență.\n\nVei avea 3 oameni dedicați care vor lucra până la 140 de ore în săptămâna dedicată ție.\n\nCodare + design + texte + SEO - vei avea totul gata într-un timp record!",
   },
   {
     q: "Ce se întâmplă dacă am nevoie de modificări?",
@@ -49,7 +49,7 @@ const FAQ = () => {
                   <AccordionTrigger className="font-display text-lg text-warm-light hover:text-gold-bright hover:no-underline py-5 text-left">
                     {faq.q}
                   </AccordionTrigger>
-                  <AccordionContent className="font-body text-warm-light-text/70 leading-relaxed pb-5">
+                  <AccordionContent className="font-body text-warm-light-text/70 leading-relaxed pb-5 whitespace-pre-line">
                     {faq.a}
                   </AccordionContent>
                 </AccordionItem>
