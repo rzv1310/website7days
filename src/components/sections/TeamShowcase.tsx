@@ -123,7 +123,7 @@ const TeamShowcase = () => {
       />
       <div className="absolute inset-0 bg-black/40" />
       <div className="sticky top-0 h-screen flex flex-col items-center justify-center overflow-hidden relative z-10">
-        <h2 className="text-3xl md:text-4xl font-bold text-white mb-8">Cine Suntem?</h2>
+        <h2 className="text-3xl md:text-4xl font-bold text-white mb-8 mt-16 md:mt-24">Cine Suntem?</h2>
         <div className="relative w-[300px] md:w-[400px]" style={{ clipPath: "inset(0)" }}>
           {slides.map((slide, i) => (
             <div
