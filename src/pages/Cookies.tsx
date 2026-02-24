@@ -26,16 +26,17 @@ const Cookies = () => {
             <p>Aceste cookie-uri sunt necesare pentru funcționarea site-ului nostru. Includ, de exemplu, cookie-uri care vă permit să vă conectați în zonele securizate ale site-ului nostru sau să utilizați coșul de cumpărături.</p>
 
             <h3 className="text-lg font-semibold text-[hsl(var(--warm-beige))] mt-4 mb-2">Cookie-uri de la terți</h3>
-            <p>Utilizăm doar două servicii terțe care pot seta cookie-uri:</p>
+            <p>Utilizăm trei servicii terțe care pot seta cookie-uri:</p>
             <ul className="mt-2 space-y-2 list-disc list-inside">
               <li><strong>Stripe</strong> - pentru procesarea securizată a plăților. Stripe utilizează cookie-uri pentru a preveni fraudele și pentru a asigura securitatea tranzacțiilor dumneavoastră. Aceste cookie-uri sunt esențiale pentru procesarea plăților și nu pot fi dezactivate dacă doriți să efectuați o plată pe site-ul nostru.</li>
               <li><strong>Google Analytics</strong> - pentru a înțelege cum utilizatorii interacționează cu site-ul nostru. Aceste cookie-uri colectează informații în mod anonim, inclusiv numărul de vizitatori ai site-ului, de unde au venit vizitatorii și paginile pe care le-au vizitat.</li>
+              <li><strong>Google Ads</strong> - pentru măsurarea conversiilor din campaniile publicitare și remarketing. Aceste cookie-uri ne permit să înțelegem eficiența campaniilor noastre publicitare și să vă afișăm reclame relevante pe alte site-uri din rețeaua Google.</li>
             </ul>
           </section>
 
           <section>
-            <h2 className="text-xl font-semibold text-[hsl(var(--warm-beige))] mb-3">3. Nu utilizăm alte cookie-uri de la terți</h2>
-            <p><strong>Important:</strong> În afara cookie-urilor Stripe și Google Analytics menționate mai sus, nu utilizăm niciun alt cookie de la terți. Nu folosim cookie-uri pentru publicitate, remarketing sau tracking în scopuri de marketing. Nu vindem și nu partajăm datele dumneavoastră cu alte companii.</p>
+            <h2 className="text-xl font-semibold text-[hsl(var(--warm-beige))] mb-3">3. Utilizarea cookie-urilor de publicitate</h2>
+            <p>Utilizăm Google Ads ca unic serviciu de publicitate pentru a măsura eficiența campaniilor noastre și pentru remarketing. <strong>Nu vindem și nu partajăm datele dumneavoastră cu alte companii.</strong> În afara serviciilor menționate mai sus (Stripe, Google Analytics și Google Ads), nu utilizăm niciun alt cookie de la terți.</p>
           </section>
 
           <section>
@@ -45,6 +46,7 @@ const Cookies = () => {
               <li>Dacă dezactivați cookie-urile esențiale, este posibil să nu puteți utiliza anumite funcții ale site-ului nostru.</li>
               <li>Dacă dezactivați cookie-urile Stripe, nu veți putea efectua plăți pe site-ul nostru.</li>
               <li>Dacă dezactivați cookie-urile Google Analytics, nu vom putea înțelege cum să îmbunătățim experiența dumneavoastră pe site.</li>
+              <li>Dacă dezactivați cookie-urile Google Ads, este posibil să vedeți în continuare reclame, dar acestea nu vor fi personalizate în funcție de interesele dumneavoastră.</li>
             </ul>
           </section>
 
