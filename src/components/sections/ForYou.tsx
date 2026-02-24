@@ -54,7 +54,7 @@ const ForYou = () => {
               </motion.button>
 
               <p className="font-body text-warm-light-text/50 text-sm text-center mt-4">
-                ✓ Fără costuri ascunse. ✓ Include optimizare mobil.
+                ✓ Fără costuri ascunse.
               </p>
             </div>
           </ScrollReveal>
