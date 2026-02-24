@@ -1,9 +1,9 @@
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import andreeaImg from "@/assets/Andreea.png";
-import ioanImg from "@/assets/ioan.png";
-import oanaImg from "@/assets/Oana.png";
+import andreeaImg from "@/assets/Andreea.webp";
+import ioanImg from "@/assets/ioan.webp";
+import oanaImg from "@/assets/Oana.webp";
 
 gsap.registerPlugin(ScrollTrigger);
 
