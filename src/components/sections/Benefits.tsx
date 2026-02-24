@@ -37,6 +37,14 @@ const benefits = [
 const Benefits = () => {
   const wrapperRef = useRef<HTMLDivElement>(null);
   const [translateX, setTranslateX] = useState(0);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => setIsMobile(window.innerWidth < 768);
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+    return () => window.removeEventListener("resize", checkMobile);
+  }, []);
 
   useEffect(() => {
     const wrapper = wrapperRef.current;
@@ -47,15 +55,17 @@ const Benefits = () => {
       const wrapperHeight = wrapper.offsetHeight;
       const viewportHeight = window.innerHeight;
       const scrollableDistance = wrapperHeight - viewportHeight;
-      const deadZone = 600; // px of scroll before animation starts
-      const endDeadZone = 600; // px of scroll after last card is fully visible
+      const isMobile = window.innerWidth < 768;
+      const deadZone = isMobile ? 300 : 600;
+      const endDeadZone = isMobile ? 200 : 600;
 
       if (rect.top <= 0 && rect.bottom >= viewportHeight) {
         const scrolled = -rect.top;
         const adjustedScroll = Math.max(scrolled - deadZone, 0);
         const adjustedDistance = scrollableDistance - deadZone - endDeadZone;
         const progress = Math.min(Math.max(adjustedScroll / adjustedDistance, 0), 1);
-        const maxTranslate = 6 * 396 - window.innerWidth + 148;
+        const cardWidth = isMobile ? 300 + 16 : 380 + 32; // card + gap
+        const maxTranslate = 6 * cardWidth - window.innerWidth + (isMobile ? 48 : 148);
         setTranslateX(-progress * Math.max(maxTranslate, 0));
       }
     };
@@ -67,7 +77,7 @@ const Benefits = () => {
   }, []);
 
   return (
-    <div ref={wrapperRef} className="section-dark" style={{ height: "350vh" }}>
+    <div ref={wrapperRef} className="section-dark" style={{ height: isMobile ? "250vh" : "350vh" }}>
       <div className="sticky top-0 h-screen flex flex-col overflow-hidden">
         {/* Header */}
         <div className="pt-20 md:pt-28 pb-12 text-center px-6 flex-shrink-0">
