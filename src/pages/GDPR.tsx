@@ -5,7 +5,7 @@ const GDPR = () => {
   return (
     <div className="min-h-screen bg-[hsl(var(--warm-dark))] text-[hsl(var(--warm-light-text))]">
       <div className="container max-w-3xl py-16 px-4">
-        <Link to="/" className="inline-flex items-center gap-2 text-[hsl(var(--warm-gold))] hover:opacity-80 transition-opacity mb-8 font-body">
+        <Link to="/" title="Înapoi la pagina principală" className="inline-flex items-center gap-2 text-[hsl(var(--warm-gold))] hover:opacity-80 transition-opacity mb-8 font-body">
           <ArrowLeft className="w-4 h-4" />
           Înapoi la pagina principală
         </Link>
@@ -142,15 +142,15 @@ const GDPR = () => {
             <h2 className="text-xl font-semibold text-[hsl(var(--warm-beige))] mb-3">14. Legătura cu alte politici</h2>
             <p>Prezenta Politică de Confidențialitate (GDPR) trebuie citită împreună cu următoarele documente, care fac parte integrantă din acordul dintre dumneavoastră și SEO Doctor SRL:</p>
             <ul className="mt-2 list-disc list-inside space-y-1">
-              <li><Link to="/cookies" className="text-[hsl(var(--warm-gold))] hover:underline">Politica de Cookies</Link></li>
-              <li><Link to="/termeni-si-conditii" className="text-[hsl(var(--warm-gold))] hover:underline">Termenii și Condițiile</Link></li>
+              <li><Link to="/cookies" title="Politica de Cookies" className="text-[hsl(var(--warm-gold))] hover:underline">Politica de Cookies</Link></li>
+              <li><Link to="/termeni-si-conditii" title="Termeni și condiții" className="text-[hsl(var(--warm-gold))] hover:underline">Termenii și Condițiile</Link></li>
             </ul>
           </section>
 
           <section>
             <h2 className="text-xl font-semibold text-[hsl(var(--warm-beige))] mb-3">15. Contactați-ne</h2>
             <p>Dacă aveți întrebări sau preocupări despre modul în care prelucrăm datele dumneavoastră personale sau doriți să vă exercitați drepturile GDPR, vă rugăm să ne contactați:</p>
-            <p className="mt-2">Telefon: <a href="tel:+40742702982" className="text-[hsl(var(--warm-gold))] hover:underline">+40 742 702 982</a></p>
+            <p className="mt-2">Telefon: <a href="tel:+40742702982" title="Sună la SEO Doctor" className="text-[hsl(var(--warm-gold))] hover:underline">+40 742 702 982</a></p>
           </section>
         </div>
       </div>

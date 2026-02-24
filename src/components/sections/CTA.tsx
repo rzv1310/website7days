@@ -19,6 +19,7 @@ const CTA = () => {
             <div className="flex justify-center mb-12">
               <motion.a
                 href="tel:+40742702982"
+                title="Sună la SEO Doctor"
                 whileHover={{ scale: 1.03 }}
                 whileTap={{ scale: 0.98 }}
                 className="inline-flex items-center justify-center gap-3 px-8 py-4 rounded-xl gradient-gold text-warm-dark font-body font-bold text-lg shadow-lg shadow-warm-gold/20 hover:opacity-90 transition-opacity"

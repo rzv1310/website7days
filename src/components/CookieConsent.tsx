@@ -38,11 +38,11 @@ const CookieConsent = () => {
                 <p className="text-sm text-[hsl(var(--warm-light-text))]/70 mt-1 font-body leading-relaxed">
                   Utilizăm cookie-uri esențiale pentru funcționarea site-ului și, cu acordul dumneavoastră, cookie-uri de analiză și marketing. 
                   Puteți accepta toate, le puteți refuza sau personaliza preferințele.{" "}
-                  <Link to="/cookies" className="text-[hsl(var(--warm-gold))] hover:underline">
+                  <Link to="/cookies" title="Politica de Cookies" className="text-[hsl(var(--warm-gold))] hover:underline">
                     Politica de Cookies
                   </Link>{" "}
                   |{" "}
-                  <Link to="/gdpr" className="text-[hsl(var(--warm-gold))] hover:underline">
+                  <Link to="/gdpr" title="Politica GDPR" className="text-[hsl(var(--warm-gold))] hover:underline">
                     GDPR
                   </Link>
                 </p>

@@ -215,6 +215,7 @@ const Hero: React.FC<HeroProps> = ({ trustBadge, headline, subtitle, buttons, cl
                   href={buttons.primary.href || "#"}
                   target="_blank"
                   rel="noopener noreferrer"
+                  title="Scrie-ne pe WhatsApp"
                   onClick={buttons.primary.onClick}
                   className="relative inline-flex items-center gap-3 px-8 py-4 rounded-lg font-body font-semibold text-base sm:text-lg tracking-wide transition-all duration-300 hover:scale-105 overflow-hidden"
                   style={{
