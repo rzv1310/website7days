@@ -1,4 +1,4 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { MeshGradient } from "@paper-design/shaders-react";
@@ -61,6 +61,19 @@ const slides: Slide[] = [
 const TeamShowcase = () => {
   const containerRef = useRef<HTMLDivElement>(null);
   const cardsRef = useRef<(HTMLDivElement | null)[]>([]);
+  const [shaderActive, setShaderActive] = useState(false);
+
+  useEffect(() => {
+    const container = containerRef.current;
+    if (!container) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => setShaderActive(entry.isIntersecting),
+      { threshold: 0.05 }
+    );
+    observer.observe(container);
+    return () => observer.disconnect();
+  }, []);
 
   useEffect(() => {
     const container = containerRef.current;
@@ -105,7 +118,7 @@ const TeamShowcase = () => {
           width: "100%",
           height: "100%",
         }}
-        speed={0.12}
+        speed={shaderActive ? 0.12 : 0}
         colors={["#3d2e14", "#c4a67a", "#1a1410", "#d4b896", "#2a1f0e"]}
       />
       <div className="absolute inset-0 bg-black/40" />
