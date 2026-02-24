@@ -10,7 +10,7 @@ const CTA = () => {
           <div className="max-w-3xl mx-auto text-center">
             <span className="text-gold font-body text-sm uppercase tracking-[0.2em] font-medium">Hai să începem</span>
             <h2 className="font-display text-3xl md:text-5xl font-bold text-warm-dark mt-4 mb-6">
-              Ești gata să ai un <span className="text-gold">website profesional</span>?
+              Ești gata să apari în <span className="text-gold">Google</span>?
             </h2>
             <p className="font-body text-warm-dark/60 text-lg mb-10 max-w-xl mx-auto">
               Scrie-ne acum și în 7 zile afacerea ta va fi online. Fără bătăi de cap, fără complicații.
