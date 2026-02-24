@@ -55,7 +55,7 @@ const Benefits = () => {
         const adjustedScroll = Math.max(scrolled - deadZone, 0);
         const adjustedDistance = scrollableDistance - deadZone - endDeadZone;
         const progress = Math.min(Math.max(adjustedScroll / adjustedDistance, 0), 1);
-        const maxTranslate = 6 * 396 - window.innerWidth + 96;
+        const maxTranslate = 6 * 396 - window.innerWidth + 148;
         setTranslateX(-progress * Math.max(maxTranslate, 0));
       }
     };
