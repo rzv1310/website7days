@@ -108,9 +108,6 @@ const PricingCard: React.FC<{ plan: PlanData; variant: "gold" | "platinum" | "da
   plan,
   variant,
 }) => {
-  const scrollToContact = () => {
-    document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" });
-  };
 
   const styles = {
     gold: {
@@ -303,8 +300,10 @@ const PricingCard: React.FC<{ plan: PlanData; variant: "gold" | "platinum" | "da
           )}
 
           {/* CTA */}
-          <button
-            onClick={scrollToContact}
+          <a
+            href="https://wa.me/40742702982"
+            target="_blank"
+            rel="noopener noreferrer"
             className="relative w-full py-4 rounded-xl font-body font-bold text-base flex items-center justify-center gap-2 group transition-all duration-300 hover:scale-[1.02] overflow-hidden"
             style={{
               background: "transparent",
@@ -315,7 +314,7 @@ const PricingCard: React.FC<{ plan: PlanData; variant: "gold" | "platinum" | "da
             <span className="cta-glow-dot" />
             Vreau să vorbim
             <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-          </button>
+          </a>
         </div>
       </div>
     </div>
