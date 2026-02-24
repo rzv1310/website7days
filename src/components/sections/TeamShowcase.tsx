@@ -65,17 +65,16 @@ const TeamShowcase = () => {
     const container = containerRef.current;
     if (!container) return;
 
-    // 5 slides: each transition takes ~15% of scroll, plus dead zone at end
-    // Slide 0: visible from start
-    // Slide 1: 10%-22%
-    // Slide 2: 22%-34%
-    // Slide 3: 34%-46%
-    // Slide 4: 46%-58%
-    // Dead zone: 58%-100%
+    // Each slide: ~8% transition + ~8% dead zone = ~16% per slide
+    // Slide 0: visible 0-16%
+    // Slide 1: transition 16%-24%, dead 24%-32%
+    // Slide 2: transition 32%-40%, dead 40%-48%
+    // Slide 3: transition 48%-56%, dead 56%-64%
+    // Slide 4: transition 64%-72%, dead 72%-100%
     const ctx = gsap.context(() => {
       for (let i = 1; i < slides.length; i++) {
-        const startPct = 10 + (i - 1) * 12;
-        const endPct = startPct + 12;
+        const startPct = i * 16;
+        const endPct = startPct + 8;
         gsap.fromTo(
           cardsRef.current[i],
           { xPercent: 120 },
