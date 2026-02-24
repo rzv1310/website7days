@@ -78,6 +78,40 @@ const TermsAndConditions = () => {
             <p>Dacă aveți întrebări despre acești Termeni, vă rugăm să ne contactați:</p>
             <p className="mt-2">Telefon: <a href="tel:+40742702982" className="text-[hsl(var(--warm-gold))] hover:underline">+40 742 702 982</a></p>
           </section>
+
+          <section>
+            <h2 className="text-xl font-semibold text-[hsl(var(--warm-beige))] mb-3">12. Descrierea serviciilor și obligațiile clientului</h2>
+            <p>SEO Doctor SRL oferă servicii de optimizare pentru motoare de căutare (SEO), marketing digital, audit tehnic al site-urilor web și consultanță strategică online. Serviciile sunt prestate conform specificațiilor agreate la momentul achiziției și pot include, fără a se limita la: cercetare de cuvinte cheie, optimizare on-page și off-page, creare de conținut optimizat, link building și raportare periodică.</p>
+            <p className="mt-2">Clientul se obligă să furnizeze accesul necesar la site-ul web, conturile de analytics, Search Console și orice alte platforme relevante pentru prestarea serviciilor. Întârzierile în furnizarea accesului sau a materialelor solicitate pot afecta termenele de livrare, fără ca SEO Doctor SRL să fie responsabil pentru aceste întârzieri.</p>
+          </section>
+
+          <section>
+            <h2 className="text-xl font-semibold text-[hsl(var(--warm-beige))] mb-3">13. Condiții de plată</h2>
+            <p>Plățile pentru serviciile SEO Doctor se efectuează conform facturii emise, prin transfer bancar sau prin intermediul platformei de plăți online Stripe. Moneda de plată este RON sau EUR, conform ofertei acceptate.</p>
+            <p className="mt-2">Facturile sunt scadente în termen de 5 zile lucrătoare de la emitere, cu excepția cazului în care se convine altfel în scris. Neplata la termen poate duce la suspendarea temporară a serviciilor până la regularizarea situației financiare, fără ca aceasta să constituie o reziliere a contractului.</p>
+          </section>
+
+          <section>
+            <h2 className="text-xl font-semibold text-[hsl(var(--warm-beige))] mb-3">14. Forță majoră</h2>
+            <p>Niciuna dintre părți nu va fi răspunzătoare pentru neexecutarea sau executarea cu întârziere a obligațiilor sale dacă aceasta este cauzată de un eveniment de forță majoră. Prin forță majoră se înțelege orice eveniment imprevizibil și insurmontabil, inclusiv, dar fără a se limita la: dezastre naturale, pandemii, modificări legislative majore, întreruperi ale serviciilor de internet sau hosting, atacuri cibernetice sau orice alt eveniment în afara controlului rezonabil al părților.</p>
+            <p className="mt-2">Partea afectată de forța majoră va notifica cealaltă parte în termen de 5 zile lucrătoare de la apariția evenimentului și va depune toate eforturile rezonabile pentru a minimiza impactul asupra serviciilor contractate.</p>
+          </section>
+
+          <section>
+            <h2 className="text-xl font-semibold text-[hsl(var(--warm-beige))] mb-3">15. Confidențialitate</h2>
+            <p>Ambele părți se obligă să păstreze confidențialitatea tuturor informațiilor sensibile obținute în cadrul colaborării, inclusiv, dar fără a se limita la: date de acces, strategii de marketing, date financiare, informații despre clienți și orice alte informații desemnate ca fiind confidențiale.</p>
+            <p className="mt-2">Obligația de confidențialitate se menține pe toată durata colaborării și pentru o perioadă de 2 ani după încetarea acesteia, indiferent de motivul încetării. Încălcarea acestei obligații poate atrage răspunderea civilă conform legislației române în vigoare.</p>
+          </section>
+
+          <section>
+            <h2 className="text-xl font-semibold text-[hsl(var(--warm-beige))] mb-3">16. Legătura cu alte politici</h2>
+            <p>Acești Termeni și Condiții trebuie citiți împreună cu următoarele politici ale SEO Doctor, care fac parte integrantă din prezentul acord:</p>
+            <ul className="mt-2 list-disc list-inside space-y-1">
+              <li><Link to="/cookies" className="text-[hsl(var(--warm-gold))] hover:underline">Politica de Cookies</Link> – descrie modul în care utilizăm cookie-urile și tehnologiile similare pe site-ul nostru.</li>
+              <li><Link to="/gdpr" className="text-[hsl(var(--warm-gold))] hover:underline">Politica de Confidențialitate (GDPR)</Link> – detaliază modul în care colectăm, utilizăm și protejăm datele dumneavoastră personale, în conformitate cu Regulamentul General privind Protecția Datelor.</li>
+            </ul>
+            <p className="mt-2">Prin acceptarea acestor Termeni și Condiții, confirmați că ați citit și înțeles toate politicile menționate mai sus.</p>
+          </section>
         </div>
       </div>
     </div>
