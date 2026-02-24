@@ -1,45 +1,97 @@
 
 
-## Plan: Adaugare atribute `title` pe toate link-urile `<a>` si `<Link>`
+# Plan: Curățare cod
 
-Toate link-urile din site lipsesc atributul `title`, ceea ce afecteaza SEO si accesibilitatea. Voi adauga `title` descriptiv pe fiecare link.
+Am analizat întregul proiect și am identificat următoarele probleme:
 
-### Fisiere si modificari:
+---
 
-**1. `src/components/sections/Footer.tsx`** (3 link-uri)
-- `/termeni-si-conditii` → `title="Termeni și condiții"`
-- `/gdpr` → `title="Politica GDPR"`
-- `/cookies` → `title="Politica de Cookies"`
+## 1. Fișiere nefolosite de șters
 
-**2. `src/components/sections/CTA.tsx`** (1 link)
-- `tel:+40742702982` → `title="Sună la SEO Doctor"`
+Următoarele componente UI nu sunt importate nicăieri în aplicație (doar se referă intern una la alta):
 
-**3. `src/components/sections/ForYou.tsx`** (2 link-uri)
-- WhatsApp "Vreau site în 7 zile!" → `title="Contactează-ne pe WhatsApp"`
-- WhatsApp "Vreau să vorbim!" → `title="Contactează-ne pe WhatsApp"`
+- `src/components/ui/alert-dialog.tsx`
+- `src/components/ui/alert.tsx`
+- `src/components/ui/aspect-ratio.tsx`
+- `src/components/ui/badge.tsx`
+- `src/components/ui/breadcrumb.tsx`
+- `src/components/ui/calendar.tsx`
+- `src/components/ui/chart.tsx`
+- `src/components/ui/checkbox.tsx`
+- `src/components/ui/collapsible.tsx`
+- `src/components/ui/command.tsx`
+- `src/components/ui/context-menu.tsx`
+- `src/components/ui/dialog.tsx`
+- `src/components/ui/drawer.tsx`
+- `src/components/ui/dropdown-menu.tsx`
+- `src/components/ui/form.tsx`
+- `src/components/ui/hover-card.tsx`
+- `src/components/ui/input-otp.tsx`
+- `src/components/ui/input.tsx`
+- `src/components/ui/label.tsx`
+- `src/components/ui/menubar.tsx`
+- `src/components/ui/navigation-menu.tsx`
+- `src/components/ui/pagination.tsx`
+- `src/components/ui/popover.tsx`
+- `src/components/ui/progress.tsx`
+- `src/components/ui/radio-group.tsx`
+- `src/components/ui/resizable.tsx`
+- `src/components/ui/scroll-area.tsx`
+- `src/components/ui/select.tsx`
+- `src/components/ui/separator.tsx`
+- `src/components/ui/sheet.tsx`
+- `src/components/ui/sidebar.tsx`
+- `src/components/ui/skeleton.tsx`
+- `src/components/ui/slider.tsx`
+- `src/components/ui/switch.tsx`
+- `src/components/ui/table.tsx`
+- `src/components/ui/tabs.tsx`
+- `src/components/ui/textarea.tsx`
+- `src/components/ui/toggle-group.tsx`
+- `src/components/ui/toggle.tsx`
+- `src/components/ui/card.tsx`
+- `src/components/NavLink.tsx` — neimportat nicăieri
+- `src/components/SectionDivider.tsx` — importat în Index.tsx dar nu folosit (nici un `<SectionDivider` în cod)
+- `src/App.css` — neimportat nicăieri (stilurile Vite default, nefolosite)
 
-**4. `src/components/sections/Pricing.tsx`** (link-uri din carduri)
-- WhatsApp CTA → `title="Comandă pachet pe WhatsApp"`
+## 2. Import nefolosit de eliminat
 
-**5. `src/components/CookieConsent.tsx`** (2 link-uri)
-- `/cookies` → `title="Politica de Cookies"`
-- `/gdpr` → `title="Politica GDPR"`
+- **`src/pages/Index.tsx`**: eliminare `import SectionDivider`
 
-**6. `src/pages/TermsAndConditions.tsx`** (4 link-uri)
-- Back link → `title="Înapoi la pagina principală"`
-- `tel:` → `title="Sună la SEO Doctor"`
-- `/cookies` → `title="Politica de Cookies"`
-- `/gdpr` → `title="Politica GDPR"`
+## 3. Componente folosite dar discutabile
 
-**7. `src/pages/Cookies.tsx`** (3 link-uri)
-- Back link → `title="Înapoi la pagina principală"`
-- `tel:` → `title="Sună la SEO Doctor"`
-- `allaboutcookies.org` → `title="Informații despre cookies"`
+Următoarele rămân pentru că sunt folosite activ:
+- `accordion.tsx` — folosit în FAQ
+- `avatar.tsx` — probabil folosit
+- `button.tsx` — folosit în carousel, calendar, etc.
+- `carousel.tsx` — folosit în Testimonials
+- `sonner.tsx`, `toaster.tsx`, `toast.tsx`, `tooltip.tsx` — folosite în App.tsx
+- `use-toast.ts` (hooks) — folosit
 
-**8. `src/pages/GDPR.tsx`** (2 link-uri)
-- Back link → `title="Înapoi la pagina principală"`
-- `tel:` → `title="Sună la SEO Doctor"`
+## 4. Dependențe npm nefolosite
 
-**9. `src/components/ui/animated-shader-hero.tsx`** (butonul principal WhatsApp din Hero)
-- → `title="Scrie-ne pe WhatsApp"`
+Următoarele pachete nu par a fi folosite în cod și ar putea fi eliminate din `package.json`:
+- `@hookform/resolvers`, `react-hook-form`, `zod` — nu există formulare
+- `@paper-design/shaders-react` — shader-ul e custom, nu folosește acest pachet
+- `next-themes` — nu este importat nicăieri
+- `react-resizable-panels` — nefolosit
+- `recharts` — nefolosit
+- `vaul` — drawer nefolosit
+- `cmdk` — command nefolosit
+- `input-otp` — nefolosit
+- `react-day-picker` — calendar nefolosit
+- `date-fns` — nefolosit
+- Multiple pachete `@radix-ui/*` care corespund componentelor UI șterse
+
+---
+
+## Rezumat
+
+| Acțiune | Număr |
+|---------|-------|
+| Fișiere de șters | ~43 |
+| Importuri de curățat | 1 |
+| Pachete npm de eliminat | ~15+ |
+
+Toate componentele UI shadcn nefolosite vor fi șterse. Funcționalitatea site-ului rămâne identică — doar codul mort este eliminat.
 
