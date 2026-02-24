@@ -8,21 +8,57 @@ import oanaImg from "@/assets/Oana.webp";
 gsap.registerPlugin(ScrollTrigger);
 
 const teamMembers = [
-  { src: andreeaImg, name: "Andreea", role: "Design", experience: "5 ani experiență" },
-  { src: ioanImg, name: "Ioan", role: "Web Developer", experience: "15 ani experiență" },
-  { src: oanaImg, name: "Oana", role: "Marketing", experience: "7 ani experiență" },
+  { src: andreeaImg, label: "Andreea - design, 5 ani experiență" },
+  { src: ioanImg, label: "Ioan - web developer, 15 ani experiență" },
+  { src: oanaImg, label: "Oana - marketing, 7 ani experiență" },
 ];
 
 const TeamShowcase = () => {
   const containerRef = useRef<HTMLDivElement>(null);
   const cardsRef = useRef<(HTMLDivElement | null)[]>([]);
+  const textsRef = useRef<(HTMLParagraphElement | null)[]>([]);
 
   useEffect(() => {
     const container = containerRef.current;
     if (!container) return;
 
     const ctx = gsap.context(() => {
-      // Second card slides in from right over the first (15%-40%)
+      // Timeline: 0-15% dead zone card 1 visible
+      // 15%-18% text 1 fades out
+      // 18%-38% card 2 slides in (with text 2)
+      // 38%-48% dead zone card 2
+      // 48%-51% text 2 fades out  
+      // 51%-66% card 3 slides in (with text 3)
+      // 66%-100% dead zone card 3
+
+      // Text 1 fades out before card 2 arrives
+      gsap.to(textsRef.current[0], {
+        opacity: 0,
+        ease: "none",
+        scrollTrigger: {
+          trigger: container,
+          start: "13% top",
+          end: "18% top",
+          scrub: 1,
+        },
+      });
+
+      // Text 2 appears as card 2 arrives
+      gsap.fromTo(textsRef.current[1],
+        { opacity: 0 },
+        {
+          opacity: 1,
+          ease: "none",
+          scrollTrigger: {
+            trigger: container,
+            start: "33% top",
+            end: "38% top",
+            scrub: 1,
+          },
+        }
+      );
+
+      // Card 2 slides in from right
       gsap.fromTo(cardsRef.current[1],
         { xPercent: 120 },
         {
@@ -30,14 +66,41 @@ const TeamShowcase = () => {
           ease: "none",
           scrollTrigger: {
             trigger: container,
-            start: "15% top",
-            end: "40% top",
+            start: "18% top",
+            end: "38% top",
             scrub: 1,
           },
         }
       );
 
-      // Third card slides in from right over the second (40%-60%)
+      // Text 2 fades out before card 3 arrives
+      gsap.to(textsRef.current[1], {
+        opacity: 0,
+        ease: "none",
+        scrollTrigger: {
+          trigger: container,
+          start: "46% top",
+          end: "51% top",
+          scrub: 1,
+        },
+      });
+
+      // Text 3 appears as card 3 arrives
+      gsap.fromTo(textsRef.current[2],
+        { opacity: 0 },
+        {
+          opacity: 1,
+          ease: "none",
+          scrollTrigger: {
+            trigger: container,
+            start: "61% top",
+            end: "66% top",
+            scrub: 1,
+          },
+        }
+      );
+
+      // Card 3 slides in from right
       gsap.fromTo(cardsRef.current[2],
         { xPercent: 120 },
         {
@@ -45,20 +108,20 @@ const TeamShowcase = () => {
           ease: "none",
           scrollTrigger: {
             trigger: container,
-            start: "40% top",
-            end: "60% top",
+            start: "51% top",
+            end: "66% top",
             scrub: 1,
           },
         }
       );
-      // 60%-100% = dead zone for last photo
+      // 66%-100% = dead zone for last photo
     }, container);
 
     return () => ctx.revert();
   }, []);
 
   return (
-    <div ref={containerRef} className="section-dark relative" style={{ height: "350vh" }}>
+    <div ref={containerRef} className="section-dark relative" style={{ height: "400vh" }}>
       <div className="sticky top-0 h-screen flex items-center justify-center overflow-hidden">
         <div className="relative w-[300px] md:w-[400px]">
           {teamMembers.map((member, i) => (
@@ -71,17 +134,26 @@ const TeamShowcase = () => {
               <div className="rounded-2xl overflow-hidden shadow-2xl">
                 <img
                   src={member.src}
-                  alt={member.name}
+                  alt={member.label}
                   className="w-full h-full object-contain"
                   loading="lazy"
                 />
               </div>
-              <div className="text-center mt-3">
-                <p className="text-foreground font-semibold text-lg">{member.name}</p>
-                <p className="text-muted-foreground text-sm">{member.role} · {member.experience}</p>
-              </div>
             </div>
           ))}
+          {/* Text labels - positioned below images, each on its own layer */}
+          <div className="relative mt-4 h-8">
+            {teamMembers.map((member, i) => (
+              <p
+                key={i}
+                ref={(el) => { textsRef.current[i] = el; }}
+                className="absolute inset-0 text-center text-foreground font-medium text-base md:text-lg"
+                style={{ zIndex: i, opacity: i === 0 ? 1 : 0 }}
+              >
+                {member.label}
+              </p>
+            ))}
+          </div>
         </div>
       </div>
     </div>
