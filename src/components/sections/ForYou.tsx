@@ -48,7 +48,7 @@ const ForYou = () => {
                 onClick={scrollToContact}
                 whileHover={{ scale: 1.03 }}
                 whileTap={{ scale: 0.98 }}
-                className="w-full inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl gradient-gold text-warm-dark font-body font-bold text-lg shadow-lg shadow-warm-gold/20 hover:opacity-90 transition-opacity"
+                className="w-full inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl border border-warm-gold/30 text-warm-light-text font-body font-semibold text-lg hover:bg-warm-gold/10 transition-colors"
               >
                 Vreau site în 7 zile!
               </motion.button>
