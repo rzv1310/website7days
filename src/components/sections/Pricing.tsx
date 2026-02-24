@@ -12,6 +12,7 @@ interface PlanData {
   features: string[];
   highlight?: string;
   note?: string;
+  ctaText?: string;
 }
 
 const plans: PlanData[] = [
@@ -78,6 +79,7 @@ const plans: PlanData[] = [
     titleLine1: "WEBSITE +",
     titleLine2: "MAGAZIN ONLINE",
     price: "Cere Oferta",
+    ctaText: "Hai să vorbim",
     
     preDescription: "Ce Primești:",
     description: "Soluție completă cu magazin online, plăți integrate și panou de administrare.",
@@ -312,7 +314,7 @@ const PricingCard: React.FC<{ plan: PlanData; variant: "gold" | "platinum" | "da
             }}
           >
             <span className="cta-glow-dot" />
-            Vreau să vorbim
+            {plan.ctaText || "Vreau să vorbim"}
             <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
           </a>
         </div>
