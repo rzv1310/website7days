@@ -18,30 +18,36 @@ const TeamShowcase = () => {
     if (!container) return;
 
     const ctx = gsap.context(() => {
-      // First card: dead zone then slides left (starts at 20%, ends at 45%)
-      gsap.to(cardsRef.current[0], {
-        xPercent: -120,
-        ease: "none",
-        scrollTrigger: {
-          trigger: container,
-          start: "20% top",
-          end: "45% top",
-          scrub: 1,
-        },
-      });
+      // Second card slides in from right over the first (15%-40%)
+      gsap.fromTo(cardsRef.current[1],
+        { xPercent: 120 },
+        {
+          xPercent: 0,
+          ease: "none",
+          scrollTrigger: {
+            trigger: container,
+            start: "15% top",
+            end: "40% top",
+            scrub: 1,
+          },
+        }
+      );
 
-      // Second card slides left (starts at 45%, ends at 70%)
-      gsap.to(cardsRef.current[1], {
-        xPercent: -120,
-        ease: "none",
-        scrollTrigger: {
-          trigger: container,
-          start: "45% top",
-          end: "70% top",
-          scrub: 1,
-        },
-      });
-      // 70%-100% = dead zone for last photo
+      // Third card slides in from right over the second (40%-60%)
+      gsap.fromTo(cardsRef.current[2],
+        { xPercent: 120 },
+        {
+          xPercent: 0,
+          ease: "none",
+          scrollTrigger: {
+            trigger: container,
+            start: "40% top",
+            end: "60% top",
+            scrub: 1,
+          },
+        }
+      );
+      // 60%-100% = dead zone for last photo
     }, container);
 
     return () => ctx.revert();
@@ -56,7 +62,7 @@ const TeamShowcase = () => {
               key={i}
               ref={(el) => { cardsRef.current[i] = el; }}
               className={`${i === 0 ? 'relative' : 'absolute inset-0'} rounded-2xl overflow-hidden shadow-2xl`}
-              style={{ zIndex: images.length - i }}
+              style={{ zIndex: i }}
             >
               <img
                 src={src}
