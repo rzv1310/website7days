@@ -12,6 +12,7 @@ const ForYou = () => {
     "Ai o afacere locală care nu vinde produse fizice (de ex.: cabinete medicale, avocați, contabili, psihologi, consultanți, designeri, profesori, instalatori, electricieni, artiști, saloane beauty, fitness etc.)",
     "Ai o firmă nouă și vrei să intri în piață cu un impact vizual puternic.",
     "Ai deja un site, dar care nu-ți aduce clienți (îl refacem complet și îl optimizăm ca să-ți aducă mai multe apeluri).",
+    "Vrei un magazin online performant.",
   ];
 
   const notForYouItems = [
