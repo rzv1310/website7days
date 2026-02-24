@@ -50,7 +50,7 @@ const TeamShowcase = () => {
   return (
     <div ref={containerRef} className="section-dark relative" style={{ height: "350vh" }}>
       <div className="sticky top-0 h-screen flex items-center justify-center overflow-hidden">
-        <div className="relative w-[320px] md:w-[420px] aspect-[9/16] max-h-[85vh]">
+        <div className="relative w-[260px] md:w-[340px] aspect-[9/16]">
           {images.map((src, i) => (
             <div
               key={i}
@@ -61,7 +61,7 @@ const TeamShowcase = () => {
               <img
                 src={src}
                 alt={`Team member ${i + 1}`}
-                className="w-full h-full object-cover object-bottom"
+                className="w-full h-full object-contain"
                 loading="lazy"
               />
             </div>
