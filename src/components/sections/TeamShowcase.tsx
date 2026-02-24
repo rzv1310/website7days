@@ -17,13 +17,13 @@ const slides: Slide[] = [
     type: "text",
     content: (
       <div className="flex flex-col items-center justify-center h-full px-6 text-center" style={{ backgroundColor: 'hsl(40, 60%, 70%)' }}>
-        <p className="text-xl md:text-2xl font-bold text-warm-brown-text mb-6">
+        <p className="text-[1.375rem] md:text-[1.625rem] font-bold text-warm-brown-text mb-6">
           Suntem echipa care transformă „frumosul" în „profitabil".
         </p>
-        <p className="text-sm md:text-base text-warm-brown-text/80 mb-4">
+        <p className="text-[0.9375rem] md:text-[1.125rem] text-warm-brown-text/80 mb-4">
           La noi, proiectul tău nu primește doar o bifă într-un calendar, ci devine o prioritate strategică.
         </p>
-        <p className="text-sm md:text-base text-warm-brown-text/80">
+        <p className="text-[0.9375rem] md:text-[1.125rem] text-warm-brown-text/80">
           Nu ne limităm la a crea ceva care „arată bine" – construim instrumente de vânzare.
         </p>
       </div>
@@ -34,20 +34,20 @@ const slides: Slide[] = [
     content: (
       <div className="flex flex-col items-center justify-center h-full px-5 text-center" style={{ backgroundColor: 'hsl(40, 60%, 70%)' }}>
         <div className="space-y-4 mb-6">
-          <p className="text-xs md:text-sm text-warm-brown-text/80">
+          <p className="text-[0.8125rem] md:text-[0.9375rem] text-warm-brown-text/80">
             <span className="font-semibold text-warm-brown-text">Andreea (Design, 5 ani):</span> Se asigură că brandul tău are o identitate vizuală care captează atenția și ghidează utilizatorul spre conversie.
           </p>
-          <p className="text-xs md:text-sm text-warm-brown-text/80">
+          <p className="text-[0.8125rem] md:text-[0.9375rem] text-warm-brown-text/80">
             <span className="font-semibold text-warm-brown-text">Ioan (Webdev, 15 ani):</span> Pune bazele unei infrastructuri tehnice impecabile, unde viteza și funcționalitatea sunt obligatorii.
           </p>
-          <p className="text-xs md:text-sm text-warm-brown-text/80">
+          <p className="text-[0.8125rem] md:text-[0.9375rem] text-warm-brown-text/80">
             <span className="font-semibold text-warm-brown-text">Oana (Marketing, 7 ani):</span> Traduce viziunea ta pe limba publicului țintă, astfel încât mesajul să ajungă exact unde trebuie.
           </p>
         </div>
-        <p className="text-sm md:text-base font-bold text-warm-brown-text">
+        <p className="text-[0.9375rem] md:text-[1.125rem] font-bold text-warm-brown-text">
           Concluzia?
         </p>
-        <p className="text-sm md:text-base text-warm-brown-text/80">
+        <p className="text-[0.9375rem] md:text-[1.125rem] text-warm-brown-text/80">
           Nu facem doar design de dragul artei. Construim experiențe digitale care îți aduc bani.
         </p>
       </div>
