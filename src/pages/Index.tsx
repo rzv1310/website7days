@@ -8,7 +8,7 @@ import Pricing from "@/components/sections/Pricing";
 import FAQ from "@/components/sections/FAQ";
 import CTA from "@/components/sections/CTA";
 import Footer from "@/components/sections/Footer";
-import SectionDivider from "@/components/SectionDivider";
+
 
 const Index = () => {
   const whatsAppUrl = "https://wa.me/40742702982";
