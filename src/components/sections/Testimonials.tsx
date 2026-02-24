@@ -1,10 +1,12 @@
-import { Star, Quote } from "lucide-react";
+import { Star, Quote, ChevronLeft, ChevronRight } from "lucide-react";
 import ScrollReveal from "../ScrollReveal";
 import { useIsMobile } from "@/hooks/use-mobile";
 import {
   Carousel,
   CarouselContent,
   CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
 } from "@/components/ui/carousel";
 
 const testimonials = [
@@ -88,6 +90,10 @@ const Testimonials = () => {
                 </CarouselItem>
               ))}
             </CarouselContent>
+            <div className="flex justify-center gap-4 mt-6">
+              <CarouselPrevious className="static translate-y-0 border-warm-gold/30 text-warm-light-text hover:bg-warm-gold/10 hover:border-warm-gold/50" />
+              <CarouselNext className="static translate-y-0 border-warm-gold/30 text-warm-light-text hover:bg-warm-gold/10 hover:border-warm-gold/50" />
+            </div>
           </Carousel>
         ) : (
           <div className="grid grid-cols-3 gap-8 max-w-5xl mx-auto">
