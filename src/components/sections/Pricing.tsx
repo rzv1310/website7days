@@ -296,7 +296,7 @@ const PricingCard: React.FC<{ plan: PlanData; variant: "gold" | "platinum" | "da
           </div>
 
           {plan.note && (
-            <p className="font-body mb-3 italic text-center whitespace-pre-line" style={{ color: "hsla(30, 30%, 88%, 0.6)", fontSize: "14px" }}>
+            <p className="font-body mb-3 italic text-center whitespace-pre-line" style={{ color: "white", fontSize: "14px" }}>
               {plan.note}
             </p>
           )}
