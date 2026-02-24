@@ -15,14 +15,14 @@ const slides: Slide[] = [
   {
     type: "text",
     content: (
-      <div className="flex flex-col items-center justify-center h-full px-6 text-center">
-        <p className="text-xl md:text-2xl font-bold text-foreground mb-6">
+      <div className="flex flex-col items-center justify-center h-full px-6 text-center" style={{ backgroundColor: '#7f7a65' }}>
+        <p className="text-xl md:text-2xl font-bold text-white mb-6">
           Suntem echipa care transformă „frumosul" în „profitabil".
         </p>
-        <p className="text-sm md:text-base text-muted-foreground mb-4">
+        <p className="text-sm md:text-base text-white/80 mb-4">
           La noi, proiectul tău nu primește doar o bifă într-un calendar, ci devine o prioritate strategică.
         </p>
-        <p className="text-sm md:text-base text-muted-foreground">
+        <p className="text-sm md:text-base text-white/80">
           Nu ne limităm la a crea ceva care „arată bine" – construim instrumente de vânzare.
         </p>
       </div>
@@ -31,22 +31,22 @@ const slides: Slide[] = [
   {
     type: "text",
     content: (
-      <div className="flex flex-col items-center justify-center h-full px-5 text-center">
+      <div className="flex flex-col items-center justify-center h-full px-5 text-center" style={{ backgroundColor: '#7f7a65' }}>
         <div className="space-y-4 mb-6">
-          <p className="text-xs md:text-sm text-muted-foreground">
-            <span className="font-semibold text-foreground">Andreea (Design, 5 ani):</span> Se asigură că brandul tău are o identitate vizuală care captează atenția și ghidează utilizatorul spre conversie.
+          <p className="text-xs md:text-sm text-white/80">
+            <span className="font-semibold text-white">Andreea (Design, 5 ani):</span> Se asigură că brandul tău are o identitate vizuală care captează atenția și ghidează utilizatorul spre conversie.
           </p>
-          <p className="text-xs md:text-sm text-muted-foreground">
-            <span className="font-semibold text-foreground">Ioan (Webdev, 15 ani):</span> Pune bazele unei infrastructuri tehnice impecabile, unde viteza și funcționalitatea sunt obligatorii.
+          <p className="text-xs md:text-sm text-white/80">
+            <span className="font-semibold text-white">Ioan (Webdev, 15 ani):</span> Pune bazele unei infrastructuri tehnice impecabile, unde viteza și funcționalitatea sunt obligatorii.
           </p>
-          <p className="text-xs md:text-sm text-muted-foreground">
-            <span className="font-semibold text-foreground">Oana (Marketing, 7 ani):</span> Traduce viziunea ta pe limba publicului țintă, astfel încât mesajul să ajungă exact unde trebuie.
+          <p className="text-xs md:text-sm text-white/80">
+            <span className="font-semibold text-white">Oana (Marketing, 7 ani):</span> Traduce viziunea ta pe limba publicului țintă, astfel încât mesajul să ajungă exact unde trebuie.
           </p>
         </div>
-        <p className="text-sm md:text-base font-bold text-foreground">
+        <p className="text-sm md:text-base font-bold text-white">
           Concluzia?
         </p>
-        <p className="text-sm md:text-base text-muted-foreground">
+        <p className="text-sm md:text-base text-white/80">
           Nu facem doar design de dragul artei. Construim experiențe digitale care îți aduc bani.
         </p>
       </div>
