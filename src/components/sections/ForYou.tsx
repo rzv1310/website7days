@@ -83,6 +83,10 @@ const ForYou = () => {
               >
                 Vreau să vorbim!
               </motion.button>
+
+              <p className="font-body text-warm-light-text/50 text-sm text-center mt-4">
+                ✓ Și să-mi depășesc concurența
+              </p>
             </div>
           </ScrollReveal>
         </div>
