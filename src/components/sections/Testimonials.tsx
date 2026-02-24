@@ -1,5 +1,11 @@
 import { Star, Quote } from "lucide-react";
 import ScrollReveal from "../ScrollReveal";
+import { useIsMobile } from "@/hooks/use-mobile";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+} from "@/components/ui/carousel";
 
 const testimonials = [
   {
@@ -40,7 +46,27 @@ const testimonials = [
   },
 ];
 
+const TestimonialCard = ({ t }: { t: (typeof testimonials)[0] }) => (
+  <div className="p-6 md:p-8 rounded-2xl border border-warm-gold/10 bg-warm-dark/50 backdrop-blur-sm hover:border-warm-gold/25 transition-all duration-500 h-full flex flex-col">
+    <Quote className="w-8 h-8 text-gold/30 mb-4" />
+    <div className="flex gap-1 mb-4">
+      {Array.from({ length: t.stars }).map((_, i) => (
+        <Star key={i} className="w-4 h-4 fill-warm-gold text-warm-gold" />
+      ))}
+    </div>
+    <p className="font-body text-warm-light-text/80 leading-relaxed flex-1 mb-6 italic">
+      "{t.text}"
+    </p>
+    <div>
+      <p className="font-display font-semibold text-warm-light">{t.name}</p>
+      <p className="font-body text-sm text-gold/70">{t.business}</p>
+    </div>
+  </div>
+);
+
 const Testimonials = () => {
+  const isMobile = useIsMobile();
+
   return (
     <section className="section-dark-alt py-20 md:py-28">
       <div className="container">
@@ -53,30 +79,25 @@ const Testimonials = () => {
           </div>
         </ScrollReveal>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 max-w-5xl mx-auto">
-          {testimonials.map((t, index) => (
-            <ScrollReveal key={t.name} delay={index * 0.12}>
-              <div className="p-6 md:p-8 rounded-2xl border border-warm-gold/10 bg-warm-dark/50 backdrop-blur-sm hover:border-warm-gold/25 transition-all duration-500 h-full flex flex-col">
-                <Quote className="w-8 h-8 text-gold/30 mb-4" />
-                
-                <div className="flex gap-1 mb-4">
-                  {Array.from({ length: t.stars }).map((_, i) => (
-                    <Star key={i} className="w-4 h-4 fill-warm-gold text-warm-gold" />
-                  ))}
-                </div>
-                
-                <p className="font-body text-warm-light-text/80 leading-relaxed flex-1 mb-6 italic">
-                  "{t.text}"
-                </p>
-                
-                <div>
-                  <p className="font-display font-semibold text-warm-light">{t.name}</p>
-                  <p className="font-body text-sm text-gold/70">{t.business}</p>
-                </div>
-              </div>
-            </ScrollReveal>
-          ))}
-        </div>
+        {isMobile ? (
+          <Carousel opts={{ align: "start", loop: true }} className="w-full max-w-sm mx-auto">
+            <CarouselContent>
+              {testimonials.map((t) => (
+                <CarouselItem key={t.name}>
+                  <TestimonialCard t={t} />
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+          </Carousel>
+        ) : (
+          <div className="grid grid-cols-3 gap-8 max-w-5xl mx-auto">
+            {testimonials.map((t, index) => (
+              <ScrollReveal key={t.name} delay={index * 0.12}>
+                <TestimonialCard t={t} />
+              </ScrollReveal>
+            ))}
+          </div>
+        )}
       </div>
     </section>
   );
