@@ -63,8 +63,23 @@ const Benefits = () => {
         const scrolled = -rect.top;
         const adjustedScroll = Math.max(scrolled - deadZone, 0);
         const adjustedDistance = scrollableDistance - deadZone - endDeadZone;
-        const progress = Math.min(Math.max(adjustedScroll / adjustedDistance, 0), 1);
-        const cardWidth = isMobile ? 300 + 16 : 380 + 32; // card + gap
+        const rawProgress = Math.min(Math.max(adjustedScroll / adjustedDistance, 0), 1);
+
+        // Snap to cards: divide progress into card segments
+        const cardCount = 6;
+        const segments = cardCount - 1; // 5 transitions between 6 cards
+        const segmentProgress = rawProgress * segments;
+        const currentSegment = Math.floor(segmentProgress);
+        const segmentFraction = segmentProgress - currentSegment;
+
+        // Ease with a snap feel: fast in middle, slow at edges (settle effect)
+        const snapped = segmentFraction < 0.5
+          ? 2 * segmentFraction * segmentFraction
+          : 1 - 2 * (1 - segmentFraction) * (1 - segmentFraction);
+
+        const progress = Math.min((currentSegment + snapped) / segments, 1);
+
+        const cardWidth = isMobile ? 300 + 16 : 380 + 32;
         const maxTranslate = 6 * cardWidth - window.innerWidth + (isMobile ? 48 : 148);
         setTranslateX(-progress * Math.max(maxTranslate, 0));
       }
