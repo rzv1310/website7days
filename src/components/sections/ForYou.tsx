@@ -15,7 +15,7 @@ const ForYou = () => {
   const notForYouItems = [
     "Nu vrei să crești.",
     "Ești mulțumit cu câți clienți ai acum.",
-    "Nu ți-ai dat seama că dacă nu apari online în 2026 — pur și simplu nu exiști.",
+    "Nu ți-ai dat seama că dacă nu apari online în 2026 - pur și simplu nu exiști.",
   ];
 
   return (
