@@ -16,7 +16,7 @@ const slides: Slide[] = [
   {
     type: "text",
     content: (
-      <div className="flex flex-col items-center justify-center h-full px-6 text-center" style={{ background: 'linear-gradient(151deg, #F2D3B3 0%, #B09563 100%)' }}>
+      <div className="flex flex-col items-center justify-center h-full px-6 text-center" style={{ background: 'linear-gradient(151deg, #F2D3B3 0%, #A1927C 100%)' }}>
         <p className="text-[1.375rem] md:text-[1.625rem] font-bold text-warm-brown-text mb-6">
           Suntem echipa care transformă „frumosul" în „profitabil".
         </p>
@@ -32,7 +32,7 @@ const slides: Slide[] = [
   {
     type: "text",
     content: (
-      <div className="flex flex-col items-center justify-center h-full px-5 text-center" style={{ background: 'linear-gradient(151deg, #F2D3B3 0%, #B09563 100%)' }}>
+      <div className="flex flex-col items-center justify-center h-full px-5 text-center" style={{ background: 'linear-gradient(151deg, #F2D3B3 0%, #A1927C 100%)' }}>
         <div className="space-y-4 mb-6">
           <p className="text-[0.8125rem] md:text-[0.9375rem] text-warm-brown-text/80">
             <span className="font-semibold text-warm-brown-text">Andreea (Design, 5 ani):</span> Se asigură că brandul tău are o identitate vizuală care captează atenția și ghidează utilizatorul spre conversie.
