@@ -70,7 +70,7 @@ const Process = () => {
                 {/* Glass card */}
                 <div className="rounded-2xl bg-[#3d2e14]/60 backdrop-blur-md border border-white/10 px-6 py-6 shadow-lg flex-1 flex flex-col justify-center">
                   <h3 className="font-display text-2xl font-bold text-warm-light-text mb-3">{step.title}</h3>
-                  <p className="font-body text-warm-light-text/70 leading-relaxed">{step.description}</p>
+                  <p className="font-body text-[1.0625rem] text-warm-light-text/70 leading-relaxed">{step.description}</p>
                 </div>
               </div>
             </ScrollReveal>
