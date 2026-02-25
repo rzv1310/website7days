@@ -53,7 +53,7 @@ const plans: PlanData[] = [
     preDescription: "Ce Primești:",
     description: "Website profesional livrat în 7 zile. Plată unică, fără abonament lunar.",
     highlight: "Totul din Pachetul Gold +",
-    note: "Ce primești aici NU e doar 'un site frumos'.\n\nȘi NU e din categoria 'ai un vecin care știe un băiat care face site-uri'!\n\nCe primești aici este top local SEO, tehnic impecabil, desenat de la zero pentru businessul tău și focusat pe apeluri și programări — pentru a converti vizitatorii în clienți.",
+    note: "Ce primești aici NU e doar 'un site frumos'.\n\nȘi NU e din categoria 'ai un vecin care știe un băiat care face site-uri'!\n\nCe primești aici este top local SEO, tehnic impecabil, desenat de la zero pentru businessul tău și focusat pe apeluri și programări - pentru a converti vizitatorii în clienți.",
     features: [
       "Pagină Blog (cu 4 articole optimizate SEO)",
       "Pagini dedicate Servicii în website",
