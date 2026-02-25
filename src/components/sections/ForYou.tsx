@@ -109,7 +109,7 @@ const ForYou = () => {
           <ScrollReveal delay={0.15}>
             <div className="h-full rounded-2xl border border-warm-light-text/10 p-8 md:p-10 flex flex-col">
               <h2 className="font-display text-2xl md:text-3xl font-bold text-warm-light-text mb-8">
-                Această ofertă nu este pentru tine, dacă:
+                Această ofertă <span className="uppercase">nu</span> este pentru tine, dacă:
               </h2>
 
               <ul className="space-y-5 mb-10 flex-grow">
