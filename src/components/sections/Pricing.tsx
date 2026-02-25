@@ -21,7 +21,7 @@ const plans: PlanData[] = [
     titleLine2: "GOLD",
     price: "970",
     preDescription: "Ce Primești:",
-    description: "Un site web complet funcțional, cu design premium, cu până la 8 pagini personalizate, care arată perfect pe orice ecran și care e gata să-ți producă bani până la sfârșitul zilei.",
+    description: "Un site web complet funcțional, cu design premium, cu până la 8 pagini personalizate, care arată perfect pe orice ecran și care e gata să-ți producă bani în fiecare zi.",
     note: "Opțional: Domeniu + Găzduire + suport + security updates = 100 lei/lună",
     features: [
       "Apel telefonic (30 min) în care pregătim totul pentru ziua lansării.",
