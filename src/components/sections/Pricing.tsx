@@ -209,7 +209,7 @@ const PricingCard: React.FC<{ plan: PlanData; variant: "gold" | "platinum" | "da
               <Icon className="w-4 h-4" style={{ color: s.priceColor }} />
             </div>
             <div
-              className="text-xs font-bold tracking-[0.2em] font-body"
+              className="text-[0.9375rem] md:text-xs font-bold tracking-[0.2em] font-body"
               style={{ color: s.titleColor }}
             >
               <div>{plan.titleLine1}</div>
@@ -245,7 +245,7 @@ const PricingCard: React.FC<{ plan: PlanData; variant: "gold" | "platinum" | "da
           {/* Pre-description label */}
           {plan.preDescription && (
             <p
-              className="font-body text-xs font-bold uppercase tracking-wider mb-2"
+              className="font-body text-[0.9375rem] md:text-xs font-bold uppercase tracking-wider mb-2"
               style={{ color: s.priceColor }}
             >
               {plan.preDescription}
@@ -254,7 +254,7 @@ const PricingCard: React.FC<{ plan: PlanData; variant: "gold" | "platinum" | "da
 
           {/* Description */}
           <p
-            className="font-body text-sm mb-4 leading-relaxed"
+            className="font-body text-[1.0625rem] md:text-sm mb-4 leading-relaxed"
             style={{ color: s.descColor }}
           >
             {plan.description}
