@@ -72,10 +72,17 @@ const Benefits = () => {
         const currentSegment = Math.floor(segmentProgress);
         const segmentFraction = segmentProgress - currentSegment;
 
-        // Ease with a snap feel: fast in middle, slow at edges (settle effect)
-        const snapped = segmentFraction < 0.5
-          ? 2 * segmentFraction * segmentFraction
-          : 1 - 2 * (1 - segmentFraction) * (1 - segmentFraction);
+        // Ease with a stronger snap feel: hold longer at edges
+        const hold = 0.3; // dead zone at start/end of each segment
+        let snapped;
+        if (segmentFraction < hold) {
+          snapped = 0;
+        } else if (segmentFraction > 1 - hold) {
+          snapped = 1;
+        } else {
+          const t = (segmentFraction - hold) / (1 - 2 * hold);
+          snapped = t * t * (3 - 2 * t); // smoothstep
+        }
 
         const progress = Math.min((currentSegment + snapped) / segments, 1);
 
