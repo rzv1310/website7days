@@ -29,6 +29,7 @@ const faqs = [
   {
     q: "Cu cât timp înainte ar trebui să-mă programez?",
     a: "În ziua programării vom avea împreună o conversație telefonică și vom stabili atunci.\n\nRecomandăm, de obicei, să rezervi cu aprox. 2 săptămâni înainte, ca să avem timp să strângem textele și materialele necesare. Dacă ai deadline strâns, spune-ne și vedem cum te putem \u201Estrecura\u201D în program.",
+    cta: true,
   },
   {
     q: "Scrieți voi textele pentru site?",
@@ -63,6 +64,19 @@ const FAQ = () => {
                   </AccordionTrigger>
                   <AccordionContent className="font-body text-lg text-warm-light-text/70 leading-relaxed pb-5 whitespace-pre-line">
                     {faq.a}
+                    {faq.cta && (
+                      <span className="block mt-4">
+                        Nu mai pierde timpul,{" "}
+                        <a
+                          href="https://wa.me/40742702982"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-block px-3 py-1 rounded-md bg-[#25D366] text-white font-medium no-underline hover:bg-[#20bd5a] transition-colors"
+                        >
+                          fă-ți programarea acum în WhatsApp!
+                        </a>
+                      </span>
+                    )}
                   </AccordionContent>
                 </AccordionItem>
               ))}
