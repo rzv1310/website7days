@@ -13,7 +13,7 @@ const CTA = () => {
               Ești gata să apari în <span className="text-gold">Google</span>?
             </h2>
             <p className="font-body text-warm-dark/60 text-lg mb-10 max-w-xl mx-auto">
-              Scrie-ne acum și în 7 zile afacerea ta va fi online. Fără bătăi de cap, fără complicații.
+              Sună-ne acum și în 7 zile afacerea ta va fi online. Fără bătăi de cap, fără complicații.
             </p>
 
             <div className="flex justify-center mb-12">
