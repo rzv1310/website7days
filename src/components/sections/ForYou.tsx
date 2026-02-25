@@ -19,7 +19,7 @@ const HighlightText = ({ text, boldPart, boldDelay }: { text: string; boldPart: 
           initial={{ scaleX: 0 }}
           animate={isInView ? { scaleX: 1 } : { scaleX: 0 }}
           transition={{ duration: 0.5, delay: 0.5 + boldDelay, ease: [0.22, 1, 0.36, 1] }}
-          style={{ position: "absolute", left: 0, bottom: 0, width: "100%", height: "2px", transformOrigin: "left", background: "hsl(40, 60%, 70%)" }}
+          style={{ position: "absolute", left: 0, bottom: 0, width: "100%", height: "1px", transformOrigin: "left", background: "linear-gradient(90deg, hsl(36, 50%, 62%), hsl(40, 60%, 70%), hsl(36, 50%, 62%))" }}
           className="block"
         />
       </span>
