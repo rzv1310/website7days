@@ -73,7 +73,7 @@ const Benefits = () => {
         const segmentFraction = segmentProgress - currentSegment;
 
         // Ease with a stronger snap feel: hold longer at edges
-        const hold = 0.3; // dead zone at start/end of each segment
+        const hold = 0.38;
         let snapped;
         if (segmentFraction < hold) {
           snapped = 0;
