@@ -5,6 +5,7 @@ const faqs = [
   {
     q: "Chiar se poate face un site bun în 7 zile?",
     a: "Da! Procesul nostru este optimizat pentru eficiență.\n\nVei avea 3 oameni dedicați care vor lucra până la 140 de ore în săptămâna dedicată ție.\n\nCodare + design + texte + SEO - vei avea totul gata într-un timp record!",
+    ctaProgramare: true,
   },
   {
     q: "Ce informații aveți nevoie de la mine?",
@@ -77,6 +78,16 @@ const FAQ = () => {
                           fă-ți programarea acum în WhatsApp!
                         </a>
                       </span>
+                    )}
+                    {faq.ctaProgramare && (
+                      <a
+                        href="https://wa.me/40742702982"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="block mt-4 px-3 py-1 rounded-md bg-[#25D366] text-white font-medium no-underline hover:bg-[#20bd5a] transition-colors w-fit"
+                      >
+                        Scrie-ne aici pentru programare.
+                      </a>
                     )}
                     {faq.ctaRate && (
                       <span className="block mt-4">
