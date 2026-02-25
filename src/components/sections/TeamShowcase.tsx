@@ -124,7 +124,7 @@ const TeamShowcase = () => {
       <div className="absolute inset-0 bg-black/40" />
       <div className="sticky top-0 h-screen flex flex-col items-center justify-center overflow-hidden relative z-10">
         <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">Cine Suntem?</h2>
-        <div className="relative w-[70vw] md:w-[340px]" style={{ clipPath: "inset(0)" }}>
+        <div className="relative w-[85vw] md:w-[340px]" style={{ clipPath: "inset(0)" }}>
           {slides.map((slide, i) => (
             <div
               key={i}
@@ -133,7 +133,7 @@ const TeamShowcase = () => {
               style={{ zIndex: i }}
             >
               {slide.type === "text" ? (
-                <div className="w-full aspect-[3/5] md:aspect-[3/4] flex items-center justify-center" style={{ borderTop: '14px solid white', borderBottom: '14px solid white' }}>
+                <div className="w-full aspect-[4/5] md:aspect-[3/4] flex items-center justify-center" style={{ borderTop: '14px solid white', borderBottom: '14px solid white' }}>
                   {slide.content}
                 </div>
               ) : (
@@ -141,7 +141,7 @@ const TeamShowcase = () => {
                   src={slide.src}
                   alt={slide.alt}
                   title={slide.alt}
-                  className="w-full h-full object-contain"
+                  className="w-full aspect-[4/5] md:aspect-[3/4] object-cover"
                   loading="lazy"
                 />
               )}
