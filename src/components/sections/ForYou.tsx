@@ -13,14 +13,15 @@ const HighlightText = ({ text, boldPart, boldDelay }: { text: string; boldPart: 
   return (
     <span ref={ref}>
       {parts[0]}
-      <motion.span
-        initial={{ fontWeight: 400 }}
-        animate={isInView ? { fontWeight: 700 } : { fontWeight: 400 }}
-        transition={{ duration: 0.4, delay: boldDelay }}
-        className="text-warm-light-text"
-      >
+      <span className="relative inline">
         {boldPart}
-      </motion.span>
+        <motion.span
+          initial={{ scaleX: 0 }}
+          animate={isInView ? { scaleX: 1 } : { scaleX: 0 }}
+          transition={{ duration: 0.5, delay: boldDelay, ease: [0.22, 1, 0.36, 1] }}
+          className="absolute left-0 bottom-0 w-full h-[2px] bg-gold-bright origin-left"
+        />
+      </span>
       {parts[1]}
     </span>
   );
