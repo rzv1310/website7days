@@ -21,6 +21,7 @@ const faqs = [
   {
     q: "Oferiți plata în rate?",
     a: "Câteodată! Știm că e o investiție importantă și vrem să fie cât mai ușor să spui \u201Eda\u201D și să începem.\nDe aceea oferim opțiuni de plată în câteva rate lunare la toate pachetele.",
+    ctaRate: true,
   },
   {
     q: "Mai aveți și alte pachete de website?",
@@ -75,6 +76,20 @@ const FAQ = () => {
                         >
                           fă-ți programarea acum în WhatsApp!
                         </a>
+                      </span>
+                    )}
+                    {faq.ctaRate && (
+                      <span className="block mt-4">
+                        Scrie-ne în{" "}
+                        <a
+                          href="https://wa.me/40742702982"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-block px-3 py-1 rounded-md bg-[#25D366] text-white font-medium no-underline hover:bg-[#20bd5a] transition-colors"
+                        >
+                          WhatsApp
+                        </a>
+                        {" "}să vedem exact ce ai nevoie.
                       </span>
                     )}
                   </AccordionContent>
