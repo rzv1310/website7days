@@ -273,7 +273,7 @@ const PricingCard: React.FC<{ plan: PlanData; variant: "gold" | "platinum" | "da
               return isHighlight ? (
                 <p
                   key={i}
-                  className="text-xs font-body font-bold uppercase tracking-wider"
+                  className={`font-body font-bold uppercase tracking-wider ${variant === "platinum" ? "text-[0.875rem]" : "text-xs"}`}
                   style={{ color: s.priceColor }}
                 >
                   {text}
@@ -281,7 +281,7 @@ const PricingCard: React.FC<{ plan: PlanData; variant: "gold" | "platinum" | "da
               ) : (
                 <div
                   key={i}
-                  className={`flex items-start gap-2 font-body ${variant === "gold" ? "text-[0.875rem]" : "text-xs"}`}
+                  className={`flex items-start gap-2 font-body ${variant === "gold" || variant === "platinum" ? "text-[0.875rem]" : "text-xs"}`}
                   style={{ color: s.pillColor }}
                 >
                   <Check className="w-3.5 h-3.5 flex-shrink-0 mt-0.5" style={{ color: s.priceColor }} />
