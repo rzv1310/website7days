@@ -114,10 +114,17 @@ const ForYou = () => {
 
               <ul className="space-y-5 mb-10 flex-grow">
                 {notForYouItems.map((item, i) => (
-                  <li key={i} className="flex gap-3 items-start">
+                  <motion.li
+                    key={i}
+                    className="flex gap-3 items-start"
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: [0, -8, 0] }}
+                    viewport={{ once: true, margin: "-80px" }}
+                    transition={{ duration: 0.5, delay: 0.5 + i * 1.5, ease: "easeOut" }}
+                  >
                     <X className="w-5 h-5 text-red-400/70 mt-0.5 shrink-0" />
-                    <span className="font-body text-warm-light-text/60 leading-relaxed">{item}</span>
-                  </li>
+                    <span className="font-body text-warm-light-text leading-relaxed">{item}</span>
+                  </motion.li>
                 ))}
               </ul>
 
