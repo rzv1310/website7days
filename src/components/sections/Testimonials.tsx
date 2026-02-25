@@ -38,7 +38,7 @@ const testimonials = [
   {
     name: "Stefan B.",
     business: "Owner Coffee Shop",
-    text: "Super tare!! Mi-a luat ideea din cap și a făcut-o realitate exact cum mi-am imaginat. John e un adevărat vrăjitor pe partea tehnică la construit site-uri, răspunde repede și e un om de nota 10. Recomand 🤗",
+    text: "Super tare!! Mi-a luat ideea din cap și a făcut-o realitate exact cum mi-am imaginat. Ioan e un adevărat vrăjitor pe partea tehnică la construit site-uri, răspunde repede și e un om de nota 10. Recomand 🤗",
     stars: 5,
   },
   {
