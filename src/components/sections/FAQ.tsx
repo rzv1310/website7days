@@ -61,7 +61,7 @@ const FAQ = () => {
                   value={`item-${i}`}
                   className="border border-warm-gold/10 rounded-xl px-6 bg-warm-dark-secondary/50 backdrop-blur-sm data-[state=open]:border-warm-gold/25 transition-colors"
                 >
-                  <AccordionTrigger className="font-display text-lg text-warm-light hover:text-gold-bright hover:no-underline py-5 text-left">
+                  <AccordionTrigger className="font-body text-lg text-warm-light hover:text-gold-bright hover:no-underline py-5 text-left">
                     {faq.q}
                   </AccordionTrigger>
                   <AccordionContent className="font-body text-lg text-warm-light-text/70 leading-relaxed pb-5 whitespace-pre-line">
