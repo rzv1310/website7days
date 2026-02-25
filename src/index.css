@@ -185,8 +185,8 @@
   width: 6px;
   height: 6px;
   border-radius: 50%;
-  background: hsl(40, 60%, 70%);
-  box-shadow: 0 0 8px 2px hsla(36, 50%, 62%, 0.8), 0 0 16px 4px hsla(36, 50%, 62%, 0.4);
+  background: hsl(25, 30%, 20%);
+  box-shadow: 0 0 8px 2px hsla(25, 30%, 20%, 0.8), 0 0 16px 4px hsla(25, 30%, 20%, 0.4);
   offset-path: rect(0 100% 100% 0 round 12px);
   animation: travel-border 6s linear infinite;
   pointer-events: none;
