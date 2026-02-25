@@ -57,7 +57,7 @@ const TestimonialCard = ({ t }: { t: (typeof testimonials)[0] }) => (
         <Star key={i} className="w-4 h-4 fill-warm-gold text-warm-gold" />
       ))}
     </div>
-    <p className="font-body text-warm-light-text/80 leading-relaxed flex-1 mb-6 italic">
+    <p className="font-body text-[1.0625rem] text-warm-light-text/80 leading-relaxed flex-1 mb-6 italic">
       "{t.text}"
     </p>
     <div>
