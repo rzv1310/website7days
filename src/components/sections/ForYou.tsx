@@ -1,8 +1,33 @@
 import { Check, X } from "lucide-react";
 import ScrollReveal from "../ScrollReveal";
-import { motion } from "framer-motion";
+import { motion, useInView } from "framer-motion";
+import { useRef } from "react";
+
+const HighlightText = ({ text, boldPart, boldDelay }: { text: string; boldPart: string; boldDelay: number }) => {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, margin: "-80px" });
+
+  const parts = text.split(boldPart);
+  if (parts.length < 2) return <span>{text}</span>;
+
+  return (
+    <span ref={ref}>
+      {parts[0]}
+      <motion.span
+        initial={{ fontWeight: 400 }}
+        animate={isInView ? { fontWeight: 700 } : { fontWeight: 400 }}
+        transition={{ duration: 0.4, delay: boldDelay }}
+        className="text-warm-light-text"
+      >
+        {boldPart}
+      </motion.span>
+      {parts[1]}
+    </span>
+  );
+};
 
 const ForYou = () => {
+  const boldPhrases = ["site de prezentare", "Ai o afacere locală", "Ai o firmă nouă", "Ai deja un site"];
 
   const forYouItems = [
     "Ai nevoie de un site de prezentare, funcțional, estetic și publicat rapid, fără să te pierzi în termeni tehnici sau luni de așteptare.",
@@ -18,6 +43,15 @@ const ForYou = () => {
     "Nu ți-ai dat seama că dacă nu apari online în 2026 - pur și simplu nu exiști.",
   ];
 
+  const getBoldInfo = (item: string): { boldPart: string; delayIndex: number } | null => {
+    for (let i = 0; i < boldPhrases.length; i++) {
+      if (item.includes(boldPhrases[i])) {
+        return { boldPart: boldPhrases[i], delayIndex: i };
+      }
+    }
+    return null;
+  };
+
   return (
     <section className="section-dark py-20 md:py-28">
       <div className="container">
@@ -30,12 +64,21 @@ const ForYou = () => {
               </h2>
 
               <ul className="space-y-5 mb-10 flex-grow">
-                {forYouItems.map((item, i) => (
-                  <li key={i} className="flex gap-3 items-start">
-                    <Check className="w-5 h-5 text-gold-bright mt-0.5 shrink-0" />
-                    <span className="font-body text-warm-light-text/80 leading-relaxed">{item}</span>
-                  </li>
-                ))}
+                {forYouItems.map((item, i) => {
+                  const boldInfo = getBoldInfo(item);
+                  return (
+                    <li key={i} className="flex gap-3 items-start">
+                      <Check className="w-5 h-5 text-gold-bright mt-0.5 shrink-0" />
+                      <span className="font-body text-warm-light-text/80 leading-relaxed">
+                        {boldInfo ? (
+                          <HighlightText text={item} boldPart={boldInfo.boldPart} boldDelay={boldInfo.delayIndex * 1.5} />
+                        ) : (
+                          item
+                        )}
+                      </span>
+                    </li>
+                  );
+                })}
               </ul>
 
               <p className="font-display text-lg md:text-xl text-gold-bright mb-6">
