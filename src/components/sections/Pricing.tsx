@@ -25,11 +25,7 @@ const plans: PlanData[] = [
     note: "Opțional: Domeniu + Găzduire + suport + security updates = 100 lei/lună",
     features: [
       "Apel telefonic (30 min) în care pregătim totul pentru ziua lansării.",
-      "Pagina 'Acasă'",
-      "Pagina 'Servicii'",
-      "Pagina 'Despre noi'",
-      "Pagina 'Tarife'",
-      "Pagina 'Contact'",
+      "Pagini: 'Acasă', 'Servicii', 'Despre noi', 'Tarife', 'Contact'",
       "Pagini Legale (Termeni, Cookies, GDPR)",
       "Logo design",
       "Brand colors & brand fonts",
