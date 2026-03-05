@@ -5,6 +5,7 @@ import TeamShowcase from "@/components/sections/TeamShowcase";
 import Process from "@/components/sections/Process";
 import Testimonials from "@/components/sections/Testimonials";
 import Pricing from "@/components/sections/Pricing";
+import VideoFeed from "@/components/sections/VideoFeed";
 import FAQ from "@/components/sections/FAQ";
 import CTA from "@/components/sections/CTA";
 import Footer from "@/components/sections/Footer";
@@ -29,20 +30,21 @@ const Index = () => {
 
       <ForYou />
 
+      <div id="process">
+        <Process />
+      </div>
+
       <TeamShowcase />
 
       <div id="benefits">
         <Benefits />
       </div>
 
-      <div id="process">
-        <Process />
-      </div>
-
       <Testimonials />
       <div id="pricing">
         <Pricing />
       </div>
+      <VideoFeed />
       <FAQ />
       <CTA />
       <Footer />
