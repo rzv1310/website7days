@@ -90,7 +90,7 @@ function PhoneVideo({ video }: { video: (typeof VIDEOS)[number] }) {
 
 const VideoFeedSection = () => {
   return (
-    <div className="pt-20 md:pt-28">
+    <div className="pt-20 md:pt-28 pb-20 md:pb-28">
       <div className="max-w-5xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
