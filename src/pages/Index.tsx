@@ -40,7 +40,7 @@ const Index = () => {
         <Benefits />
       </div>
 
-      <Testimonials />
+
       <div id="pricing">
         <Pricing />
       </div>
