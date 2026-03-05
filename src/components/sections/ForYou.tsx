@@ -102,6 +102,13 @@ const ForYou = () => {
               <p className="font-body text-warm-light-text/50 text-sm text-center mt-4">
                 ✓ Fără costuri ascunse.
               </p>
+
+              <a
+                href="#pricing"
+                className="block md:hidden w-full text-center mt-4 px-8 py-3 rounded-xl border border-warm-gold/30 text-gold-bright font-body font-semibold text-base hover:bg-warm-gold/10 transition-colors"
+              >
+                Vezi Preț Site
+              </a>
             </div>
           </ScrollReveal>
 
