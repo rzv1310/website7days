@@ -171,7 +171,7 @@ const Hero: React.FC<HeroProps> = ({ trustBadge, headline, subtitle, buttons, cl
   const canvasRef = useShaderBackground();
 
   return (
-    <section className={`relative w-full min-h-screen overflow-hidden ${className}`}>
+    <section className={`relative w-full overflow-hidden ${className}`} style={{ minHeight: '100dvh' }}>
       <canvas
         ref={canvasRef}
         className="absolute inset-0 w-full h-full"
@@ -184,7 +184,7 @@ const Hero: React.FC<HeroProps> = ({ trustBadge, headline, subtitle, buttons, cl
       <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-b from-transparent to-[hsl(25,30%,8%)]" />
 
       {/* Content */}
-      <div className="relative z-10 flex flex-col items-center justify-center min-h-screen px-6 text-center">
+      <div className="relative z-10 flex flex-col items-center justify-center px-6 text-center pt-32 pb-48 md:pt-0 md:pb-0" style={{ minHeight: '100dvh' }}>
         {trustBadge && (
           <div className="animate-fade-in-down mb-8">
             <span className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full border border-warm-gold/30 bg-warm-dark/40 backdrop-blur-md text-warm-light-text text-sm font-body tracking-wide">

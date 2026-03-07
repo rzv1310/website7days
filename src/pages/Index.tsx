@@ -1,4 +1,5 @@
 import Hero from "@/components/ui/animated-shader-hero";
+import StickyNav from "@/components/StickyNav";
 import ForYou from "@/components/sections/ForYou";
 import Benefits from "@/components/sections/Benefits";
 import TeamShowcase from "@/components/sections/TeamShowcase";
@@ -16,6 +17,8 @@ const Index = () => {
 
   return (
     <div>
+      <StickyNav />
+
       <Hero
         trustBadge={{ text: "Ajutăm la dezvoltarea a peste 50 de afaceri locale" }}
         headline={{
@@ -34,19 +37,27 @@ const Index = () => {
         <Process />
       </div>
 
-      <TeamShowcase />
+      <div id="echipa">
+        <TeamShowcase />
+      </div>
 
       <div id="benefits">
         <Benefits />
       </div>
 
-      <Testimonials />
+      <div id="recenzii">
+        <Testimonials />
+      </div>
 
-      <div id="pricing">
+      <div id="preturi">
         <Pricing />
       </div>
+
       <VideoFeed />
-      <FAQ />
+
+      <div id="faq">
+        <FAQ />
+      </div>
       <CTA />
       <Footer />
     </div>
