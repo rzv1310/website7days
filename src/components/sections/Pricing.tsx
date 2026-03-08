@@ -41,6 +41,8 @@ const plans: PlanData[] = [
       "3 revizii incluse",
       "Suport tehnic 30 zile",
     ],
+    visibleCount: 3,
+    ],
   },
   {
     titleLine1: "SITE DE PREZENTARE",
