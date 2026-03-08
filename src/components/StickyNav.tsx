@@ -1,16 +1,16 @@
 import { useIsMobile } from "@/hooks/use-mobile";
 
 const desktopLinks = [
-  { label: "Echipa", href: "#echipa" },
-  { label: "Prețuri", href: "#preturi" },
   { label: "Recenzii", href: "#recenzii" },
+  { label: "Prețuri", href: "#preturi" },
   { label: "FAQs", href: "#faq" },
+  { label: "Echipa", href: "#echipa" },
 ];
 
 const mobileLinks = [
-  { label: "Echipa", href: "#echipa" },
   { label: "Prețuri", href: "#preturi" },
   { label: "FAQs", href: "#faq" },
+  { label: "Echipa", href: "#echipa" },
 ];
 
 const StickyNav = () => {
