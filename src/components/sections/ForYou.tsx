@@ -127,7 +127,7 @@ const ForYou = () => {
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: [0, -8, 0] }}
                     viewport={{ once: true, margin: "-80px" }}
-                    transition={{ duration: 0.5, delay: 0.3 + i * 0.6, ease: "easeOut" }}
+                    transition={{ duration: 0.4, delay: 0.2 + i * 0.3, ease: "easeOut" }}
                   >
                     <X className="w-5 h-5 text-red-400/70 mt-0.5 shrink-0" />
                     <span className="font-body text-warm-light-text leading-relaxed">{item}</span>
