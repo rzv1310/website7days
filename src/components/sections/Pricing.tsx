@@ -57,8 +57,6 @@ const plans: PlanData[] = [
     features: [
       "Pagină Blog (cu 4 articole optimizate SEO)",
       "Pagini dedicate Servicii în website",
-      "Creare și optimizare Google Business Profile",
-      "Creare profil social media + covers",
       "Local Schema Mark-up + Organization + FAQ + AggregateReviews",
       "Optimizare SEO on-page (meta-titles, descriptions, headings)",
       "Optimizare Core Web Vitals (+80 viteză, accesibilitate)",
