@@ -351,10 +351,9 @@ const Pricing = () => {
           </h2>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto md:items-stretch">
-          <div className="mb-[50px] md:mb-0 order-2 md:order-1"><PricingCard plan={plans[0]} variant="gold" /></div>
-          <div className="mb-[50px] md:mb-0 order-1 md:order-2"><PricingCard plan={plans[1]} variant="platinum" /></div>
-          <div className="order-3"><PricingCard plan={plans[2]} variant="dark" /></div>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto md:items-stretch">
+          <div><PricingCard plan={plans[0]} variant="gold" /></div>
+          <div><PricingCard plan={plans[1]} variant="dark" /></div>
         </div>
       </div>
     </section>
