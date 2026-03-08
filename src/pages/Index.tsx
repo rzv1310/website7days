@@ -37,14 +37,6 @@ const Index = () => {
         <Process />
       </div>
 
-      <div id="echipa">
-        <TeamShowcase />
-      </div>
-
-      <div id="benefits">
-        <Benefits />
-      </div>
-
       <div id="recenzii">
         <Testimonials />
       </div>
@@ -57,6 +49,14 @@ const Index = () => {
 
       <div id="faq">
         <FAQ />
+      </div>
+
+      <div id="echipa">
+        <TeamShowcase />
+      </div>
+
+      <div id="benefits">
+        <Benefits />
       </div>
       <CTA />
       <Footer />
