@@ -1,5 +1,5 @@
-import React from "react";
-import { Check, ArrowRight, Star, Crown, Layers } from "lucide-react";
+import React, { useState } from "react";
+import { Check, ArrowRight, Star, Crown, Layers, ChevronDown } from "lucide-react";
 import ScrollReveal from "../ScrollReveal";
 
 interface PlanData {
