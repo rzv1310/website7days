@@ -52,30 +52,6 @@ const plans: PlanData[] = [
     visibleCount: 5,
   },
   {
-    titleLine1: "SITE DE PREZENTARE",
-    titleLine2: "PLATINUM",
-    price: "1700",
-    
-    preDescription: "Ce Primești:",
-    description: "Website profesional livrat în 7 zile. Plată unică, fără abonament lunar.",
-    highlight: "Totul din Pachetul Gold +",
-    note: "Ce primești aici NU e doar 'un site frumos'.\n\nȘi NU e din categoria 'ai un vecin care știe un băiat care face site-uri'!\n\nCe primești aici este top local SEO, tehnic impecabil, desenat de la zero pentru businessul tău și focusat pe apeluri și programări - pentru a converti vizitatorii în clienți.",
-    features: [
-      "Pagină Blog (cu 4 articole optimizate SEO)",
-      "Pagini dedicate Servicii în website",
-      "Local Schema Mark-up + Organization + FAQ + AggregateReviews",
-      "Optimizare SEO on-page (meta-titluri, descrieri)",
-      "Optimizare Core Web Vitals (viteză, accesibilitate)",
-      "LLM.txt (descoperit de ChatGPT, Google AI Overviews)",
-      "OpenGraph cards (share WhatsApp/Fb/Twitter)",
-      "Banner (pop-up) Cookies",
-      "Widget pt persoane cu dizabilități",
-      "Nume domeniu (1 an)",
-      "Găzduire domeniu (1 an)",
-      "Mentenanță tehnică (1 an)",
-    ],
-  },
-  {
     titleLine1: "WEBSITE +",
     titleLine2: "MAGAZIN ONLINE",
     price: "Cere Oferta",
@@ -375,10 +351,9 @@ const Pricing = () => {
           </h2>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto md:items-stretch">
-          <div className="mb-[50px] md:mb-0 order-2 md:order-1"><PricingCard plan={plans[0]} variant="gold" /></div>
-          <div className="mb-[50px] md:mb-0 order-1 md:order-2"><PricingCard plan={plans[1]} variant="platinum" /></div>
-          <div className="order-3"><PricingCard plan={plans[2]} variant="dark" /></div>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto md:items-stretch">
+          <div><PricingCard plan={plans[0]} variant="gold" /></div>
+          <div><PricingCard plan={plans[1]} variant="dark" /></div>
         </div>
       </div>
     </section>
