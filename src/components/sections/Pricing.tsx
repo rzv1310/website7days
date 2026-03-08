@@ -27,8 +27,9 @@ const plans: PlanData[] = [
       "Apel telefonic (30 min) în care pregătim totul pentru ziua lansării.",
       "Pagini: 'Acasă', 'Servicii', 'Despre noi', 'Tarife', 'Contact'",
       "Pagini Legale (Termeni, Cookies, GDPR)",
+      "Pagini dedicate pentru Servicii",
+      "Pagină Blog (cu 4 articole optimizate SEO)",
       "Logo design, Favicon",
-      
       "Research competiție locală",
       "Buton WhatsApp",
       "Harta locației in footer",
@@ -41,7 +42,7 @@ const plans: PlanData[] = [
       "3 revizii incluse",
       "Suport tehnic 30 zile",
     ],
-    visibleCount: 3,
+    visibleCount: 5,
   },
   {
     titleLine1: "SITE DE PREZENTARE",
