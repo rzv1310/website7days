@@ -37,7 +37,7 @@ const plans: PlanData[] = [
       "Configurare e-mail personalizat",
       "Formular programare online",
       "Robots.txt, Sitemap.xml",
-      "LLMs.txt (descoperit de ChatGPT, Google AI Overviews)",
+      "LLMs.txt (ChatGPT, Google AI Overviews)",
       "Certificat SSL gratuit",
       "Structură linkuri interne",
       "Local Schema Mark-up + Organization + FAQ + AggregateReviews",
