@@ -27,7 +27,7 @@ const plans: PlanData[] = [
       "Apel telefonic (30 min) în care pregătim totul pentru ziua lansării.",
       "Pagini: 'Acasă', 'Servicii', 'Despre noi', 'Tarife', 'Contact'",
       "Pagini Legale (Termeni, Cookies, GDPR)",
-      "Pagini dedicate pentru Servicii",
+      "Pagini dedicate Servicii",
       "Pagină Blog (cu 4 articole optimizate SEO)",
       "Logo design, Favicon",
       "Research competiție locală",
