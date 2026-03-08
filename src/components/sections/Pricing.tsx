@@ -42,7 +42,6 @@ const plans: PlanData[] = [
       "Suport tehnic 30 zile",
     ],
     visibleCount: 3,
-    ],
   },
   {
     titleLine1: "SITE DE PREZENTARE",
