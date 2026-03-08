@@ -6,13 +6,13 @@ interface PlanData {
   titleLine1: string;
   titleLine2: string;
   price: string;
-  
   preDescription?: string;
   description: string;
   features: string[];
   highlight?: string;
   note?: string;
   ctaText?: string;
+  visibleCount?: number;
 }
 
 const plans: PlanData[] = [
