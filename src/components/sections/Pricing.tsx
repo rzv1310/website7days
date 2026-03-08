@@ -28,7 +28,7 @@ const plans: PlanData[] = [
       "Pagini: 'Acasă', 'Servicii', 'Despre noi', 'Tarife', 'Contact'",
       "Pagini Legale (Termeni, Cookies, GDPR)",
       "Logo design",
-      "Brand colors & brand fonts",
+      "Favicon",
       "Hero Images",
       "Research + Content writing",
       "Buton WhatsApp",
