@@ -40,7 +40,6 @@ const plans: PlanData[] = [
       "Sitemap.xml",
       "Certificat SSL gratuit",
       "Structură linkuri interne",
-      "Favicon",
       "3 revizii incluse",
       "Suport tehnic 30 zile",
     ],
