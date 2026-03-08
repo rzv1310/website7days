@@ -31,7 +31,7 @@ const plans: PlanData[] = [
       "Hero Images",
       "Research competiție locală",
       "Buton WhatsApp",
-      "Map embed în footer",
+      "Harta locației in footer",
       "Optimizare Mobil",
       "Configurare e-mail personalizat",
       "Formular programare online",
