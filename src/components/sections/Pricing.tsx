@@ -103,6 +103,7 @@ const PricingCard: React.FC<{ plan: PlanData; variant: "gold" | "platinum" | "da
   plan,
   variant,
 }) => {
+  const [expanded, setExpanded] = useState(false);
 
   const styles = {
     gold: {
