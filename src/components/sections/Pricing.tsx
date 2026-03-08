@@ -22,7 +22,7 @@ const plans: PlanData[] = [
     price: "970",
     preDescription: "Ce Primești:",
     description: "Un site web profesional, livrat in 7 zile, care arată perfect pe orice ecran și gata să-ți producă bani în fiecare zi.",
-    note: "La cerere: Domeniu + Găzduire + suport + security updates = 100 lei/lună",
+    note: "Opțional: Domeniu + Găzduire + suport + security updates = 100 lei/lună",
     features: [
       "Apel telefonic (30 min) în care pregătim totul pentru ziua lansării.",
       "Pagini: 'Acasă', 'Servicii', 'Despre noi', 'Tarife', 'Contact'",
