@@ -265,28 +265,64 @@ const PricingCard: React.FC<{ plan: PlanData; variant: "gold" | "platinum" | "da
           )}
 
           <div className="flex flex-col gap-2 mb-8 flex-grow">
-            {plan.features.map((f, i) => {
-              const isHighlight = f.startsWith("__highlight__");
-              const text = isHighlight ? f.replace("__highlight__", "") : f;
-              return isHighlight ? (
-                <p
-                  key={i}
-                  className={`font-body font-bold uppercase tracking-wider ${variant === "platinum" ? "text-[0.875rem]" : "text-xs"}`}
-                  style={{ color: s.priceColor }}
-                >
-                  {text}
-                </p>
-              ) : (
-                <div
-                  key={i}
-                  className={`flex items-start gap-2 font-body ${variant === "gold" || variant === "platinum" ? "text-[0.875rem]" : "text-xs"}`}
-                  style={{ color: s.pillColor }}
-                >
-                  <Check className="w-3.5 h-3.5 flex-shrink-0 mt-0.5" style={{ color: s.priceColor }} />
-                  {text}
-                </div>
+            {(() => {
+              const hasAccordion = plan.visibleCount !== undefined;
+              const visibleFeatures = hasAccordion ? plan.features.slice(0, plan.visibleCount) : plan.features;
+              const hiddenFeatures = hasAccordion ? plan.features.slice(plan.visibleCount) : [];
+
+              const renderFeature = (f: string, i: number) => {
+                const isHighlight = f.startsWith("__highlight__");
+                const text = isHighlight ? f.replace("__highlight__", "") : f;
+                return isHighlight ? (
+                  <p
+                    key={i}
+                    className={`font-body font-bold uppercase tracking-wider ${variant === "platinum" ? "text-[0.875rem]" : "text-xs"}`}
+                    style={{ color: s.priceColor }}
+                  >
+                    {text}
+                  </p>
+                ) : (
+                  <div
+                    key={i}
+                    className={`flex items-start gap-2 font-body ${variant === "gold" || variant === "platinum" ? "text-[0.875rem]" : "text-xs"}`}
+                    style={{ color: s.pillColor }}
+                  >
+                    <Check className="w-3.5 h-3.5 flex-shrink-0 mt-0.5" style={{ color: s.priceColor }} />
+                    {text}
+                  </div>
+                );
+              };
+
+              return (
+                <>
+                  {visibleFeatures.map(renderFeature)}
+                  {hasAccordion && hiddenFeatures.length > 0 && (
+                    <>
+                      <div
+                        className="overflow-hidden transition-all duration-300 flex flex-col gap-2"
+                        style={{
+                          maxHeight: expanded ? `${hiddenFeatures.length * 40}px` : "0px",
+                          opacity: expanded ? 1 : 0,
+                        }}
+                      >
+                        {hiddenFeatures.map((f, i) => renderFeature(f, visibleFeatures.length + i))}
+                      </div>
+                      <button
+                        onClick={() => setExpanded(!expanded)}
+                        className="flex items-center gap-1.5 font-body text-[0.8125rem] font-medium mt-1 transition-colors hover:opacity-80"
+                        style={{ color: s.priceColor }}
+                      >
+                        {expanded ? "Ascunde" : "Vezi mai mult"}
+                        <ChevronDown
+                          className="w-4 h-4 transition-transform duration-300"
+                          style={{ transform: expanded ? "rotate(180deg)" : "rotate(0deg)" }}
+                        />
+                      </button>
+                    </>
+                  )}
+                </>
               );
-            })}
+            })()}
           </div>
 
           {plan.note && (
