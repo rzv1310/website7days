@@ -67,7 +67,7 @@ const plans: PlanData[] = [
       "Optimizare SEO on-page (meta-titles, descriptions, headings)",
       "Optimizare Core Web Vitals (+80 viteză, accesibilitate)",
       "LLM.txt (descoperit de ChatGPT, Google AI Overviews)",
-      "OpenGraph cards (share WhatsApp/Facebook/Twitter)",
+      "OpenGraph cards (share WhatsApp/Fb/Twitter)",
       "Banner (pop-up) Cookies",
       "Widget pt persoane cu dizabilități",
       "Nume domeniu (1 an)",
