@@ -42,7 +42,7 @@ const ForYou = () => {
   const notForYouItems = [
     "Nu vrei să crești.",
     "Ești mulțumit cu câți clienți ai acum.",
-    "Ești conștient că dacă nu apari online în 2026 - pur și simplu nu exiști.",
+    "Crezi că poți exista in 2026 fără online.",
   ];
 
   const getBoldInfo = (item: string): { boldPart: string; delayIndex: number } | null => {
