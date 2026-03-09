@@ -309,9 +309,14 @@ const PricingCard: React.FC<{ plan: PlanData; variant: "gold" | "platinum" | "da
           </div>
 
           {plan.note && (
-            <p className="font-body mb-3 text-center whitespace-pre-line" style={{ color: "hsl(36, 50%, 62%)", fontSize: "16px" }}>
-              {plan.note}
-            </p>
+            <div className="text-center mb-3">
+              <p className="font-body whitespace-pre-line" style={{ color: "white", fontSize: "16px" }}>
+                {plan.note.split('\n\n')[0]}
+              </p>
+              <p className="font-body whitespace-pre-line mt-4 mb-[10px] md:mb-0" style={{ color: "hsl(36, 50%, 62%)", fontSize: "16px" }}>
+                {plan.note.split('\n\n').slice(1).join('\n\n')}
+              </p>
+            </div>
           )}
 
           {/* CTA */}
@@ -324,7 +329,7 @@ const PricingCard: React.FC<{ plan: PlanData; variant: "gold" | "platinum" | "da
             style={{
               background: "transparent",
               border: "1px solid hsl(36, 50%, 62%)",
-              color: "hsl(36, 50%, 62%)",
+              color: "white",
             }}
           >
             <span className="cta-glow-dot" />
