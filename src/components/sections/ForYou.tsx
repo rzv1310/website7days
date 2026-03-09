@@ -104,7 +104,7 @@ const ForYou = () => {
               </p>
 
               <a
-                href="#pricing"
+                href="#preturi"
                 className="block md:hidden w-full text-center mt-4 px-8 py-3 rounded-xl border border-warm-gold/30 text-gold-bright font-body font-semibold text-base hover:bg-warm-gold/10 transition-colors"
               >
                 Vezi Preț Site
