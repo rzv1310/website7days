@@ -1,5 +1,4 @@
 import { Clock, Zap, Shield, TrendingUp, Smartphone, HeartHandshake } from "lucide-react";
-import { useEffect, useRef, useState } from "react";
 
 const benefits = [
   {
@@ -35,74 +34,11 @@ const benefits = [
 ];
 
 const Benefits = () => {
-  const wrapperRef = useRef<HTMLDivElement>(null);
-  const [translateX, setTranslateX] = useState(0);
-  const [isMobile, setIsMobile] = useState(false);
-
-  useEffect(() => {
-    const checkMobile = () => setIsMobile(window.innerWidth < 768);
-    checkMobile();
-    window.addEventListener("resize", checkMobile);
-    return () => window.removeEventListener("resize", checkMobile);
-  }, []);
-
-  useEffect(() => {
-    const wrapper = wrapperRef.current;
-    if (!wrapper) return;
-
-    const handleScroll = () => {
-      const rect = wrapper.getBoundingClientRect();
-      const wrapperHeight = wrapper.offsetHeight;
-      const viewportHeight = window.innerHeight;
-      const scrollableDistance = wrapperHeight - viewportHeight;
-      const isMobile = window.innerWidth < 768;
-      const deadZone = isMobile ? 300 : 600;
-      const endDeadZone = isMobile ? 400 : 600;
-
-      if (rect.top <= 0 && rect.bottom >= viewportHeight) {
-        const scrolled = -rect.top;
-        const adjustedScroll = Math.max(scrolled - deadZone, 0);
-        const adjustedDistance = scrollableDistance - deadZone - endDeadZone;
-        const rawProgress = Math.min(Math.max(adjustedScroll / adjustedDistance, 0), 1);
-
-        // Snap to cards: divide progress into card segments
-        const cardCount = 6;
-        const segments = cardCount - 1; // 5 transitions between 6 cards
-        const segmentProgress = rawProgress * segments;
-        const currentSegment = Math.floor(segmentProgress);
-        const segmentFraction = segmentProgress - currentSegment;
-
-        // Ease with a stronger snap feel: hold longer at edges
-        const hold = 0.38;
-        let snapped;
-        if (segmentFraction < hold) {
-          snapped = 0;
-        } else if (segmentFraction > 1 - hold) {
-          snapped = 1;
-        } else {
-          const t = (segmentFraction - hold) / (1 - 2 * hold);
-          snapped = t * t * (3 - 2 * t); // smoothstep
-        }
-
-        const progress = Math.min((currentSegment + snapped) / segments, 1);
-
-        const cardWidth = isMobile ? 300 + 16 : 380 + 32;
-        const maxTranslate = 6 * cardWidth - window.innerWidth + (isMobile ? 48 : 148);
-        setTranslateX(-progress * Math.max(maxTranslate, 0));
-      }
-    };
-
-    window.addEventListener("scroll", handleScroll, { passive: true });
-    handleScroll();
-
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
   return (
-    <div ref={wrapperRef} className="section-dark" style={{ height: isMobile ? "280vh" : "350vh" }}>
-      <div className="sticky top-0 h-screen flex flex-col overflow-hidden">
+    <section className="section-dark py-20 md:py-28">
+      <div className="container">
         {/* Header */}
-        <div className="pt-20 md:pt-28 pb-12 text-center px-6 flex-shrink-0">
+        <div className="text-center mb-16">
           <span className="text-gold font-body text-sm uppercase tracking-[0.2em] font-medium">
             De ce noi
           </span>
@@ -111,16 +47,13 @@ const Benefits = () => {
           </h2>
         </div>
 
-        {/* Horizontal track */}
-        <div className="flex-1 flex items-center overflow-hidden px-12">
-          <div
-            className="flex gap-4 md:gap-8 will-change-transform"
-            style={{ transform: `translateX(${translateX}px)` }}
-          >
+        {/* Horizontal scroll container */}
+        <div className="overflow-x-auto pb-8 -mx-6 px-6 md:mx-0 md:px-0">
+          <div className="flex gap-4 md:gap-8 md:grid md:grid-cols-2 lg:grid-cols-3">
             {benefits.map((benefit) => (
               <div
                 key={benefit.title}
-                className="group flex-shrink-0 w-[300px] md:w-[380px] p-6 md:p-8 rounded-2xl border border-warm-gold/10 backdrop-blur-sm hover:border-warm-gold/30 transition-all duration-300 hover:-translate-y-1"
+                className="group flex-shrink-0 w-[300px] md:w-auto p-6 md:p-8 rounded-2xl border border-warm-gold/10 backdrop-blur-sm hover:border-warm-gold/30 transition-all duration-300"
                 style={{
                   backgroundColor: "hsl(25 20% 14% / 0.5)",
                   backgroundImage: `linear-gradient(hsl(30 35% 90% / 0.04) 1px, transparent 1px), linear-gradient(90deg, hsl(30 35% 90% / 0.04) 1px, transparent 1px)`,
@@ -138,7 +71,7 @@ const Benefits = () => {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 
