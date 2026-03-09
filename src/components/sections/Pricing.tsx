@@ -352,7 +352,7 @@ const Pricing = () => {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto md:items-stretch">
-          <div><PricingCard plan={plans[0]} variant="gold" /></div>
+          <div className="mb-[50px] md:mb-0"><PricingCard plan={plans[0]} variant="gold" /></div>
           <div><PricingCard plan={plans[1]} variant="dark" /></div>
         </div>
       </div>
