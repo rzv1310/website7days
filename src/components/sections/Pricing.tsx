@@ -214,7 +214,7 @@ const PricingCard: React.FC<{ plan: PlanData; variant: "gold" | "platinum" | "da
             <div className="flex items-end gap-1 mb-1">
               {variant === "gold" && (
                 <span
-                  className="text-2xl font-body mb-2 line-through mr-2"
+                  className="font-display font-bold text-[46px] md:text-[58px] line-through mr-2"
                   style={{ 
                     color: s.priceColor,
                     textDecorationColor: "white"
