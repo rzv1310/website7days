@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import Hero from "@/components/ui/animated-shader-hero";
 import StickyNav from "@/components/StickyNav";
 import ForYou from "@/components/sections/ForYou";
@@ -15,13 +14,6 @@ import Footer from "@/components/sections/Footer";
 
 const Index = () => {
   const whatsAppUrl = "https://wa.me/40742702982";
-
-  useEffect(() => {
-    if ('scrollRestoration' in history) {
-      history.scrollRestoration = 'manual';
-    }
-    window.scrollTo({ top: 0, left: 0, behavior: 'instant' as ScrollBehavior });
-  }, []);
 
   return (
     <div>
