@@ -13,7 +13,7 @@ const steps = [
   {
     icon: Palette,
     step: "02",
-    title: "Codăm & Desenăm",
+    title: "Codăm",
     description: "Construim paginile tehnic și cu design wow, conținut optimizat și funcționalități adaptate nevoilor tale.",
     day: "Zilele 2-5",
   },
