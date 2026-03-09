@@ -226,6 +226,12 @@ const PricingCard: React.FC<{ plan: PlanData; variant: "gold" | "platinum" | "da
                       background: 'linear-gradient(to top right, transparent calc(50% - 1px), white calc(50% - 1px), white calc(50% + 1px), transparent calc(50% + 1px))'
                     }}
                   />
+                  <span 
+                    className="absolute inset-0"
+                    style={{
+                      background: 'linear-gradient(to bottom right, transparent calc(50% - 1px), white calc(50% - 1px), white calc(50% + 1px), transparent calc(50% + 1px))'
+                    }}
+                  />
                 </span>
               )}
               <span
