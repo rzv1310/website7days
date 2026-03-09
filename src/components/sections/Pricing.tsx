@@ -211,8 +211,8 @@ const PricingCard: React.FC<{ plan: PlanData; variant: "gold" | "platinum" | "da
             </div>
           </div>
 
-          {/* Price - fixed height on desktop */}
-          <div className="md:min-h-[110px]">
+          {/* Price - fixed height on desktop, content aligned to bottom */}
+          <div className="md:min-h-[110px] md:flex md:flex-col md:justify-end">
             <div className="flex items-baseline gap-1 mb-1">
               {variant === "gold" && (
                 <>
