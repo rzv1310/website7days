@@ -359,7 +359,7 @@ const PricingCard: React.FC<{ plan: PlanData; variant: "gold" | "platinum" | "da
               <p className="font-body whitespace-pre-line" style={{ color: "white", fontSize: "16px" }}>
                 {plan.note.split('\n\n')[0]}
               </p>
-              <p className="font-body whitespace-pre-line mt-4 mb-[10px] md:mb-0" style={{ color: "hsl(36, 50%, 62%)", fontSize: "16px" }}>
+              <p className="font-body text-[1.0625rem] md:text-sm whitespace-pre-line mt-4 mb-[10px] md:mb-0 leading-relaxed" style={{ color: s.descColor }}>
                 {plan.note.split('\n\n').slice(1).join('\n\n')}
               </p>
             </div>
