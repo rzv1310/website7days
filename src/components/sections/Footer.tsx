@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
-    <footer className="section-dark border-t border-warm-gold/10 py-8">
+    <footer className="section-dark border-t border-warm-gold/10 py-8 pb-[100px]">
       <div className="container">
         <div className="flex flex-col md:flex-row items-center justify-between gap-4 text-center md:text-left">
           <p className="font-display text-lg font-semibold text-warm-light">
