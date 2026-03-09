@@ -229,7 +229,10 @@ const PricingCard: React.FC<{ plan: PlanData; variant: "gold" | "platinum" | "da
               {variant === "gold" && (
                 <span
                   className="text-2xl font-body mb-2 line-through ml-2"
-                  style={{ color: "white", opacity: 0.6 }}
+                  style={{ 
+                    color: s.priceColor,
+                    textDecorationColor: "white"
+                  }}
                 >
                   1700€
                 </span>
