@@ -79,6 +79,7 @@ const plans: PlanData[] = [
       "Remarketing integrat (Meta Pixel, Google Ads Tag)",
       "3 luni suport gratuit",
     ],
+    visibleCount: 5,
   },
 ];
 
