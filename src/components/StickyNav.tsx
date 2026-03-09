@@ -1,3 +1,4 @@
+import { Phone } from "lucide-react";
 import { useIsMobile } from "@/hooks/use-mobile";
 
 const desktopLinks = [
@@ -10,7 +11,6 @@ const desktopLinks = [
 const mobileLinks = [
   { label: "Prețuri", href: "#preturi" },
   { label: "FAQs", href: "#faq" },
-  { label: "Echipa", href: "#echipa" },
 ];
 
 const StickyNav = () => {
@@ -19,7 +19,7 @@ const StickyNav = () => {
 
   return (
     <nav className="sticky top-0 z-[9999] bg-warm-dark py-5 md:py-5 px-4" style={{ paddingTop: `calc(0.9rem + env(safe-area-inset-top, 0px))` }}>
-      <div className="max-w-4xl mx-auto flex items-center justify-center gap-8 md:gap-10">
+      <div className="max-w-4xl mx-auto flex items-center justify-center gap-8 md:gap-10 relative">
         {links.map((link) => (
           <a
             key={link.href}
@@ -29,9 +29,21 @@ const StickyNav = () => {
             {link.label}
           </a>
         ))}
+        {isMobile && (
+          <a
+            href="https://wa.me/40742702982"
+            target="_blank"
+            rel="noopener noreferrer"
+            title="Contactează-ne pe WhatsApp"
+            className="absolute right-0 text-gold hover:text-gold-bright transition-colors"
+          >
+            <Phone className="w-5 h-5" />
+          </a>
+        )}
       </div>
     </nav>
   );
 };
 
 export default StickyNav;
+
