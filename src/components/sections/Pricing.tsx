@@ -213,26 +213,34 @@ const PricingCard: React.FC<{ plan: PlanData; variant: "gold" | "platinum" | "da
           <div>
             <div className="flex items-baseline gap-1 mb-1">
               {variant === "gold" && (
-                <span
-                  className="font-display font-bold text-[46px] md:text-[58px] mr-2 relative inline-block"
-                  style={{ 
-                    color: s.priceColor,
-                  }}
-                >
-                  1700€
-                  <span 
-                    className="absolute inset-0"
-                    style={{
-                      background: 'linear-gradient(to top right, transparent calc(50% - 1px), white calc(50% - 1px), white calc(50% + 1px), transparent calc(50% + 1px))'
+                <>
+                  <span
+                    className="font-display font-bold text-[46px] md:text-[58px] relative inline-block"
+                    style={{ 
+                      color: s.priceColor,
                     }}
-                  />
-                  <span 
-                    className="absolute inset-0"
-                    style={{
-                      background: 'linear-gradient(to bottom right, transparent calc(50% - 1px), white calc(50% - 1px), white calc(50% + 1px), transparent calc(50% + 1px))'
-                    }}
-                  />
-                </span>
+                  >
+                    1700
+                    <span 
+                      className="absolute inset-0"
+                      style={{
+                        background: 'linear-gradient(to top right, transparent calc(50% - 1px), white calc(50% - 1px), white calc(50% + 1px), transparent calc(50% + 1px))'
+                      }}
+                    />
+                    <span 
+                      className="absolute inset-0"
+                      style={{
+                        background: 'linear-gradient(to bottom right, transparent calc(50% - 1px), white calc(50% - 1px), white calc(50% + 1px), transparent calc(50% + 1px))'
+                      }}
+                    />
+                  </span>
+                  <span
+                    className="text-2xl font-body mr-2"
+                    style={{ color: s.currencyColor }}
+                  >
+                    €
+                  </span>
+                </>
               )}
               <span
                 className="font-display font-bold text-5xl md:text-6xl"
