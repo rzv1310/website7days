@@ -226,6 +226,14 @@ const PricingCard: React.FC<{ plan: PlanData; variant: "gold" | "platinum" | "da
                   €
                 </span>
               )}
+              {variant === "gold" && (
+                <span
+                  className="text-2xl font-body mb-2 line-through ml-2"
+                  style={{ color: "white", opacity: 0.6 }}
+                >
+                  1700€
+                </span>
+              )}
             </div>
             <p className="text-xs font-body italic mt-1" style={{ color: s.subtitleColor }}>
               * posibilitate plată în rate
