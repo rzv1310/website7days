@@ -194,10 +194,10 @@ const PricingCard: React.FC<{ plan: PlanData; variant: "gold" | "platinum" | "da
         )}
 
         <div className="relative z-10 p-8 md:p-10 flex flex-col h-full">
-          {/* Header */}
-          <div className="flex items-center gap-2 mb-6">
+          {/* Header - fixed height on desktop */}
+          <div className="flex items-center gap-2 mb-6 md:min-h-[56px]">
             <div
-              className="w-8 h-8 rounded-full flex items-center justify-center"
+              className="w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0"
               style={{ background: s.iconBg }}
             >
               <Icon className="w-4 h-4" style={{ color: s.priceColor }} />
@@ -211,8 +211,8 @@ const PricingCard: React.FC<{ plan: PlanData; variant: "gold" | "platinum" | "da
             </div>
           </div>
 
-          {/* Price */}
-          <div>
+          {/* Price - fixed height on desktop */}
+          <div className="md:min-h-[110px]">
             <div className="flex items-baseline gap-1 mb-1">
               {variant === "gold" && (
                 <>
@@ -266,23 +266,27 @@ const PricingCard: React.FC<{ plan: PlanData; variant: "gold" | "platinum" | "da
 
           <div className="w-full h-px mb-6" style={{ background: s.lineColor }} />
 
-          {/* Pre-description label */}
-          {plan.preDescription && (
-            <p
-              className="font-body text-[0.9375rem] md:text-xs font-bold uppercase tracking-wider mb-2"
-              style={{ color: s.priceColor }}
-            >
-              {plan.preDescription}
-            </p>
-          )}
+          {/* Pre-description label - fixed height on desktop */}
+          <div className="md:min-h-[28px] mb-2">
+            {plan.preDescription && (
+              <p
+                className="font-body text-[0.9375rem] md:text-xs font-bold uppercase tracking-wider"
+                style={{ color: s.priceColor }}
+              >
+                {plan.preDescription}
+              </p>
+            )}
+          </div>
 
-          {/* Description */}
-          <p
-            className="font-body text-[1.0625rem] md:text-sm mb-4 leading-relaxed"
-            style={{ color: s.descColor }}
-          >
-            {plan.description}
-          </p>
+          {/* Description - fixed height on desktop */}
+          <div className="md:min-h-[72px] mb-4">
+            <p
+              className="font-body text-[1.0625rem] md:text-sm leading-relaxed"
+              style={{ color: s.descColor }}
+            >
+              {plan.description}
+            </p>
+          </div>
 
           {/* Highlight */}
           {plan.highlight && (
