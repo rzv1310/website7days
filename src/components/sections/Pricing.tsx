@@ -138,10 +138,25 @@ const PricingCard: React.FC<{ plan: PlanData; variant: "gold" | "platinum" | "da
 
   const s = styles[variant];
   const isPlatinum = variant === "platinum";
+  const isGold = variant === "gold";
   const Icon = isPlatinum ? Crown : variant === "gold" ? Star : Layers;
 
   return (
     <div className="h-full flex flex-col">
+      {/* Badge for gold - positioned above without affecting card alignment */}
+      {isGold && (
+        <div className="text-center mb-3 md:-mt-10">
+          <span
+            className="inline-block px-4 py-1.5 rounded-full text-xs font-bold tracking-[0.15em] font-body uppercase"
+            style={{
+              background: "linear-gradient(135deg, hsl(36, 50%, 55%), hsl(40, 60%, 65%))",
+              color: "hsl(25, 30%, 8%)",
+            }}
+          >
+            🎉 Preț Redus până de Paște
+          </span>
+        </div>
+      )}
       {/* Popular badge for platinum - positioned above without affecting card alignment */}
       {isPlatinum && (
         <div className="text-center mb-3 md:-mt-10">
