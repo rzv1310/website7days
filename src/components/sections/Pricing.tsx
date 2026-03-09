@@ -212,6 +212,17 @@ const PricingCard: React.FC<{ plan: PlanData; variant: "gold" | "platinum" | "da
           {/* Price */}
           <div>
             <div className="flex items-end gap-1 mb-1">
+              {variant === "gold" && (
+                <span
+                  className="text-2xl font-body mb-2 line-through mr-2"
+                  style={{ 
+                    color: s.priceColor,
+                    textDecorationColor: "white"
+                  }}
+                >
+                  1700€
+                </span>
+              )}
               <span
                 className={`font-display font-bold ${/^\d+$/.test(plan.price) ? "text-5xl md:text-6xl" : "text-3xl md:text-4xl"}`}
                 style={{ color: s.priceColor }}
@@ -224,14 +235,6 @@ const PricingCard: React.FC<{ plan: PlanData; variant: "gold" | "platinum" | "da
                   style={{ color: s.currencyColor }}
                 >
                   €
-                </span>
-              )}
-              {variant === "gold" && (
-                <span
-                  className="text-2xl font-body mb-2 line-through ml-2"
-                  style={{ color: "white", opacity: 0.6 }}
-                >
-                  1700€
                 </span>
               )}
             </div>
