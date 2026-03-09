@@ -52,6 +52,12 @@ fbq('track', 'PageView');
 }
 </script>
 <!-- End Meta Pixel Code -->
+
+<!-- Scroll restoration fix: disable browser scroll restoration before React loads -->
+<script>
+  if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
+  window.scrollTo(0, 0);
+</script>
 </head>
 
   <body>
