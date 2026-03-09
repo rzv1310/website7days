@@ -329,7 +329,7 @@ const PricingCard: React.FC<{ plan: PlanData; variant: "gold" | "platinum" | "da
             style={{
               background: "transparent",
               border: "1px solid hsl(36, 50%, 62%)",
-              color: "hsl(36, 50%, 62%)",
+              color: "white",
             }}
           >
             <span className="cta-glow-dot" />
