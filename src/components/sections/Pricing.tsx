@@ -214,13 +214,18 @@ const PricingCard: React.FC<{ plan: PlanData; variant: "gold" | "platinum" | "da
             <div className="flex items-baseline gap-1 mb-1">
               {variant === "gold" && (
                 <span
-                  className="font-display font-bold text-[46px] md:text-[58px] line-through mr-2"
+                  className="font-display font-bold text-[46px] md:text-[58px] mr-2 relative inline-block"
                   style={{ 
                     color: s.priceColor,
-                    textDecorationColor: "white"
                   }}
                 >
                   1700€
+                  <span 
+                    className="absolute inset-0"
+                    style={{
+                      background: 'linear-gradient(to top right, transparent calc(50% - 1px), white calc(50% - 1px), white calc(50% + 1px), transparent calc(50% + 1px))'
+                    }}
+                  />
                 </span>
               )}
               <span
