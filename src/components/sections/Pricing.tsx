@@ -244,7 +244,7 @@ const PricingCard: React.FC<{ plan: PlanData; variant: "gold" | "platinum" | "da
                 </>
               )}
               <span
-                className={`font-display font-bold ${/^\d+$/.test(plan.price) ? "text-5xl md:text-6xl" : "text-4xl md:text-4xl"}`}
+                className={`font-display font-bold ${/^\d+$/.test(plan.price) ? "text-5xl md:text-6xl" : "text-4xl md:text-5xl"}`}
                 style={{ color: s.priceColor }}
               >
                 {plan.price}
