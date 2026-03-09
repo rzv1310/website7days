@@ -1,23 +1,12 @@
 
 
-## Problem
+## Modificare stilul notei din pachetul Gold
 
-On page refresh, the browser's built-in scroll restoration kicks in **before** React mounts and runs `useEffect`, so the page stays at the previous scroll position instead of jumping to the top. The CSS `scroll-behavior: smooth` also makes the `scrollTo(0,0)` animate slowly instead of snapping.
+Textul "Opțional: Domeniu + Găzduire + suport + security updates = 100 lei/lună" va fi schimbat:
+- Culoare: din `white` în gri (e.g. `hsla(30, 30%, 88%, 0.6)` — același gri folosit deja pentru descrieri)
+- Fără bold (deja nu e bold, deci nu e nevoie de schimbări aici)
 
-## Plan
+### Modificare în `src/components/sections/Pricing.tsx`
 
-**File: `src/pages/Index.tsx`** — Update the `useEffect` to:
-1. Set `history.scrollRestoration = 'manual'` to disable the browser's automatic scroll restoration.
-2. Use `window.scrollTo({ top: 0, behavior: 'instant' })` to override the smooth scroll CSS and snap to top immediately.
-
-```tsx
-useEffect(() => {
-  if ('scrollRestoration' in history) {
-    history.scrollRestoration = 'manual';
-  }
-  window.scrollTo({ top: 0, left: 0, behavior: 'instant' as ScrollBehavior });
-}, []);
-```
-
-This is a 1-file, ~3-line change.
+Linia cu `plan.note` (linia ~299) — schimb `color: "white"` în `color: "hsla(30, 30%, 88%, 0.6)"`.
 
