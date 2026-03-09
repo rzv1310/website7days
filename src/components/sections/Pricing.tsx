@@ -330,7 +330,7 @@ const PricingCard: React.FC<{ plan: PlanData; variant: "gold" | "platinum" | "da
                       <div
                         className="overflow-hidden transition-all duration-300 flex flex-col gap-2"
                         style={{
-                          maxHeight: expanded ? `${hiddenFeatures.length * 40}px` : "0px",
+                          maxHeight: expanded ? `${hiddenFeatures.length * 60}px` : "0px",
                           opacity: expanded ? 1 : 0,
                         }}
                       >
