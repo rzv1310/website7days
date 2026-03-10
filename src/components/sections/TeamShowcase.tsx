@@ -17,13 +17,13 @@ const slides: Slide[] = [
     type: "text",
     content: (
       <div className="flex flex-col items-center justify-center h-full px-6 text-center" style={{ background: '#ffffff' }}>
-        <p className="text-[1.375rem] md:text-[1.625rem] font-bold text-warm-brown-text mb-6">
+        <p className="text-[1.375rem] md:text-[1.625rem] font-bold text-gray-900 mb-6">
           Suntem echipa care transformă „frumosul" în „profitabil".
         </p>
-        <p className="text-[0.9375rem] md:text-[1.125rem] text-warm-brown-text/80 mb-4">
+        <p className="text-[0.9375rem] md:text-[1.125rem] text-gray-700 mb-4">
           La noi, proiectul tău nu primește doar o bifă într-un calendar, ci devine o prioritate strategică.
         </p>
-        <p className="text-[0.9375rem] md:text-[1.125rem] text-warm-brown-text/80">
+        <p className="text-[0.9375rem] md:text-[1.125rem] text-gray-700">
           Nu ne limităm la a crea ceva care „arată bine" – construim instrumente de vânzare.
         </p>
       </div>
