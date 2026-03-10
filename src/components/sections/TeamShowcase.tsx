@@ -34,20 +34,20 @@ const slides: Slide[] = [
     content: (
       <div className="flex flex-col items-center justify-center h-full px-5 text-center" style={{ background: '#ffffff' }}>
         <div className="space-y-4 mb-6">
-          <p className="text-[0.8125rem] md:text-[0.9375rem] text-warm-brown-text/80">
-            <span className="font-semibold text-warm-brown-text">Andreea (Design, 5 ani):</span> Se asigură că brandul tău are o identitate vizuală care captează atenția și ghidează utilizatorul spre conversie.
+          <p className="text-[0.8125rem] md:text-[0.9375rem] text-gray-700">
+            <span className="font-semibold text-gray-900">Andreea (Design, 5 ani):</span> Se asigură că brandul tău are o identitate vizuală care captează atenția și ghidează utilizatorul spre conversie.
           </p>
-          <p className="text-[0.8125rem] md:text-[0.9375rem] text-warm-brown-text/80">
-            <span className="font-semibold text-warm-brown-text">Ioan (Webdev, 15 ani):</span> Pune bazele unei infrastructuri tehnice impecabile, unde viteza și funcționalitatea sunt obligatorii.
+          <p className="text-[0.8125rem] md:text-[0.9375rem] text-gray-700">
+            <span className="font-semibold text-gray-900">Ioan (Webdev, 15 ani):</span> Pune bazele unei infrastructuri tehnice impecabile, unde viteza și funcționalitatea sunt obligatorii.
           </p>
-          <p className="text-[0.8125rem] md:text-[0.9375rem] text-warm-brown-text/80">
-            <span className="font-semibold text-warm-brown-text">Oana (Marketing, 7 ani):</span> Traduce viziunea ta pe limba publicului țintă, astfel încât mesajul să ajungă exact unde trebuie.
+          <p className="text-[0.8125rem] md:text-[0.9375rem] text-gray-700">
+            <span className="font-semibold text-gray-900">Oana (Marketing, 7 ani):</span> Traduce viziunea ta pe limba publicului țintă, astfel încât mesajul să ajungă exact unde trebuie.
           </p>
         </div>
-        <p className="text-[0.9375rem] md:text-[1.125rem] font-bold text-warm-brown-text">
+        <p className="text-[0.9375rem] md:text-[1.125rem] font-bold text-gray-900">
           Concluzia?
         </p>
-        <p className="text-[0.9375rem] md:text-[1.125rem] text-warm-brown-text/80">
+        <p className="text-[0.9375rem] md:text-[1.125rem] text-gray-700">
           Nu facem doar design de dragul artei. Construim experiențe digitale care îți aduc bani.
         </p>
       </div>
