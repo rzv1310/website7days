@@ -62,19 +62,6 @@ const slides: Slide[] = [
 const TeamShowcase = () => {
   const containerRef = useRef<HTMLDivElement>(null);
   const cardsRef = useRef<(HTMLDivElement | null)[]>([]);
-  const [shaderActive, setShaderActive] = useState(false);
-
-  useEffect(() => {
-    const container = containerRef.current;
-    if (!container) return;
-
-    const observer = new IntersectionObserver(
-      ([entry]) => setShaderActive(entry.isIntersecting),
-      { threshold: 0.05 }
-    );
-    observer.observe(container);
-    return () => observer.disconnect();
-  }, []);
 
   useEffect(() => {
     const container = containerRef.current;
