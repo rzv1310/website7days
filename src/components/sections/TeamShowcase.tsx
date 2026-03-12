@@ -1,13 +1,15 @@
-import { useEffect, useRef } from "react";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
 import andreeaImg from "@/assets/Andreea.webp";
 import teamBg from "@/assets/team_bg.webp";
 import teamBgMobil from "@/assets/team_bg_mobil.webp";
 import ioanImg from "@/assets/ioan.webp";
 import oanaImg from "@/assets/Oana.webp";
-
-gsap.registerPlugin(ScrollTrigger);
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
 
 type Slide =
   | { type: "text"; content: React.ReactNode }
@@ -60,76 +62,44 @@ const slides: Slide[] = [
 ];
 
 const TeamShowcase = () => {
-  const containerRef = useRef<HTMLDivElement>(null);
-  const cardsRef = useRef<(HTMLDivElement | null)[]>([]);
-
-  useEffect(() => {
-    const container = containerRef.current;
-    if (!container) return;
-
-    // Each slide: ~8% transition + ~8% dead zone = ~16% per slide
-    // Slide 0: visible 0-16%
-    // Slide 1: transition 16%-24%, dead 24%-32%
-    // Slide 2: transition 32%-40%, dead 40%-48%
-    // Slide 3: transition 48%-56%, dead 56%-64%
-    // Slide 4: transition 64%-72%, dead 72%-100%
-    const ctx = gsap.context(() => {
-      for (let i = 1; i < slides.length; i++) {
-        const startPct = i * 16;
-        const endPct = startPct + 8;
-        gsap.fromTo(
-          cardsRef.current[i],
-          { xPercent: 120 },
-          {
-            xPercent: 0,
-            ease: "none",
-            scrollTrigger: {
-              trigger: container,
-              start: `${startPct}% top`,
-              end: `${endPct}% top`,
-              scrub: 1,
-            },
-          }
-        );
-      }
-    }, container);
-
-    return () => ctx.revert();
-  }, []);
-
   return (
-    <div ref={containerRef} className="relative" style={{ height: "500vh" }}>
+    <div className="relative py-20 md:py-28">
       <picture className="absolute inset-0 w-full h-full">
         <source media="(max-width: 767px)" srcSet={teamBgMobil} />
         <img src={teamBg} alt="" className="absolute inset-0 w-full h-full object-cover" loading="lazy" />
       </picture>
       <div className="absolute inset-0 bg-black/40" />
-      <div className="sticky top-0 h-screen flex flex-col items-center justify-center overflow-hidden relative z-10">
-        <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">Cine Suntem?</h2>
-        <div className="relative w-[85vw] md:w-[340px]" style={{ clipPath: "inset(0)" }}>
-          {slides.map((slide, i) => (
-            <div
-              key={i}
-              ref={(el) => { cardsRef.current[i] = el; }}
-              className={`${i === 0 ? "relative" : "absolute inset-0"} rounded-2xl overflow-hidden shadow-2xl bg-card`}
-              style={{ zIndex: i }}
-            >
-              {slide.type === "text" ? (
-                <div className="w-full aspect-[4/5] md:aspect-[3/4] flex items-center justify-center" style={{ borderTop: '14px solid white', borderBottom: '14px solid white' }}>
-                  {slide.content}
+
+      <div className="relative z-10 flex flex-col items-center justify-center">
+        <h2 className="text-3xl md:text-4xl font-bold text-white mb-8">Cine Suntem?</h2>
+
+        <Carousel opts={{ align: "center", loop: true }} className="w-[85vw] md:w-[380px]">
+          <CarouselContent>
+            {slides.map((slide, i) => (
+              <CarouselItem key={i}>
+                <div className="rounded-2xl overflow-hidden shadow-2xl bg-card">
+                  {slide.type === "text" ? (
+                    <div className="w-full aspect-[4/5] md:aspect-[3/4] flex items-center justify-center" style={{ borderTop: '14px solid white', borderBottom: '14px solid white' }}>
+                      {slide.content}
+                    </div>
+                  ) : (
+                    <img
+                      src={slide.src}
+                      alt={slide.alt}
+                      title={slide.alt}
+                      className="w-full aspect-[4/5] md:aspect-[3/4] object-cover"
+                      loading="lazy"
+                    />
+                  )}
                 </div>
-              ) : (
-                <img
-                  src={slide.src}
-                  alt={slide.alt}
-                  title={slide.alt}
-                  className="w-full aspect-[4/5] md:aspect-[3/4] object-cover"
-                  loading="lazy"
-                />
-              )}
-            </div>
-          ))}
-        </div>
+              </CarouselItem>
+            ))}
+          </CarouselContent>
+          <div className="flex justify-center gap-4 mt-6">
+            <CarouselPrevious className="static translate-y-0 border-white/30 bg-black/30 text-white hover:bg-white/20 hover:border-white/50" />
+            <CarouselNext className="static translate-y-0 border-white/30 bg-black/30 text-white hover:bg-white/20 hover:border-white/50" />
+          </div>
+        </Carousel>
       </div>
     </div>
   );
