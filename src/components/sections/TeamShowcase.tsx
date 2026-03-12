@@ -1,8 +1,9 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { MeshGradient } from "@paper-design/shaders-react";
 import andreeaImg from "@/assets/Andreea.webp";
+import teamBg from "@/assets/team_bg.webp";
+import teamBgMobil from "@/assets/team_bg_mobil.webp";
 import ioanImg from "@/assets/ioan.webp";
 import oanaImg from "@/assets/Oana.webp";
 
@@ -61,19 +62,6 @@ const slides: Slide[] = [
 const TeamShowcase = () => {
   const containerRef = useRef<HTMLDivElement>(null);
   const cardsRef = useRef<(HTMLDivElement | null)[]>([]);
-  const [shaderActive, setShaderActive] = useState(false);
-
-  useEffect(() => {
-    const container = containerRef.current;
-    if (!container) return;
-
-    const observer = new IntersectionObserver(
-      ([entry]) => setShaderActive(entry.isIntersecting),
-      { threshold: 0.05 }
-    );
-    observer.observe(container);
-    return () => observer.disconnect();
-  }, []);
 
   useEffect(() => {
     const container = containerRef.current;
@@ -111,16 +99,10 @@ const TeamShowcase = () => {
 
   return (
     <div ref={containerRef} className="relative" style={{ height: "500vh" }}>
-      <MeshGradient
-        style={{
-          position: "absolute",
-          inset: 0,
-          width: "100%",
-          height: "100%",
-        }}
-        speed={shaderActive ? 0.12 : 0}
-        colors={["#3d2e14", "#c4a67a", "#1a1410", "#d4b896", "#2a1f0e"]}
-      />
+      <picture className="absolute inset-0 w-full h-full">
+        <source media="(max-width: 767px)" srcSet={teamBgMobil} />
+        <img src={teamBg} alt="" className="absolute inset-0 w-full h-full object-cover" loading="lazy" />
+      </picture>
       <div className="absolute inset-0 bg-black/40" />
       <div className="sticky top-0 h-screen flex flex-col items-center justify-center overflow-hidden relative z-10">
         <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">Cine Suntem?</h2>
