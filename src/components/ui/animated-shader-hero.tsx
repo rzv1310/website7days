@@ -1,6 +1,4 @@
 import React from 'react';
-import bgDesktop from '@/assets/brown_background.webp';
-import bgMobile from '@/assets/brown_background_mobil.webp';
 
 interface HeroProps {
   trustBadge?: {
@@ -31,12 +29,13 @@ const Hero: React.FC<HeroProps> = ({ trustBadge, headline, subtitle, buttons, cl
     <section className={`relative w-full overflow-hidden ${className}`} style={{ minHeight: '100dvh' }}>
       {/* Background images - mobile & desktop */}
       <picture className="absolute inset-0 w-full h-full">
-        <source media="(max-width: 767px)" srcSet={bgMobile} />
+        <source media="(max-width: 767px)" srcSet="/hero-mobile.webp" />
         <img
-          src={bgDesktop}
+          src="/hero-desktop.webp"
           alt=""
           className="absolute inset-0 w-full h-full object-cover"
           loading="eager"
+          fetchPriority="high"
         />
       </picture>
 

@@ -1,15 +1,17 @@
+import { lazy, Suspense } from "react";
 import Hero from "@/components/ui/animated-shader-hero";
 import StickyNav from "@/components/StickyNav";
-import ForYou from "@/components/sections/ForYou";
-import Benefits from "@/components/sections/Benefits";
-import TeamShowcase from "@/components/sections/TeamShowcase";
-import Process from "@/components/sections/Process";
-import Testimonials from "@/components/sections/Testimonials";
-import Pricing from "@/components/sections/Pricing";
-import VideoFeed from "@/components/sections/VideoFeed";
-import FAQ from "@/components/sections/FAQ";
-import CTA from "@/components/sections/CTA";
-import Footer from "@/components/sections/Footer";
+
+const ForYou = lazy(() => import("@/components/sections/ForYou"));
+const Benefits = lazy(() => import("@/components/sections/Benefits"));
+const TeamShowcase = lazy(() => import("@/components/sections/TeamShowcase"));
+const Process = lazy(() => import("@/components/sections/Process"));
+const Testimonials = lazy(() => import("@/components/sections/Testimonials"));
+const Pricing = lazy(() => import("@/components/sections/Pricing"));
+const VideoFeed = lazy(() => import("@/components/sections/VideoFeed"));
+const FAQ = lazy(() => import("@/components/sections/FAQ"));
+const CTA = lazy(() => import("@/components/sections/CTA"));
+const Footer = lazy(() => import("@/components/sections/Footer"));
 
 
 const Index = () => {
@@ -31,35 +33,36 @@ const Index = () => {
         }}
       />
 
-      <ForYou />
+      <Suspense fallback={null}>
+        <ForYou />
+        <div id="process">
+          <Process />
+        </div>
 
-      <div id="process">
-        <Process />
-      </div>
+        <div id="recenzii">
+          <Testimonials />
+        </div>
 
-      <div id="recenzii">
-        <Testimonials />
-      </div>
+        <div id="preturi">
+          <Pricing />
+        </div>
 
-      <div id="preturi">
-        <Pricing />
-      </div>
+        <VideoFeed />
 
-      <VideoFeed />
+        <div id="faq">
+          <FAQ />
+        </div>
 
-      <div id="faq">
-        <FAQ />
-      </div>
+        <div id="echipa">
+          <TeamShowcase />
+        </div>
 
-      <div id="echipa">
-        <TeamShowcase />
-      </div>
-
-      <div id="benefits">
-        <Benefits />
-      </div>
-      <CTA />
-      <Footer />
+        <div id="benefits">
+          <Benefits />
+        </div>
+        <CTA />
+        <Footer />
+      </Suspense>
     </div>
   );
 };

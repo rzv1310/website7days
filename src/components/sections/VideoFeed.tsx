@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { useRef, useState, useCallback } from "react";
+import { useRef, useState, useCallback, useEffect } from "react";
 import { Play } from "lucide-react";
 
 const VIDEOS = [
@@ -9,7 +9,25 @@ const VIDEOS = [
 
 function PhoneVideo({ video }: { video: (typeof VIDEOS)[number] }) {
   const videoRef = useRef<HTMLVideoElement>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
   const [playing, setPlaying] = useState(false);
+  const [visible, setVisible] = useState(false);
+
+  useEffect(() => {
+    const el = containerRef.current;
+    if (!el) return;
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setVisible(true);
+          observer.disconnect();
+        }
+      },
+      { rootMargin: "200px" },
+    );
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
 
   const togglePlay = useCallback(() => {
     const el = videoRef.current;
@@ -31,19 +49,22 @@ function PhoneVideo({ video }: { video: (typeof VIDEOS)[number] }) {
 
       {/* Screen */}
       <div
+        ref={containerRef}
         className="relative rounded-[2rem] md:rounded-[2.4rem] overflow-hidden bg-black aspect-[9/16]"
         style={{ height: "min(70vh, 600px)" }}
       >
-        <video
-          ref={videoRef}
-          src={`${video.src}#t=0.001`}
-          loop
-          muted
-          playsInline
-          preload="metadata"
-          className="absolute inset-0 w-full h-full object-cover"
-          onClick={togglePlay}
-        />
+        {visible && (
+          <video
+            ref={videoRef}
+            src={`${video.src}#t=0.001`}
+            loop
+            muted
+            playsInline
+            preload="metadata"
+            className="absolute inset-0 w-full h-full object-cover"
+            onClick={togglePlay}
+          />
+        )}
 
         {/* Big play button overlay — visible when paused */}
         <button

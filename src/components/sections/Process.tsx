@@ -1,6 +1,5 @@
 import { MessageSquare, Palette, Rocket } from "lucide-react";
 import ScrollReveal from "../ScrollReveal";
-import { MeshGradient } from "@paper-design/shaders-react";
 
 const steps = [
   {
@@ -29,16 +28,12 @@ const steps = [
 const Process = () => {
   return (
     <section className="relative py-20 md:py-28 overflow-hidden">
-      {/* Shader Background */}
-      <MeshGradient
+      {/* Gradient Background */}
+      <div
+        className="absolute inset-0 w-full h-full"
         style={{
-          position: "absolute",
-          inset: 0,
-          width: "100%",
-          height: "100%",
+          background: "radial-gradient(ellipse at 20% 50%, #f5e6d3 0%, #d4b896 25%, #c4a67a 50%, #3d2e14 80%, #e8d5bc 100%)",
         }}
-        speed={0.15}
-        colors={["#f5e6d3", "#d4b896", "#c4a67a", "#3d2e14", "#e8d5bc"]}
       />
       {/* Overlay for readability */}
       <div className="absolute inset-0 bg-black/30" />

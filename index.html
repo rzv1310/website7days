@@ -10,58 +10,53 @@
     <meta name="author" content="SEO Doctor" />
     <meta name="publisher" content="SEO Doctor" />
 
-    <!-- TODO: Update og:title to match your application name -->
-    
-    
     <meta property="og:type" content="website" />
     <meta property="og:image" content="https://storage.googleapis.com/gpt-engineer-file-uploads/4JwdkPfG3Mgryfl0Byt7yN5KIf43/social-images/social-1771935016930-creare_website_in_7_zile_cover.webp">
-
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:site" content="@seo-doctor" />
     <meta name="twitter:image" content="https://storage.googleapis.com/gpt-engineer-file-uploads/4JwdkPfG3Mgryfl0Byt7yN5KIf43/social-images/social-1771935016930-creare_website_in_7_zile_cover.webp">
-    
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  <meta property="og:title" content="Creare Site Web in 7 zile | Website prezentare &gt; Magazin">
-  <meta name="twitter:title" content="Creare Site Web in 7 zile | Website prezentare &gt; Magazin">
-  <meta property="og:description" content="Creare site web profesional in doar 7 zile. Website de prezentare, Magazin Online. Rezerva-ți locul azi!">
-  <meta name="twitter:description" content="Creare site web profesional in doar 7 zile. Website de prezentare, Magazin Online. Rezerva-ți locul azi!">
-  <link rel="canonical" href="https://crearesiteweb.seo-doctor.ro/" />
-  <meta property="og:url" content="https://crearesiteweb.seo-doctor.ro/" />
+    <meta property="og:title" content="Creare Site Web in 7 zile | Website prezentare &gt; Magazin">
+    <meta name="twitter:title" content="Creare Site Web in 7 zile | Website prezentare &gt; Magazin">
+    <meta property="og:description" content="Creare site web profesional in doar 7 zile. Website de prezentare, Magazin Online. Rezerva-ți locul azi!">
+    <meta name="twitter:description" content="Creare site web profesional in doar 7 zile. Website de prezentare, Magazin Online. Rezerva-ți locul azi!">
+    <link rel="canonical" href="https://crearesiteweb.seo-doctor.ro/" />
+    <meta property="og:url" content="https://crearesiteweb.seo-doctor.ro/" />
 
-<!-- Meta Pixel Code -->
-<script>
-if(window.location.hostname === 'crearesiteweb.seo-doctor.ro'){
-!function(f,b,e,v,n,t,s)
-{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-n.queue=[];t=b.createElement(e);t.async=!0;
-t.src=v;s=b.getElementsByTagName(e)[0];
-s.parentNode.insertBefore(t,s)}(window, document,'script',
-'https://connect.facebook.net/en_US/fbevents.js');
-fbq('init', '765044876355878');
-fbq('track', 'PageView');
-}
-</script>
-<!-- End Meta Pixel Code -->
+    <!-- Preconnect to Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
-<!-- Scroll restoration fix: disable browser scroll restoration before React loads -->
-<script>
-  if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
-  window.scrollTo(0, 0);
-</script>
-</head>
+    <!-- Fonts — render-blocking is fine, display=optional prevents CLS from font swap -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=optional" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=OpenDyslexic:wght@400;700&display=optional" />
 
+    <!-- Preload LCP hero image -->
+    <link rel="preload" as="image" href="/hero-mobile.webp" media="(max-width: 767px)" />
+    <link rel="preload" as="image" href="/hero-desktop.webp" media="(min-width: 768px)" />
+
+    <!-- Meta Pixel — deferred to after page load -->
+    <script>
+    window.addEventListener('load', function(){
+      if(window.location.hostname === 'crearesiteweb.seo-doctor.ro'){
+        !function(f,b,e,v,n,t,s)
+        {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+        n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+        if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+        n.queue=[];t=b.createElement(e);t.async=!0;
+        t.src=v;s=b.getElementsByTagName(e)[0];
+        s.parentNode.insertBefore(t,s)}(window, document,'script',
+        'https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', '765044876355878');
+        fbq('track', 'PageView');
+      }
+    });
+    </script>
+
+    <script>
+      if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
+      window.scrollTo(0, 0);
+    </script>
+  </head>
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
