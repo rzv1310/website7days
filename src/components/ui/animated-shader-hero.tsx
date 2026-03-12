@@ -46,7 +46,7 @@ const Hero: React.FC<HeroProps> = ({ trustBadge, headline, subtitle, buttons, cl
       <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-b from-transparent to-[hsl(25,30%,8%)]" />
 
       {/* Content */}
-      <div className="relative z-10 flex flex-col items-center justify-center px-6 text-center pt-32 pb-48 md:pt-0 md:pb-0" style={{ minHeight: '100dvh' }}>
+      <div className="relative z-10 flex flex-col items-center justify-center px-6 text-center pt-32 pb-48 md:pt-0 md:pb-0 -translate-y-10 md:translate-y-0" style={{ minHeight: '100dvh' }}>
         {trustBadge && (
           <div className="mb-8">
             <span className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full border border-warm-gold/30 bg-warm-dark/40 backdrop-blur-md text-warm-light-text text-sm font-body tracking-wide">
