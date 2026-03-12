@@ -1,8 +1,9 @@
 import { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { MeshGradient } from "@paper-design/shaders-react";
 import andreeaImg from "@/assets/Andreea.webp";
+import teamBg from "@/assets/team_bg.webp";
+import teamBgMobil from "@/assets/team_bg_mobil.webp";
 import ioanImg from "@/assets/ioan.webp";
 import oanaImg from "@/assets/Oana.webp";
 
