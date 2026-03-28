@@ -24,10 +24,10 @@ const Index = () => {
       <Hero
         trustBadge={{ text: "Ajutăm la dezvoltarea a peste 50 de afaceri locale" }}
         headline={{
-          line1: "Creare Site Web Profesional",
-          line2: "în doar 7 Zile",
+          line1: <>Creare Site Web<span className="md:hidden"> Profesional</span></>,
+          line2: "în numai 7 zile",
         }}
-        subtitle="Construim site-uri de prezentare elegante pentru businessuri locale. Rapid și optimizat pentru conversii."
+        subtitle={<>Construim site-uri de prezentare elegante pentru businessuri locale.<br className="hidden md:block" />Rapid și optimizat pentru conversii.</>}
         buttons={{
           primary: { text: "Scrie-ne în WhatsApp", href: whatsAppUrl },
         }}

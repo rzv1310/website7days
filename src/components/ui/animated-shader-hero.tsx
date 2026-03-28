@@ -5,10 +5,10 @@ interface HeroProps {
     text: string;
   };
   headline: {
-    line1: string;
-    line2: string;
+    line1: React.ReactNode;
+    line2: React.ReactNode;
   };
-  subtitle: string;
+  subtitle: React.ReactNode;
   buttons?: {
     primary?: {
       text: string;
