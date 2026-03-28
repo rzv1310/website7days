@@ -45,7 +45,7 @@ const Hero: React.FC<HeroProps> = ({ trustBadge, headline, subtitle, buttons, cl
       <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-b from-transparent to-[hsl(25,30%,8%)]" />
 
       {/* Content */}
-      <div className="relative z-10 flex flex-col items-center justify-center px-6 text-center pt-32 pb-48 md:pt-0 md:pb-0 -translate-y-10 md:translate-y-0" style={{ minHeight: '100dvh' }}>
+      <div className="relative z-10 flex flex-col items-center justify-center md:items-start px-6 text-center md:text-left md:pl-16 lg:pl-24 pt-32 pb-48 md:pt-0 md:pb-0 -translate-y-10 md:translate-y-0" style={{ minHeight: '100dvh' }}>
         {trustBadge && (
           <div className="mb-8">
             <span className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full border border-warm-gold/30 bg-warm-dark/40 backdrop-blur-md text-warm-light-text text-sm font-body tracking-wide">
@@ -65,12 +65,12 @@ const Hero: React.FC<HeroProps> = ({ trustBadge, headline, subtitle, buttons, cl
             </span>
           </h1>
 
-          <p className="mt-6 md:mt-8 text-base sm:text-lg md:text-xl text-warm-light-text/80 font-body max-w-2xl mx-auto leading-relaxed">
+          <p className="mt-6 md:mt-8 text-base sm:text-lg md:text-xl text-warm-light-text/80 font-body max-w-2xl mx-auto md:mx-0 leading-relaxed">
             {subtitle}
           </p>
 
           {buttons && (
-            <div className="flex flex-col sm:flex-row gap-4 justify-center mt-8 md:mt-12">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start mt-8 md:mt-12">
               {buttons.primary && (
                 <a
                   href={buttons.primary.href || "#"}
