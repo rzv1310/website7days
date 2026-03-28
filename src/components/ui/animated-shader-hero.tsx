@@ -55,7 +55,7 @@ const Hero: React.FC<HeroProps> = ({ trustBadge, headline, subtitle, buttons, cl
           </div>
         )}
 
-        <div className="max-w-4xl mx-auto">
+        <div className="max-w-4xl mx-auto md:mx-0">
           <h1 className="font-display font-bold tracking-tight">
             <span className="block text-4xl sm:text-5xl md:text-7xl text-warm-light-text mb-2">
               {headline.line1}
