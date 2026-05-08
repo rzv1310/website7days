@@ -19,7 +19,7 @@ const plans: PlanData[] = [
   {
     titleLine1: "SITE DE PREZENTARE",
     titleLine2: "PLATINUM",
-    price: "970",
+    price: "1370",
     ctaText: "Vreau Site în 7 zile",
     preDescription: "Ce Primești:",
     description: "Un site web profesional, livrat in 7 zile, care arată perfect pe orice ecran și gata să-ți producă bani în fiecare zi.",
